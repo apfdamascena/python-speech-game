@@ -1,0 +1,34 @@
+.OrangeButton{
+    display: inline-block;
+    padding: 18px 42px 18px 42px;
+    margin-top: 40px;
+    margin-left: 60px;
+    background: linear-gradient(#FF6064, #FF9867);
+    border-radius: 20px;
+}
+
+.OrangeButton a > span {
+    display: inline-block;
+    padding: 0 15px;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    border-radius: 18px;
+}
+
+.OrangeButton a > span > span {
+    font-weight: bold;
+    background: linear-gradient(#FF6064, #FF9867);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#leftOrangeButton{
+    position: absolute;
+}
+
+#rightOrangeButton{
+    position: absolute;
+    left: 1000px;
+
+}

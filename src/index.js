@@ -16,6 +16,12 @@ const DATA = {
     "CONTROL FLOW": ['alsdjasldasld','fflhsdjkfhsfk'],
     "FUNCTIONS": ['kkkkkkkkkkk','10']
 }
+const ASK = {
+    "CLASSES": "HOW WOULD YOU IMPLEMENT THIS CLASS?",
+    "STRUCTURES": "READ THIS CODE WHILE YOU RECORD:",
+    "CONTROL FLOW": "ARE YOU ABLE TO IMPLEMENT?",
+    "FUNCTIONS": "SHOW ME HOW WOULD YOU IMPLEMENT"
+}
 
 class App extends Component {
     constructor(props){
@@ -68,6 +74,7 @@ class App extends Component {
             <div>
                 {this.maybeRenderHomePage()}
                 {this.maybeRenderOptionPage()}
+                {this.maybeRenderGamePage()}
             </div>
         );
     }

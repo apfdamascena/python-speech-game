@@ -22,7 +22,7 @@
   
 .cta:hover {
     transition: 0.5s;
-    box-shadow: 10px 10px 0 #B1E37F;
+    box-shadow: 10px 10px 0 #FBC638;
     color : white;
 }
   
@@ -76,7 +76,7 @@ path.two{
         fill: white;
     }
     50%{
-        fill: #B1E37F;
+        fill: #FBC638;
     }
     100%{
         fill: white;
@@ -84,20 +84,24 @@ path.two{
 }
 
 #first {
-    padding-top : 100px;
-    padding-left : 200px; 
+    position: absolute;
+    top: 200px;
+    left : 200px; 
 }
 #second{
-    padding-top: 0px;
-    padding-left: 740px;
+    position: absolute;
+    top: 300px;
+    left: 730px;
 
 }
 #third{
-    padding-top: 30px;
-    padding-left: 170px;
+    position: absolute;
+    top: 360px;
+    left: 180px;
 }
 
 #four{
-    padding-top: 30px ;
-    padding-left: 690px;
+    position: absolute;
+    top: 450px;
+    left: 720px;
 }

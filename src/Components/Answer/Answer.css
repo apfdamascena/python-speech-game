@@ -1,0 +1,72 @@
+.imageans {
+    position: absolute;
+    top: 80px;
+    left: 310px;
+}
+
+#container {
+    display: inline-block;
+    position: relative;
+}
+
+#container figcaption {
+    position: absolute;
+    top: 125px;
+    left:320px;
+    font-size : 40px;
+    color : #292D2D;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0,4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+
+    font-family: lato;
+}
+
+button {
+    position: absolute;
+    top : 503px;
+    left : 592px;
+    width: 35px;
+    height: 35px;
+    font-size: 0;
+    background-color: red;
+    border: 0;
+    border-radius: 35px;
+    margin: 18px;
+    outline: none;
+}
+    
+.notRec{
+    background-color: darkred;
+}
+    
+.Rec{
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+    
+@keyframes pulse{
+    0%{
+      box-shadow: 0px 0px 5px 0px rgba(173,0,0,.3);
+    }
+    65%{
+      box-shadow: 0px 0px 5px 13px rgba(173,0,0,.3);
+    }
+    90%{
+      box-shadow: 0px 0px 5px 13px rgba(173,0,0,0);
+    }
+}
+  
+.record h2 {
+    color: #424848;
+    position: absolute;
+    top : 540px;
+    left : 550px;
+    font-family: lato;
+    font-size: 28px;
+    text-shadow:0px 4px 3px rgba(0,0,0,0,4),
+                0px 8px 13px rgba(0,0,0,0.1),
+                0px 18px 23px rgba(0,0,0,0.1);
+}

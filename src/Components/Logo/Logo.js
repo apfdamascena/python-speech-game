@@ -12,6 +12,7 @@ class Logo extends Component {
 
                 <div className="namelogo">
                     <h1>PythonTest</h1>
+                    <hr/>
                 </div>
             </div>
         );

@@ -1,0 +1,16 @@
+import React, { Component } from 'react';
+import './OrangeButton.css'
+
+class OrangeButton extends Component{
+    constructor(props){
+        super(props);
+        this.props = props;
+    }
+    render(){
+        return(
+            <a className="OrangeButton" id={this.props.idButton}><span><span>{this.props.action}</span></span></a>
+        );
+    }
+}
+
+export default OrangeButton;

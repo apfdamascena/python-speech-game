@@ -15,7 +15,6 @@ class Button extends Component {
                 } else {
                     this.props.handleButtonPressed(this.props.name)
                 }
-             
             }
         }>
             <a className="cta" href="#">
