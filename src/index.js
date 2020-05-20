@@ -10,12 +10,17 @@ const STATE = {
     OptionPage: 1,
     GamePage: 2
 }
-const DATA = {
-    "CLASSES": ['classe1','classe2'],
-    "STRUCTURES": ['structures1','structers2'],
-    "CONTROL FLOW": ['alsdjasldasld','fflhsdjkfhsfk'],
-    "FUNCTIONS": ['kkkkkkkkkkk','10']
+const STATUSRECORD = {
+    statusOFF : "RECORDER",
+    statusON : "RECORDING"
 }
+const DATA = {
+    "CLASSES": ['classe1', 'classe2'],
+    "STRUCTURES": ['structures1', 'structers2'],
+    "CONTROL FLOW": ['alsdjasldasld', 'fflhsdjkfhsfk'],
+    "FUNCTIONS": ['kkkkkkkkkkk', '10']
+}
+
 const ASK = {
     "CLASSES": "HOW WOULD YOU IMPLEMENT THIS CLASS?",
     "STRUCTURES": "READ THIS CODE WHILE YOU RECORD:",
@@ -24,7 +29,7 @@ const ASK = {
 }
 
 class App extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.props = props;
         this.state = {
@@ -33,42 +38,56 @@ class App extends Component {
         }
     }
 
+    startingRecording = () => {
+        console.log(10); //precisa mudar o botao vermelho, bem como iniciar a gravacao!
+    }
+
     didTapPlayButton = () => {
-        this.setState({appState:STATE.OptionPage});
+        this.setState({appState: STATE.OptionPage});
+    }
+
+    didTapGoBackOption = () => {
+        this.setState({appState: STATE.OptionPage})
     }
 
     didChooseSection = (section) => {
-        this.setState({appState:STATE.GamePage, choosenState:section});
+        this.setState({appState: STATE.GamePage, choosenState: section});
     }
 
-    maybeRenderHomePage(){
-        if(this.state.appState == STATE.HomePage){
-            return(
+    didTapGoBack = () => {
+        this.setState({appState: STATE.HomePage})
+    }
+
+    maybeRenderHomePage() {
+        if (this.state.appState == STATE.HomePage){
+            return (
                 <div>
-                    <HomePage didTapPlayButton={this.didTapPlayButton}/>
+                    <HomePage didTapPlayButton={this.didTapPlayButton} />
                 </div>
             );
         }
     }
 
-    maybeRenderOptionPage(){
-        if(this.state.appState == STATE.OptionPage){
-            return(
+    maybeRenderOptionPage() {
+        if (this.state.appState == STATE.OptionPage){
+            return (
                 <div>
-                    <OptionPage didTapSection={this.didChooseSection}/>
+                    <OptionPage didTapSection={this.didChooseSection} didTapGoBack={this.didTapGoBack} />
                 </div>
             );
         }
     }
-    maybeRenderGamePage(){
-        if(this.state.appState == STATE.GamePage){
-            return(
+
+    maybeRenderGamePage() {
+        if (this.state.appState == STATE.GamePage) {
+            return (
                 <div>
-                    <GamePage data={DATA[this.state.choosenState]}></GamePage>
+                    <GamePage data={DATA[this.state.choosenState]} startingRecording={this.startingRecording} didTapGoBackOption={this.didTapGoBack}></GamePage>
                 </div>
             );
         }
     }
+
     render() {
         return (
             <div>

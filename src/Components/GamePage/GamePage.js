@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import OrangeButton from '../OrangeButton/OrangeButton';
 import Answer from '../Answer/Answer';
+import RecordButton from '../RecordButton/RecordButton';
 
 
 class GamePage extends Component {
@@ -17,10 +18,10 @@ class GamePage extends Component {
     render() {
         return (
             <div>
-                <OrangeButton action="GO BACK" idButton="leftOrangeButton"/>
+                <OrangeButton action="GO BACK" idButton="leftOrangeButton" handleButtonPressedGoBack={this.props.didTapGoBackOption}/>
                 <OrangeButton action="NEXT" idButton="rightOrangeButton"/>
-                <Answer title="serahein"/>
-                {this.props.data.forEach(this.getDivElement)}
+                <Answer title="FUNCTIONS" statusRecord="RECORDER"/>
+                <RecordButton handleButtonPressed={this.props.startingRecording}/>
             </div>
         );
     }

@@ -17,9 +17,8 @@ class Answer extends Component {
                     <figcaption id="figcap">{this.props.title}</figcaption>
                 </div>
         
-                <div class="record">
-                    <button id="recButton"></button>
-                    <h2 id = "pharseRecord">RECORDER</h2>
+                <div className="record">
+                    <h2 id = "pharseRecord">{this.props.statusRecord}</h2>
                 </div>
                 <div id="recordingsList"></div>
             </div>

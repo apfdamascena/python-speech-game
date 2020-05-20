@@ -8,7 +8,7 @@ class OrangeButton extends Component{
     }
     render(){
         return(
-            <a className="OrangeButton" id={this.props.idButton}><span><span>{this.props.action}</span></span></a>
+            <a className="OrangeButton" id={this.props.idButton} onClick={this.props.handleButtonPressed}><span><span>{this.props.action}</span></span></a>
         );
     }
 }
