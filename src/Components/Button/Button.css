@@ -82,3 +82,22 @@ path.two{
         fill: white;
     }
 }
+
+#first {
+    padding-top : 100px;
+    padding-left : 200px; 
+}
+#second{
+    padding-top: 0px;
+    padding-left: 740px;
+
+}
+#third{
+    padding-top: 30px;
+    padding-left: 170px;
+}
+
+#four{
+    padding-top: 30px ;
+    padding-left: 690px;
+}
