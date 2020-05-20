@@ -7,7 +7,6 @@ import OrangeButton from '../OrangeButton/OrangeButton.js';
 class Answer extends Component {
     constructor(props){
         super(props);
-        this.props = props;
     }
     render() {
         return (

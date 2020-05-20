@@ -4,7 +4,7 @@ import './OrangeButton.css'
 class OrangeButton extends Component{
     constructor(props){
         super(props);
-        this.props = props;
+        console.log(props);
     }
     render(){
         return(

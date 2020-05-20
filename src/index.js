@@ -82,7 +82,7 @@ class App extends Component {
         if (this.state.appState == STATE.GamePage) {
             return (
                 <div>
-                    <GamePage data={DATA[this.state.choosenState]} startingRecording={this.startingRecording} didTapGoBackOption={this.didTapGoBack}></GamePage>
+                    <GamePage data={DATA[this.state.choosenState]} startingRecording={this.startingRecording} didTapGoBackOption={this.didTapGoBackOption}></GamePage>
                 </div>
             );
         }
