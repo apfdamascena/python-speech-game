@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+body{
+    background: url(https://www.fireworks-videos.com/wp-content/uploads/2020/02/background_stars-and-sky_2160p.jpg);
+    background-position: bottom;
+    background-size: cover;
+    font-family: Lato;
+    color : white;
+
+}
+html {
+    height: 100%;
+}

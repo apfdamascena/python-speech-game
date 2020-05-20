@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Button from './Components/Button/Button';
+import './index.css';
+import HomePage from './Components/HomePage/HomePage'
 
 
 class App extends Component {
     render() {
         return (
-            <Button name="PLAY" ></Button>
+            <div>
+                <HomePage/>
+            </div>
         );
     }
 }
