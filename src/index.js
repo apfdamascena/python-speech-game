@@ -5,10 +5,13 @@ import HomePage from './Components/HomePage/HomePage'
 
 
 class App extends Component {
+    didTapPlayButton(){
+        console.log("oi")
+    }
     render() {
         return (
             <div>
-                <HomePage/>
+                <HomePage didTapPlayButton={this.didTapPlayButton}/>
             </div>
         );
     }
