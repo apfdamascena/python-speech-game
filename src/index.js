@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import HomePage from './Components/HomePage/HomePage'
 import OptionPage from './Components/OptionPage/OptionPage';
+import GamePage from './Components/GamePage/GamePage';
 
 const STATE = {
     HomePage: 0,
-    OptionPage: 1
+    OptionPage: 1,
+    GamePage: 2
+}
+const DATA = {
+    "CLASSES": ['classe1','classe2'],
+    "STRUCTURES": ['structures1','structers2'],
+    "CONTROL FLOW": ['alsdjasldasld','fflhsdjkfhsfk'],
+    "FUNCTIONS": ['kkkkkkkkkkk','10']
 }
 
 class App extends Component {
@@ -14,12 +22,19 @@ class App extends Component {
         super(props);
         this.props = props;
         this.state = {
-            appState: STATE.HomePage
+            appState: STATE.HomePage,
+            choosenState: ""
         }
     }
+
     didTapPlayButton = () => {
-        this.setState({appState:STATE.OptionPage})
+        this.setState({appState:STATE.OptionPage});
     }
+
+    didChooseSection = (section) => {
+        this.setState({appState:STATE.GamePage, choosenState:section});
+    }
+
     maybeRenderHomePage(){
         if(this.state.appState == STATE.HomePage){
             return(
@@ -29,11 +44,21 @@ class App extends Component {
             );
         }
     }
+
     maybeRenderOptionPage(){
         if(this.state.appState == STATE.OptionPage){
             return(
                 <div>
-                    <OptionPage/>
+                    <OptionPage didTapSection={this.didChooseSection}/>
+                </div>
+            );
+        }
+    }
+    maybeRenderGamePage(){
+        if(this.state.appState == STATE.GamePage){
+            return(
+                <div>
+                    <GamePage data={DATA[this.state.choosenState]}></GamePage>
                 </div>
             );
         }
