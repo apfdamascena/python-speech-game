@@ -4,12 +4,25 @@ import './RecordButton.css'
 class RecordButton extends Component{
     constructor(props){
         super(props);
-        this.props = props;
+        this.state = {
+            isRecording: false
+        }
     }
+    switchButton = () => {
+        this.setState({isRecording:!this.state.isRecording});
+        this.props.handleButtonPressed();
+    };
     render(){
         return(
             <div className="recordClass">
-                <button id="recButton" onClick={this.props.handleButtonPressed}></button>     
+                <button 
+                className={this.state.isRecording?"Rec":"notRec"}
+                id="recButton"
+                onClick={this.switchButton}>
+                </button>
+                <div className="record">
+                    <h2 id = "pharseRecord">{this.state.isRecording? "RECORDING" : "RECORDER"}</h2>
+                </div>     
             </div>
         );
     }

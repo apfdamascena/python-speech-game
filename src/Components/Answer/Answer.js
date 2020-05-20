@@ -15,10 +15,6 @@ class Answer extends Component {
                     <img className="imageans" src={AnswerImage}/>
                     <figcaption id="figcap">{this.props.title}</figcaption>
                 </div>
-        
-                <div className="record">
-                    <h2 id = "pharseRecord">{this.props.statusRecord}</h2>
-                </div>
                 <div id="recordingsList"></div>
             </div>
         );
