@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Answer.css';
 import '../OrangeButton/OrangeButton.js'
 import AnswerImage from './ansp.png';
-import OrangeButton from '../OrangeButton/OrangeButton.js';
 
 class Answer extends Component {
     constructor(props){
@@ -13,7 +12,9 @@ class Answer extends Component {
             <div className="answer">
                 <div id= "container">
                     <img className="imageans" src={AnswerImage}/>
-                    <figcaption id="figcap">{this.props.title}</figcaption>
+                    <p id="figcap">{this.props.title}</p>
+                    <p id="question">{this.props.question}</p>
+                    <p id="content">{this.props.content}</p>
                 </div>
                 <div id="recordingsList"></div>
             </div>

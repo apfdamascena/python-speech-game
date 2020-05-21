@@ -10,10 +10,6 @@ const STATE = {
     OptionPage: 1,
     GamePage: 2
 }
-const STATUSRECORD = {
-    statusOFF : "RECORDER",
-    statusON : "RECORDING"
-}
 const DATA = {
     "CLASSES": ['classe1', 'classe2'],
     "STRUCTURES": ['structures1', 'structers2'],
@@ -22,16 +18,17 @@ const DATA = {
 }
 
 const ASK = {
-    "CLASSES": "HOW WOULD YOU IMPLEMENT THIS CLASS?",
-    "STRUCTURES": "READ THIS CODE WHILE YOU RECORD:",
+    "CLASSES": "ARE YOU ABLE TO IMPLEMENT?",
+    "STRUCTURES": "RECORD WHILE YOU READ:",
     "CONTROL FLOW": "ARE YOU ABLE TO IMPLEMENT?",
-    "FUNCTIONS": "SHOW ME HOW WOULD YOU IMPLEMENT"
+    "FUNCTIONS": "   HOW WOULD YOU IMPLEMENT?"
 }
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.props = props;
+        this.numberAsk = 0;
         this.state = {
             appState: STATE.HomePage,
             choosenState: ""
@@ -40,6 +37,11 @@ class App extends Component {
 
     startingRecording = () => {
         console.log(10); //precisa mudar o botao vermelho, bem como iniciar a gravacao!
+    }
+
+    didTapNext = () => {
+        this.numberAsk++;
+        this.setState({appState: STATE.GamePage});
     }
 
     didTapPlayButton = () => {
@@ -82,17 +84,20 @@ class App extends Component {
         if (this.state.appState == STATE.GamePage) {
             return (
                 <div>
-                    <GamePage 
+                    <GamePage
+                    content = {DATA[this.state.choosenState][this.numberAsk]}
+                    question={ASK[this.state.choosenState]}
                     name={this.state.choosenState}
                     data={DATA[this.state.choosenState]} 
                     startingRecording={this.startingRecording}
-                    didTapGoBackOption={this.didTapGoBackOption}>
+                    didTapGoBackOption={this.didTapGoBackOption}
+                    didTapNext={this.didTapNext}>
                     </GamePage>
                 </div>
             );
         }
     }
-
+    
     render() {
         return (
             <div>

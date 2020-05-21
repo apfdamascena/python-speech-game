@@ -12,8 +12,12 @@ class GamePage extends Component {
         return (
             <div>
                 <OrangeButton action="GO BACK" idButton="leftOrangeButton" handleButtonPressed={this.props.didTapGoBackOption}/>
-                <OrangeButton action="NEXT" idButton="rightOrangeButton"/>
-                <Answer title={this.props.name} statusRecord="RECORDER"/>
+                <OrangeButton action="NEXT" idButton="rightOrangeButton" handleButtonPressed={this.props.didTapNext}/>
+                <Answer
+                content={this.props.content}
+                question={this.props.question}
+                title={this.props.name}
+                />
                 <RecordButton handleButtonPressed={this.props.startingRecording}/>
             </div>
         );
