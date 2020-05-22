@@ -4,18 +4,16 @@ import './index.css';
 import HomePage from './Components/HomePage/HomePage'
 import OptionPage from './Components/OptionPage/OptionPage';
 import GamePage from './Components/GamePage/GamePage';
+import data from './dataJSON';
+
 
 const STATE = {
     HomePage: 0,
     OptionPage: 1,
     GamePage: 2
 }
-const DATA = {
-    "CLASSES": ['classe1', 'classe2'],
-    "STRUCTURES": ['structures1', 'structers2'],
-    "CONTROL FLOW": ['alsdjasldasld', 'fflhsdjkfhsfk'],
-    "FUNCTIONS": ['kkkkkkkkkkk', '10']
-}
+
+const DATA = data
 
 const ASK = {
     "CLASSES": "ARE YOU ABLE TO IMPLEMENT?",
@@ -35,12 +33,22 @@ class App extends Component {
         }
     }
 
+    getRandomNumber = (min,max) => {
+        return parseInt(Math.random()*(max-min)+min);
+    }
+
     startingRecording = () => {
-        console.log(10); //precisa mudar o botao vermelho, bem como iniciar a gravacao!
+        var audio = document.createElement('audio');
+        var recordList = document.getElementById('recordingsList');
+        recordList.appendChild(audio);
+        console.log(recordList);
+        recordList.style.position = "absolute";
+        recordList.style.top='170px';
+        recordList.style.left = '945px';
     }
 
     didTapNext = () => {
-        this.numberAsk++;
+        this.numberAsk = this.getRandomNumber(0,DATA[this.state.choosenState].length);
         this.setState({appState: STATE.GamePage});
     }
 
@@ -64,7 +72,7 @@ class App extends Component {
         if (this.state.appState == STATE.HomePage){
             return (
                 <div>
-                    <HomePage didTapPlayButton={this.didTapPlayButton} />
+                    <HomePage didTapPlayButton={this.didTapPlayButton}/>
                 </div>
             );
         }

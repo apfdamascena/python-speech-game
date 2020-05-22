@@ -22,7 +22,7 @@ class RecordButton extends Component{
                 </button>
                 <div className="record">
                     <h2 id = "pharseRecord">{this.state.isRecording? "RECORDING" : "RECORDER"}</h2>
-                </div>     
+                </div>   
             </div>
         );
     }

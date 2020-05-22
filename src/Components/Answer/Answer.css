@@ -37,9 +37,9 @@
 }
 
 #content{
+    width: 650px;
+    height: 250px;
     position: absolute;
-    margin-top: 160px;
-    margin-left: 30px;
-    padding: 70px 200px 70px 200px;
-    font-size: 28px;
+    margin-top: 190px;
+    font-size: 26px;
 }
