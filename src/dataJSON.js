@@ -1,6 +1,5 @@
 export default{
     "FUNCTIONS": [
-        "",
         "def p_simple_statement_list(s, ct, first_statement):",
         "def p_compile_time_exp(s):",
         "def p_def_statement(s):",
@@ -81785,7 +81784,7 @@ export default{
         ""
     ],
     "CLASSES": [
-        "OPAODPAD"
+        "CLASS LINKEDLIST"
     ],
     "STRUCTURES": [
         "DALDKJASDLKASJDA",

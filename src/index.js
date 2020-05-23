@@ -40,11 +40,13 @@ class App extends Component {
     startingRecording = () => {
         var audio = document.createElement('audio');
         var recordList = document.getElementById('recordingsList');
+        audio.controls = true;
         recordList.appendChild(audio);
         console.log(recordList);
         recordList.style.position = "absolute";
         recordList.style.top='170px';
         recordList.style.left = '945px';
+        //terminar e colocar na tela!!!!!
     }
 
     didTapNext = () => {
