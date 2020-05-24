@@ -5,13 +5,18 @@ class LoginInput extends Component {
     render() {
         return (
             <div className="login">
-                <input className="email"
-                placeHolder="Email"
-                ></input>
-                <input className = "password"
-                placeHolder="Password"
-                securityTextEntry={true}
-                ></input>
+                <div>
+                    <input className="email"
+                    placeHolder="Email"
+                    type="email"
+                    ></input>
+                </div>
+                <div>
+                    <input className = "password"
+                    placeHolder="Password"
+                    type="password"
+                    ></input>
+                </div>
             </div>
         );
     }

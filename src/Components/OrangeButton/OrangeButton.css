@@ -5,6 +5,7 @@
     margin-left: 60px;
     background: linear-gradient(#FF6064, #FF9867);
     border-radius: 20px;
+    text-decoration: none;
 }
 
 .OrangeButton a > span {

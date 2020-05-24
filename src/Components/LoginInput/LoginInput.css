@@ -1,10 +1,13 @@
-.login{
-    height: 40;
-    width: 95%;
-    border-color: #AAAAAA;
-    border-width: 2;
-    border-radius: 20;
-    margin-bottom: 18;
-    margin-left: 2;
-    font-size: 18;
+.email {
+    font-family: Poppins;
+    text-decoration: none;
+    background-color: #08105D;
+    padding: 10px 20px 10px 20px;
+    border-radius: 27px;
+    margin: 20px 20px 20px 20px;
+    box-shadow: none;
+}
+
+*:focus{
+    outline: none;
 }

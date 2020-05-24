@@ -5,16 +5,14 @@ import HomePage from './Components/HomePage/HomePage'
 import OptionPage from './Components/OptionPage/OptionPage';
 import GamePage from './Components/GamePage/GamePage';
 import data from './dataJSON';
-
+import Recorder from'./Components/RecordButton/recorder'
 
 const STATE = {
     HomePage: 0,
     OptionPage: 1,
     GamePage: 2
 }
-
 const DATA = data
-
 const ASK = {
     "CLASSES": "ARE YOU ABLE TO IMPLEMENT?",
     "STRUCTURES": "RECORD WHILE YOU READ:",
@@ -43,13 +41,11 @@ class App extends Component {
         audio.controls = true;
         recordList.appendChild(audio);
         console.log(recordList);
-        recordList.style.position = "absolute";
-        recordList.style.top='170px';
-        recordList.style.left = '945px';
         //terminar e colocar na tela!!!!!
     }
 
     didTapNext = () => {
+        document.getElementById('recordingsList').removeChild('audio');
         this.numberAsk = this.getRandomNumber(0,DATA[this.state.choosenState].length);
         this.setState({appState: STATE.GamePage});
     }
@@ -118,7 +114,6 @@ class App extends Component {
         );
     }
 }
-
 ReactDOM.render(
     <App />,
     document.getElementById('root')
