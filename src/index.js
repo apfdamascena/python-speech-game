@@ -108,9 +108,10 @@ class App extends Component {
     render() {
         return (
             <div>
-                {this.maybeRenderHomePage()}
+                <LoginInput></LoginInput>
+                {/* {this.maybeRenderHomePage()}
                 {this.maybeRenderOptionPage()}
-                {this.maybeRenderGamePage()}
+                {this.maybeRenderGamePage()} */}
             </div>
         );
     }
