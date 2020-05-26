@@ -11,8 +11,9 @@ import LoginPage from './Components/LoginPage/LoginPage';
 
 const STATE = {
     HomePage: 0,
-    OptionPage: 1,
-    GamePage: 2
+    LoginPage: 1,
+    OptionPage: 2,
+    GamePage: 3
 }
 const DATA = data
 const ASK = {
@@ -53,6 +54,10 @@ class App extends Component {
     }
 
     didTapPlayButton = () => {
+        this.setState({appState: STATE.LoginPage});
+    }
+
+    didTapLoginButton = () => {
         this.setState({appState: STATE.OptionPage});
     }
 
@@ -73,6 +78,16 @@ class App extends Component {
             return (
                 <div>
                     <HomePage didTapPlayButton={this.didTapPlayButton}/>
+                </div>
+            );
+        }
+    }
+
+    maybeRenderLoginPage(){
+        if(this.state.appState == STATE.LoginPage){
+            return(
+                <div>
+                    <LoginPage didTapLoginButton={this.didTapLoginButton}></LoginPage>
                 </div>
             );
         }
@@ -109,10 +124,10 @@ class App extends Component {
     render() {
         return (
             <div>
-                <LoginPage></LoginPage>
-                {/* {this.maybeRenderHomePage()}
+                {this.maybeRenderHomePage()}
+                {this.maybeRenderLoginPage()}
                 {this.maybeRenderOptionPage()}
-                {this.maybeRenderGamePage()} */}
+                {this.maybeRenderGamePage()}
             </div>
         );
     }

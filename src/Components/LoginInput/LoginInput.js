@@ -6,6 +6,9 @@ import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {faUserPlus} from '@fortawesome/free-solid-svg-icons'
 
 class LoginInput extends Component {
+    constructor(props){
+        super(props);
+    }
     render() {
         return (
             <div className="login">
@@ -23,7 +26,7 @@ class LoginInput extends Component {
                     type="password"
                     ></input>
                 </div>
-                <div className= "buttonLogin">
+                <div className= "buttonLogin" onClick={this.props.handleButtonPressed}>
                     <a>Login</a>
                 </div>
                 <div className="newUser">
