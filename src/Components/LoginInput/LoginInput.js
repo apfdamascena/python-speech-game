@@ -3,6 +3,7 @@ import './LoginInput.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
 import {faLock} from '@fortawesome/free-solid-svg-icons'
+import {faUserPlus} from '@fortawesome/free-solid-svg-icons'
 
 class LoginInput extends Component {
     render() {
@@ -21,6 +22,12 @@ class LoginInput extends Component {
                     placeHolder="Password"
                     type="password"
                     ></input>
+                </div>
+                <div className= "buttonLogin">
+                    <a>Login</a>
+                </div>
+                <div className="newUser">
+                    <a className="newUserIcon"href="#"><FontAwesomeIcon icon={faUserPlus}/> New to PythonTest? SIGN UP</a>
                 </div>
             </div>
         );

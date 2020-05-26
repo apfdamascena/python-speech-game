@@ -5,8 +5,9 @@ import HomePage from './Components/HomePage/HomePage'
 import OptionPage from './Components/OptionPage/OptionPage';
 import GamePage from './Components/GamePage/GamePage';
 import data from './dataJSON';
-import Recorder from'./Components/RecordButton/recorder'
-import LoginInput from './Components/LoginInput/LoginInput';
+import Recorder from'./Components/RecordButton/recorder';
+import LoginPage from './Components/LoginPage/LoginPage';
+
 
 const STATE = {
     HomePage: 0,
@@ -108,7 +109,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <LoginInput></LoginInput>
+                <LoginPage></LoginPage>
                 {/* {this.maybeRenderHomePage()}
                 {this.maybeRenderOptionPage()}
                 {this.maybeRenderGamePage()} */}

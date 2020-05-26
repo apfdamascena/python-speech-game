@@ -1,6 +1,6 @@
-.login{
+.emailUser{
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%,-50%);
     background: #2f3640;
@@ -9,7 +9,7 @@
     padding: 4px;
 }
 
-.logoUser{
+.iconUser{
     color:orange;
     float: left;
     width: 40px;
@@ -27,6 +27,7 @@
     outline: none;
     float: right;
     padding: 0;
+    margin-left: 8px;
     color: white;
     font-size: 16px;
     transition: 0.4s;
@@ -34,12 +35,18 @@
     width: 280px
 }
 
+.passwordUser{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 4px;
+}
 
-
-
-
-
-.loginPassword{
+.iconPassword{
     color:orange;
     float: left;
     width: 40px;
@@ -52,8 +59,8 @@
 }
 
 .password{
-    margin-left:20px;
     border:none;
+    margin-left: 8px;
     background: none;
     outline: none;
     float: right;
@@ -64,5 +71,50 @@
     line-height: 40px;
     width: 280px
 }
+
+.imageLogo{
+    padding-top: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.buttonLogin{
+    text-decoration: none;
+    background-color:#2f3640;
+    color: white;
+    padding: 8px 60px;
+    border-radius: 27px;
+    font-size:14px;
+    position: absolute;
+    top: 79%;
+    left: 43.5%;
+}
+
+.buttonLogin:hover, .active{
+    background-color: #262C34;
+}
+
+.emailUser:hover, .active{
+    background-color: #262C34;
+
+}
+
+.passwordUser:hover, .active{
+    background-color: #262C34;
+}
+
+.newUserIcon {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 90%;
+    left: 41%;
+    font-size: 14px;
+}
+
+.newUserIcon:hover, active {
+    color: #ACACAC;
+}
+
 
 
