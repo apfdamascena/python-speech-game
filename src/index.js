@@ -13,8 +13,10 @@ const STATE = {
     HomePage: 0,
     LoginPage: 1,
     OptionPage: 2,
-    GamePage: 3
+    GamePage: 3,
+    NewUser: 4
 }
+
 const DATA = data
 const ASK = {
     "CLASSES": "ARE YOU ABLE TO IMPLEMENT?",
@@ -73,6 +75,10 @@ class App extends Component {
         this.setState({appState: STATE.HomePage})
     }
 
+    createNewUser = () => {
+        this.setState({appState: STATE.NewUser});
+    }
+
     maybeRenderHomePage() {
         if (this.state.appState == STATE.HomePage){
             return (
@@ -87,7 +93,9 @@ class App extends Component {
         if(this.state.appState == STATE.LoginPage){
             return(
                 <div>
-                    <LoginPage didTapLoginButton={this.didTapLoginButton}></LoginPage>
+                    <LoginPage didTapLoginButton={this.didTapLoginButton}
+                    createNewUser = {this.createNewUser}
+                    ></LoginPage>
                 </div>
             );
         }
@@ -97,7 +105,7 @@ class App extends Component {
         if (this.state.appState == STATE.OptionPage){
             return (
                 <div>
-                    <OptionPage didTapSection={this.didChooseSection} didTapGoBack={this.didTapGoBack} />
+                    <OptionPage didTapSection={this.didChooseSection} didTapGoBack={this.didTapGoBack}/>
                 </div>
             );
         }

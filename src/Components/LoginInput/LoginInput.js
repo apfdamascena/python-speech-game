@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
 import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {faUserPlus} from '@fortawesome/free-solid-svg-icons'
+import OrangeButton from '../OrangeButton/OrangeButton';
 
 class LoginInput extends Component {
     constructor(props){
@@ -12,6 +13,7 @@ class LoginInput extends Component {
     render() {
         return (
             <div className="login">
+                <OrangeButton action="GO BACK"></OrangeButton>
                 <div className= "emailUser">
                     <a className="iconUser"href="#"><FontAwesomeIcon icon={faUser}/></a>
                     <input className="email"
@@ -30,7 +32,7 @@ class LoginInput extends Component {
                     <a>Login</a>
                 </div>
                 <div className="newUser">
-                    <a className="newUserIcon"href="#"><FontAwesomeIcon icon={faUserPlus}/> New to PythonTest? SIGN UP</a>
+                    <a className="newUserIcon"href="#" onClick={this.props.newUser}><FontAwesomeIcon icon={faUserPlus}/> New to PythonTest? SIGN UP</a>
                 </div>
             </div>
         );

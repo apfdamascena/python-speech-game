@@ -10,7 +10,9 @@ class LoginPage extends Component {
         return (
             <div>
                 <LogoInputLogo></LogoInputLogo>
-                <LoginInput handleButtonPressed={this.props.didTapLoginButton}></LoginInput>
+                <LoginInput handleButtonPressed={this.props.didTapLoginButton}
+                newUser= {this.props.createNewUser}
+                ></LoginInput>
             </div>
         );
     }
