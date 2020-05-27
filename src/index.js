@@ -7,6 +7,7 @@ import GamePage from './Components/GamePage/GamePage';
 import data from './dataJSON';
 import Recorder from'./Components/RecordButton/recorder';
 import LoginPage from './Components/LoginPage/LoginPage';
+import NewUserPage from './Components/NewUserPage/NewUserPage';
 
 
 const STATE = {
@@ -89,13 +90,22 @@ class App extends Component {
         }
     }
 
+    maybeRenderNewUserPage(){
+        if(this.state.appState == STATE.NewUser){
+            return(
+                <div>
+                    <NewUserPage/>
+                </div>
+            );
+        }
+    }
+
     maybeRenderLoginPage(){
         if(this.state.appState == STATE.LoginPage){
             return(
                 <div>
                     <LoginPage didTapLoginButton={this.didTapLoginButton}
-                    createNewUser = {this.createNewUser}
-                    ></LoginPage>
+                    createNewUser = {this.createNewUser}/>
                 </div>
             );
         }
@@ -134,6 +144,7 @@ class App extends Component {
             <div>
                 {this.maybeRenderHomePage()}
                 {this.maybeRenderLoginPage()}
+                {this.maybeRenderNewUserPage()}
                 {this.maybeRenderOptionPage()}
                 {this.maybeRenderGamePage()}
             </div>
