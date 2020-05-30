@@ -5,7 +5,6 @@ import HomePage from './Components/HomePage/HomePage'
 import OptionPage from './Components/OptionPage/OptionPage';
 import GamePage from './Components/GamePage/GamePage';
 import data from './dataJSON';
-import Recorder from'./Components/RecordButton/recorder';
 import LoginPage from './Components/LoginPage/LoginPage';
 import NewUserPage from './Components/NewUserPage/NewUserPage';
 
