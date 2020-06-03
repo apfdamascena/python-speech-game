@@ -7,6 +7,7 @@ import GamePage from './Components/GamePage/GamePage';
 import data from './dataJSON';
 import LoginPage from './Components/LoginPage/LoginPage';
 import NewUserPage from './Components/NewUserPage/NewUserPage';
+import ButtonLevel from './Components/ButtonLevel/ButtonLevel';
 
 
 const STATE = {
@@ -50,7 +51,6 @@ class App extends Component {
     }
 
     didTapNext = () => {
-        document.getElementById('recordingsList').removeChild('audio');
         this.numberAsk = this.getRandomNumber(0,DATA[this.state.choosenState].length);
         this.setState({appState: STATE.GamePage});
     }
@@ -64,7 +64,7 @@ class App extends Component {
     }
 
     didTapGoBackOption = () => {
-        this.setState({appState: STATE.OptionPage})
+        this.setState({appState: STATE.OptionPage});
     }
 
     didChooseSection = (section) => {
@@ -72,11 +72,18 @@ class App extends Component {
     }
 
     didTapGoBack = () => {
-        this.setState({appState: STATE.HomePage})
+        this.setState({appState: STATE.HomePage});
+    }
+
+    didTapGoBackLogin = () => {
+        this.setState({appState: STATE.LoginPage});
     }
 
     createNewUser = () => {
         this.setState({appState: STATE.NewUser});
+    }
+    didTapGoBackLogin = () =>{
+        this.setState({appState: STATE.LoginPage});
     }
 
     maybeRenderHomePage() {
@@ -93,7 +100,7 @@ class App extends Component {
         if(this.state.appState == STATE.NewUser){
             return(
                 <div>
-                    <NewUserPage/>
+                    <NewUserPage didTapGoBackLogin = {this.didTapGoBackLogin}/>
                 </div>
             );
         }
@@ -104,7 +111,9 @@ class App extends Component {
             return(
                 <div>
                     <LoginPage didTapLoginButton={this.didTapLoginButton}
-                    createNewUser = {this.createNewUser}/>
+                    createNewUser={this.createNewUser}
+                    didTapGoBack={this.didTapGoBack}
+                    />
                 </div>
             );
         }

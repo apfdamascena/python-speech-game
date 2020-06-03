@@ -5,7 +5,6 @@ class LevelPage extends Component {
     render() {
         return (
             <div className="OptionLevel">
-
             </div>
         );
     }

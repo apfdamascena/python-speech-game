@@ -13,7 +13,6 @@ class LoginInput extends Component {
     render() {
         return (
             <div className="login">
-                <OrangeButton action="GO BACK"></OrangeButton>
                 <div className= "emailUser">
                     <a className="iconUser"href="#"><FontAwesomeIcon icon={faUser}/></a>
                     <input className="email"

@@ -16,7 +16,7 @@ class NewUserPage extends Component {
     render() {
         return (
             <div>
-                <OrangeButton action="GO BACK"/>
+                <OrangeButton action="GO BACK" handleButtonPressed={this.props.didTapGoBackLogin}/>
                 <LogoInputLogo/>
                 <div className="UserName">
                     <a className="UserIcon"><FontAwesomeIcon icon={faUserEdit}/></a>
