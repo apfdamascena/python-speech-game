@@ -3,6 +3,12 @@
     top: 80px;
     left: 310px;
 }
+.tableans {
+    position: absolute;
+    top: 100px; 
+    left: 320px;
+    z-index: 2;
+}
 
 #container {
     display: inline-block;

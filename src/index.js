@@ -7,7 +7,6 @@ import GamePage from './Components/GamePage/GamePage';
 import data from './dataJSON';
 import LoginPage from './Components/LoginPage/LoginPage';
 import NewUserPage from './Components/NewUserPage/NewUserPage';
-import ButtonLevel from './Components/ButtonLevel/ButtonLevel';
 
 
 const STATE = {
