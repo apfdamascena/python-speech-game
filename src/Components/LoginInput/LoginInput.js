@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
 import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {faUserPlus} from '@fortawesome/free-solid-svg-icons'
-import fire from '../../FireBase/FireBase';
+import {fire} from '../../FireBase/FireBase';
 
 class LoginInput extends Component {
     constructor(props){
@@ -21,14 +21,13 @@ class LoginInput extends Component {
             console.log(user);
         }).catch((error) => {
             console.log(error);
-        })
-
+        });
     }
     
     handleChange = (event) => {
         this.setState({
             [event.target.name] : event.target.value
-        })
+        });
     }
     render() {
         return (

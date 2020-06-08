@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LogoInputLogo from '../LoginInputLogo/LoginInputLogo';
 import LoginInput from '../LoginInput/LoginInput';
-import fire from '../../FireBase/FireBase'
+import {fire} from '../../FireBase/FireBase'
 
 class LoginPage extends Component {
     constructor(props){
@@ -12,17 +12,26 @@ class LoginPage extends Component {
     }
     componentDidMount = () => {
         this.authListener();
-
     }
+
     authListener = () => {
         fire.auth().onAuthStateChanged((user)=>{
             if(user){
                 this.setState({user});
+                user.updateProfile({
+                    displayName: username
+                }).then(function(){
+                    let displayName = user.displayName;
+                },function(error){
+                    console.log(error);
+                    alert("Wrong password for this login");
+                });
             } else {
                 this.setState({user: null});
             }
         });
     }
+
     render() {
         return (
             <div>

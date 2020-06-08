@@ -7,7 +7,8 @@ import {faUserLock} from '@fortawesome/free-solid-svg-icons'
 import {faLock} from '@fortawesome/free-solid-svg-icons'
 import './NewUserPage.css'
 import OrangeButton from '../OrangeButton/OrangeButton'
-import fire from '../../FireBase/FireBase'
+import {fire} from '../../FireBase/FireBase'
+import {database} from '../../FireBase/FireBase';
 
 
 class NewUserPage extends Component {
@@ -17,8 +18,17 @@ class NewUserPage extends Component {
             username: "",
             email: "",
             password: "",
-            confirmPasswrod: ""
+            confirmPasswrod: "",
+            score: 0
         }
+    }
+
+    writeUserData = (UserId,name,email,score) => {
+        firebase.database().ref('users/'+UserId).set({
+            Username : name,
+            Email : email,
+            Score : score 
+        });
     }
 
     handleChange = (event) => {
@@ -29,14 +39,16 @@ class NewUserPage extends Component {
 
     signUp = (event) => {
         event.preventDefault();
-        fire.auth().createUserWithEmailAndPassword(this.state.email,this.state.password).then((user) => {
-            console.log(user)
-        }).catch((error) => {
-            console.log(error);
-        });
-        let confirm = confirm("Are you sure about this login?")
-        if(confirm){
-            this.props.didTapLoginButton();
+        if(this.state.password == this.state.confirmPasswrod){
+            fire.auth().createUserWithEmailAndPassword(UserId,this.state.email,this.state.password).then((user) => {
+                console.log(user);
+                this.writeUserData(user.uid,this.state.username,this.state.email,this.state.score);
+            }).catch((error) => {
+                console.log(error);
+                alert("Error to create a new user");
+            });
+        } else {
+            alert("Passwords aren't equal");
         }
     }
 

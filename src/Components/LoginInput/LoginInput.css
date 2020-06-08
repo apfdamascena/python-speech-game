@@ -112,9 +112,7 @@
     font-size: 14px;
 }
 
-.newUserIcon:hover, active {
+.newUserIcon:hover, .active {
     color: #ACACAC;
 }
-
-
 
