@@ -40,9 +40,9 @@ class NewUserPage extends Component {
     signUp = (event) => {
         event.preventDefault();
         if(this.state.password == this.state.confirmPasswrod){
-            fire.auth().createUserWithEmailAndPassword(UserId,this.state.email,this.state.password).then((user) => {
+            fire.auth().createUserWithEmailAndPassword(this.state.email,this.state.password).then((user) => {
                 console.log(user);
-                this.writeUserData(user.uid,this.state.username,this.state.email,this.state.score);
+                this.writeUserData(this.state.email,this.state.username,this.state.email,this.state.score);
             }).catch((error) => {
                 console.log(error);
                 alert("Error to create a new user");
