@@ -10,7 +10,7 @@ class RecordButton extends Component{
     }
     switchButton = () => {
         this.setState({isRecording:!this.state.isRecording});
-        this.props.handleButtonPressed();
+        this.props.handleButtonPressed(this.state.isRecording);
     };
     render(){
         return(

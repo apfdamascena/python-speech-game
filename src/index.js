@@ -7,6 +7,8 @@ import GamePage from './Components/GamePage/GamePage';
 import data from './dataJSON';
 import LoginPage from './Components/LoginPage/LoginPage';
 import NewUserPage from './Components/NewUserPage/NewUserPage';
+import './Utils/Utils';
+import Recorder from './Components/RecordButton/recorder'
 
 
 const STATE = {
@@ -40,13 +42,63 @@ class App extends Component {
         return parseInt(Math.random()*(max-min)+min);
     }
 
-    startingRecording = () => {
-        var audio = document.createElement('audio');
-        var recordList = document.getElementById('recordingsList');
-        audio.controls = true;
-        recordList.appendChild(audio);
-        console.log(recordList);
-        //terminar e colocar na tela!!!!!
+    createDownloadLink = (blob) => {
+        let url = URL.createObjectURL(blob);
+	    let au = document.createElement('audio');
+	    let li = document.createElement('li');
+	    let link = document.createElement('a');
+	    let filename = new Date().toISOString();
+        
+        au.controls = true;
+	    au.src = url;
+	    link.href = url;
+	    link.download = filename+".wav"; 
+	    link.innerHTML = "Save";
+	    link.style.color = "white";
+
+	    li.appendChild(au);	
+	    li.appendChild(link);
+	
+	    //upload link
+	    let upload = document.createElement('a');
+    
+        upload.style.color = "white"
+	    upload.innerHTML = "Upload";
+	    upload.href="#";
+
+	    upload.addEventListener("click", function(event){
+		    var xhr=new XMLHttpRequest();
+		    xhr.onload=function(e) {
+		        if(this.readyState === 4) {
+		            console.log("Server returned: ",e.target.responseText);
+		        }
+		    };
+		    var fd=new FormData();
+		    fd.append("audio_data",blob, filename);
+		    xhr.open("POST","upload.php",true);
+		    xhr.send(fd);
+	    });
+	    li.appendChild(document.createTextNode (" "))//add a space in between
+	    li.appendChild(upload)//add the upload link to li
+
+	    recordingsList.appendChild(li);
+    }
+
+    startingRecording = (isRecording) => {
+        if(isRecording){
+            let constraints = { audio: true, video:false};
+            navigator.mediaDevices.getUserMedia(constraints).then(function(stream){
+                audioContext = new AudioContext();
+                gumStream = stream;
+                input = audioContext.createMediaStreamSource(stream);
+                rec = new Recorder(input,{numChannels:1})
+                rec.record();
+            });
+        } else {
+            rec.stop();
+            gumStream.getAudioTracks()[0].stop();
+            rec.exportWAV(this.createDownloadLink);
+        }
     }
 
     didTapNext = () => {
