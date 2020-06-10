@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
 import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {faUserPlus} from '@fortawesome/free-solid-svg-icons'
-import {fire} from '../../FireBase/FireBase';
+import fire from '../../FireBase/FireBase';
 
 class LoginInput extends Component {
     constructor(props){
@@ -19,6 +19,7 @@ class LoginInput extends Component {
         event.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then((user) => {
             console.log(user);
+            this.props.handleButtonPressed();
         }).catch((error) => {
             console.log(error);
         });
@@ -35,7 +36,7 @@ class LoginInput extends Component {
                 <div className= "emailUser">
                     <a className="iconUser"href="#"><FontAwesomeIcon icon={faUser}/></a>
                     <input className="email"
-                    placeHolder="Email"
+                    placeholder="Email"
                     type="email"
                     name="email"
                     onChange={this.handleChange}
@@ -45,7 +46,7 @@ class LoginInput extends Component {
                 <div className="passwordUser">
                     <a className="iconPassword"href="#"><FontAwesomeIcon icon={faLock} /></a>
                     <input className="password"
-                    placeHolder="Password"
+                    placeholder="Password"
                     type="password"
                     name="password"
                     onChange={this.handleChange}

@@ -7,8 +7,8 @@ import GamePage from './Components/GamePage/GamePage';
 import data from './dataJSON';
 import LoginPage from './Components/LoginPage/LoginPage';
 import NewUserPage from './Components/NewUserPage/NewUserPage';
-import './Utils/Utils';
 import Recorder from './Components/RecordButton/recorder'
+import fire from './FireBase/FireBase';
 
 
 const STATE = {
@@ -18,6 +18,13 @@ const STATE = {
     GamePage: 3,
     NewUser: 4
 }
+
+URL = window.URL || window.webkitURL;
+var gumStream; 						
+var rec; 							
+var input; 						
+var AudioContext = window.AudioContext || window.webkitAudioContext;
+var audioContext
 
 const DATA = data
 const ASK = {
@@ -42,7 +49,7 @@ class App extends Component {
         return parseInt(Math.random()*(max-min)+min);
     }
 
-    createDownloadLink = (blob) => {
+     createDownloadLink = (blob) => {
         let url = URL.createObjectURL(blob);
 	    let au = document.createElement('audio');
 	    let li = document.createElement('li');
@@ -80,8 +87,7 @@ class App extends Component {
 	    });
 	    li.appendChild(document.createTextNode (" "))//add a space in between
 	    li.appendChild(upload)//add the upload link to li
-
-	    recordingsList.appendChild(li);
+	    // recordingsList.appendChild(li);
     }
 
     startingRecording = (isRecording) => {
@@ -123,6 +129,7 @@ class App extends Component {
     }
 
     didTapGoBack = () => {
+        fire.auth().signOut();
         this.setState({appState: STATE.HomePage});
     }
 
