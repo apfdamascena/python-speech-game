@@ -32,6 +32,7 @@ class NewUserPage extends Component {
     }
 
     handleChange = (event) => {
+        console.log(event);
         this.setState({
             [event.target.name]: [event.target.value]
         });
@@ -39,13 +40,13 @@ class NewUserPage extends Component {
 
     signUp = (event) => {
         console.log(this.state);
-        fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((user) => {
-            console.log(user);
-            this.props.didTapGoBackLogin();
-            // this.writeUserData(this.state.email, this.state.username, this.state.email, this.state.score);
-        }).catch((error) => {
-            console.log(error);
-        });
+        // fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((user) => {
+        //     console.log(user);
+        //     this.props.didTapGoBackLogin();
+        //     // this.writeUserData(this.state.email, this.state.username, this.state.email, this.state.score);
+        // }).catch((error) => {
+        //     console.log(error);
+        // });
     }
 
     render() {

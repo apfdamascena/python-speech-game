@@ -37,9 +37,9 @@ class LoginPage extends Component {
             <div>
                 <LogoInputLogo></LogoInputLogo>
                 <LoginInput handleButtonPressed={this.props.didTapLoginButton}
-                newUser= {this.props.createNewUser}
+                newUser={this.props.createNewUser}
                 ></LoginInput>
-                {this.state.user ? this.props.didTapLoginButton : this.props.didTapPlayButton}
+                {/* {this.state.user ? this.props.didTapLoginButton() : this.props.didTapPlayButton()} */}
             </div>
         );
     }
