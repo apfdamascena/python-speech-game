@@ -20,11 +20,11 @@ const STATE = {
 }
 
 URL = window.URL || window.webkitURL;
-var gumStream; 						
-var rec; 							
-var input; 						
+var gumStream;
+var rec;
+var input;
 var AudioContext = window.AudioContext || window.webkitAudioContext;
-var audioContext
+var audioContext;
 
 const DATA = data
 const ASK = {
@@ -45,59 +45,59 @@ class App extends Component {
         }
     }
 
-    getRandomNumber = (min,max) => {
-        return parseInt(Math.random()*(max-min)+min);
+    getRandomNumber = (min, max) => {
+        return parseInt(Math.random() * (max - min) + min);
     }
 
-     createDownloadLink = (blob) => {
+    createDownloadLink = (blob) => {
         let url = URL.createObjectURL(blob);
-	    let au = document.createElement('audio');
-	    let li = document.createElement('li');
-	    let link = document.createElement('a');
-	    let filename = new Date().toISOString();
-        
+        let au = document.createElement('audio');
+        let li = document.createElement('li');
+        let link = document.createElement('a');
+        let filename = new Date().toISOString();
+
         au.controls = true;
-	    au.src = url;
-	    link.href = url;
-	    link.download = filename+".wav"; 
-	    link.innerHTML = "Save";
-	    link.style.color = "white";
+        au.src = url;
+        link.href = url;
+        link.download = filename + ".wav";
+        link.innerHTML = "Save";
+        link.style.color = "white";
 
-	    li.appendChild(au);	
-	    li.appendChild(link);
-	
-	    //upload link
-	    let upload = document.createElement('a');
-    
+        li.appendChild(au);
+        li.appendChild(link);
+
+        //upload link
+        let upload = document.createElement('a');
+
         upload.style.color = "white"
-	    upload.innerHTML = "Upload";
-	    upload.href="#";
+        upload.innerHTML = "Upload";
+        upload.href = "#";
 
-	    upload.addEventListener("click", function(event){
-		    var xhr=new XMLHttpRequest();
-		    xhr.onload=function(e) {
-		        if(this.readyState === 4) {
-		            console.log("Server returned: ",e.target.responseText);
-		        }
-		    };
-		    var fd=new FormData();
-		    fd.append("audio_data",blob, filename);
-		    xhr.open("POST","upload.php",true);
-		    xhr.send(fd);
-	    });
-	    li.appendChild(document.createTextNode (" "))//add a space in between
-	    li.appendChild(upload)//add the upload link to li
-	    // recordingsList.appendChild(li);
+        upload.addEventListener("click", function (event) {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function (e) {
+                if (this.readyState === 4) {
+                    console.log("Server returned: ", e.target.responseText);
+                }
+            };
+            var fd = new FormData();
+            fd.append("audio_data", blob, filename);
+            xhr.open("POST", "upload.php", true);
+            xhr.send(fd);
+        });
+        li.appendChild(document.createTextNode(" "))//add a space in between
+        li.appendChild(upload)//add the upload link to li
+        // recordingsList.appendChild(li);
     }
 
     startingRecording = (isRecording) => {
-        if(isRecording){
-            let constraints = { audio: true, video:false};
-            navigator.mediaDevices.getUserMedia(constraints).then(function(stream){
+        if (isRecording) {
+            let constraints = { audio: true, video: false };
+            navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
                 audioContext = new AudioContext();
                 gumStream = stream;
                 input = audioContext.createMediaStreamSource(stream);
-                rec = new Recorder(input,{numChannels:1})
+                rec = new Recorder(input, { numChannels: 1 })
                 rec.record();
             });
         } else {
@@ -108,69 +108,76 @@ class App extends Component {
     }
 
     didTapNext = () => {
-        this.numberAsk = this.getRandomNumber(0,DATA[this.state.choosenState].length);
-        this.setState({appState: STATE.GamePage});
+        this.numberAsk = this.getRandomNumber(0, DATA[this.state.choosenState].length);
+        this.setState({ appState: STATE.GamePage });
     }
 
     didTapPlayButton = () => {
-        this.setState({appState: STATE.LoginPage});
+        this.setState({ appState: STATE.LoginPage });
     }
 
     didTapLoginButton = () => {
+        this.setState({ appState: STATE.OptionPage });
+    }
+
+    didTapRegister = () => {
         this.setState({appState: STATE.OptionPage});
     }
 
     didTapGoBackOption = () => {
-        this.setState({appState: STATE.OptionPage});
+        this.setState({ appState: STATE.OptionPage });
     }
 
     didChooseSection = (section) => {
-        this.setState({appState: STATE.GamePage, choosenState: section});
+        this.setState({ appState: STATE.GamePage, choosenState: section });
     }
 
     didTapGoBack = () => {
-        fire.auth().signOut();
-        this.setState({appState: STATE.HomePage});
+        fire.auth().signOut().then(() => {
+            this.setState({ appState: STATE.HomePage });
+        }).catch((error) => {
+            console.log(error);
+        });
     }
 
     didTapGoBackLogin = () => {
-        this.setState({appState: STATE.LoginPage});
+        this.setState({ appState: STATE.LoginPage });
     }
 
     createNewUser = () => {
-        this.setState({appState: STATE.NewUser});
+        this.setState({ appState: STATE.NewUser });
     }
-    didTapGoBackLogin = () =>{
-        this.setState({appState: STATE.LoginPage});
+    didTapGoBackLogin = () => {
+        this.setState({ appState: STATE.LoginPage });
     }
 
     maybeRenderHomePage() {
-        if (this.state.appState == STATE.HomePage){
+        if (this.state.appState == STATE.HomePage) {
             return (
                 <div>
-                    <HomePage didTapPlayButton={this.didTapPlayButton}/>
+                    <HomePage didTapPlayButton={this.didTapPlayButton} />
                 </div>
             );
         }
     }
 
-    maybeRenderNewUserPage(){
-        if(this.state.appState == STATE.NewUser){
-            return(
+    maybeRenderNewUserPage() {
+        if (this.state.appState == STATE.NewUser) {
+            return (
                 <div>
-                    <NewUserPage didTapGoBackLogin = {this.didTapGoBackLogin}/>
+                    <NewUserPage didTapRegister={this.didTapRegister} />
                 </div>
             );
         }
     }
 
-    maybeRenderLoginPage(){
-        if(this.state.appState == STATE.LoginPage){
-            return(
+    maybeRenderLoginPage() {
+        if (this.state.appState == STATE.LoginPage) {
+            return (
                 <div>
                     <LoginPage didTapLoginButton={this.didTapLoginButton}
-                    createNewUser={this.createNewUser}
-                    didTapGoBack={this.didTapGoBack}
+                        createNewUser={this.createNewUser}
+                        didTapGoBack={this.didTapGoBack}
                     />
                 </div>
             );
@@ -178,10 +185,10 @@ class App extends Component {
     }
 
     maybeRenderOptionPage() {
-        if (this.state.appState == STATE.OptionPage){
+        if (this.state.appState == STATE.OptionPage) {
             return (
                 <div>
-                    <OptionPage didTapSection={this.didChooseSection} didTapGoBack={this.didTapGoBack}/>
+                    <OptionPage didTapSection={this.didChooseSection} didTapGoBack={this.didTapGoBack} />
                 </div>
             );
         }
@@ -192,19 +199,19 @@ class App extends Component {
             return (
                 <div>
                     <GamePage
-                    content = {DATA[this.state.choosenState][this.numberAsk]}
-                    question={ASK[this.state.choosenState]}
-                    name={this.state.choosenState}
-                    data={DATA[this.state.choosenState]} 
-                    startingRecording={this.startingRecording}
-                    didTapGoBackOption={this.didTapGoBackOption}
-                    didTapNext={this.didTapNext}>
+                        content={DATA[this.state.choosenState][this.numberAsk]}
+                        question={ASK[this.state.choosenState]}
+                        name={this.state.choosenState}
+                        data={DATA[this.state.choosenState]}
+                        startingRecording={this.startingRecording}
+                        didTapGoBackOption={this.didTapGoBackOption}
+                        didTapNext={this.didTapNext}>
                     </GamePage>
                 </div>
             );
         }
     }
-    
+
     render() {
         return (
             <div>

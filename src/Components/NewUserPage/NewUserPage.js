@@ -23,36 +23,38 @@ class NewUserPage extends Component {
         }
     }
 
-    writeUserData = (UserId, name, email, score) => {
-        firebase.database().ref('users/' + UserId).set({
-            Username: name,
-            Email: email,
-            Score: score
+    writeUserData = (userId,score) => {
+        let store = firebase.firestore(fire);
+        store.collection("users").doc(userId).set({
+            score : score
+        }).then(() => {
+            console.log("foi");
+        }).catch(() => {
+            console.log("nao foi");
         });
     }
 
     handleChange = (event) => {
-        console.log(event);
         this.setState({
             [event.target.name]: [event.target.value]
         });
     }
 
     signUp = (event) => {
-        console.log(this.state);
-        // fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((user) => {
-        //     console.log(user);
-        //     this.props.didTapGoBackLogin();
-        //     // this.writeUserData(this.state.email, this.state.username, this.state.email, this.state.score);
-        // }).catch((error) => {
-        //     console.log(error);
-        // });
+        fire.auth().createUserWithEmailAndPassword(this.state.email[0], this.state.password[0]).then((user) => {
+            console.log(user);
+            let curr_user = fire.auth().currentUser;
+            this.writeUserData(curr_user.uid, this.state.score);
+            this.props.didTapRegister();
+        }).catch((error) => {
+            console.log(error);
+        });
     }
 
     render() {
         return (
             <div>
-                <OrangeButton action="GO BACK" handleButtonPressed={this.props.didTapGoBackLogin} />
+                <OrangeButton action="GO BACK" handleButtonPressed={this.props.didTapRegister} />
                 <LogoInputLogo />
                 <div className="UserName">
                     <a className="UserIcon"><FontAwesomeIcon icon={faUserEdit} /></a>
