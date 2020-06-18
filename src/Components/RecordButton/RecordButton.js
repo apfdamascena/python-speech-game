@@ -37,7 +37,7 @@ class RecordButton extends Component {
     // };
 
     componentDidMount() {
-        navigator.mediadevices.getUserMedia({ audio: true },
+        navigator.getUserMedia({ audio: true },
           () => {
             console.log('Permission Granted');
             this.setState({ isBlocked: false });
