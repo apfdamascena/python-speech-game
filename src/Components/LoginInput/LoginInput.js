@@ -15,10 +15,18 @@ class LoginInput extends Component {
         }
     }
 
+    anonymousLogin = (event) => {
+        event.preventDefault();
+        fire.auth().signInAnonymously().then((user) => {
+            this.props.handleButtonPressed();
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+
     login = (event) => {
         event.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then((user) => {
-            console.log(user);
             this.props.handleButtonPressed();
         }).catch((error) => {
             console.log(error);
@@ -55,6 +63,9 @@ class LoginInput extends Component {
                 </div>
                 <div className= "buttonLogin" onClick={this.login}>
                     <a>Login</a>
+                </div>
+                <div id="anony" className= "buttonLogin" onClick={this.anonymousLogin}>
+                    <a>Anonymous</a>
                 </div>
                 <div className="newUser">
                     <a className="newUserIcon"href="#" onClick={this.props.newUser}><FontAwesomeIcon icon={faUserPlus}/> New to PythonTest? SIGN UP</a>
