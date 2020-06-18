@@ -1,7 +1,7 @@
 #anony{
     position : absolute;
     top: 79%;
-    left: 38%;
+    left: 38.5%;
 }
 
 .emailUser{
@@ -93,7 +93,7 @@
     font-size:14px;
     position: absolute;
     top: 79%;
-    left: 53%;
+    left: 52.5%;
 }
 
 .buttonLogin:hover, .active{

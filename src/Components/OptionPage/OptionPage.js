@@ -3,17 +3,18 @@ import Button from '../Button/Button';
 import OrangeButton from '../OrangeButton/OrangeButton';
 
 class OptionPage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
+
     render() {
         return (
             <div>
-                <OrangeButton action="HOME" handleButtonPressed={this.props.didTapGoBack}></OrangeButton>
-                <Button name="CONTROL FLOW" id="first" handleButtonPressed={this.props.didTapSection}/>
-                <Button name="FUNCTIONS" id="second" handleButtonPressed={this.props.didTapSection}/>
-                <Button name="STRUCTURES" id="third" handleButtonPressed={this.props.didTapSection}/>
-                <Button name="CLASSES" id="four" handleButtonPressed={this.props.didTapSection}/>
+                <OrangeButton action="HOME" handleButtonPressed={this.props.didTapGoBack} onClick={this.submit}></OrangeButton>
+                <Button name="CONTROL FLOW" id="first" handleButtonPressed={this.props.didTapSection} />
+                <Button name="FUNCTIONS" id="second" handleButtonPressed={this.props.didTapSection} />
+                <Button name="STRUCTURES" id="third" handleButtonPressed={this.props.didTapSection} />
+                <Button name="CLASSES" id="four" handleButtonPressed={this.props.didTapSection} />
             </div>
         );
     }

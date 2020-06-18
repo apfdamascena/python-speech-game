@@ -7,8 +7,9 @@ import GamePage from './Components/GamePage/GamePage';
 import data from './dataJSON';
 import LoginPage from './Components/LoginPage/LoginPage';
 import NewUserPage from './Components/NewUserPage/NewUserPage';
-import Recorder from './Components/RecordButton/recorder'
 import fire from './FireBase/FireBase';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 
 const STATE = {
@@ -19,14 +20,8 @@ const STATE = {
     NewUser: 4
 }
 
-URL = window.URL || window.webkitURL;
-var gumStream;
-var rec;
-var input;
-var AudioContext = window.AudioContext || window.webkitAudioContext;
-var audioContext;
-
 const DATA = data
+
 const ASK = {
     "CLASSES": "ARE YOU ABLE TO IMPLEMENT?",
     "STRUCTURES": "RECORD WHILE YOU READ:",
@@ -67,7 +62,7 @@ class App extends Component {
     }
 
     didTapRegister = () => {
-        this.setState({appState: STATE.OptionPage});
+        this.setState({appState: STATE.LoginPage});
     }
 
     didTapGoBackOption = () => {
@@ -79,11 +74,24 @@ class App extends Component {
     }
 
     didTapGoBack = () => {
-        fire.auth().signOut().then(() => {
-            this.setState({ appState: STATE.HomePage });
-        }).catch((error) => {
-            console.log(error);
-        });
+        confirmAlert({
+            title: 'Confirm to leave',
+            message: 'Are you sure?',
+            buttons: [
+              {
+                label: 'Yes',
+                onClick: () => fire.auth().signOut().then(() => {
+                                this.setState({ appState: STATE.HomePage });
+                                }).catch((error) => {
+                                    console.log(error);
+                                })
+              },
+              {
+                label: 'No',
+                onClick: () => console.log("don't want")
+              }
+            ]
+          });
     }
 
     didTapGoBackLogin = () => {
