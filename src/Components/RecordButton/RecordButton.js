@@ -40,11 +40,11 @@ class RecordButton extends Component {
         navigator.getUserMedia({ audio: true },
           () => {
             console.log('Permission Granted');
-            this.setState({ isBlocked: false });
+            this.setState({ isBlocked: false});
           },
           () => {
             console.log('Permission Denied');
-            this.setState({ isBlocked: true })
+            this.setState({ isBlocked: true });
           },
         );
     }
@@ -55,11 +55,12 @@ class RecordButton extends Component {
                 <button
                     className={this.state.isRecording ? "Rec" : "notRec"}
                     id="recButton"
-                    onClick={!this.state.isRecording ? this.start() : this.stop()}>
+                    onClick={!this.state.isRecording ? this.start : this.stop}>
                 </button>
                 <div className="record">
                     <h2 id="pharseRecord">{this.state.isRecording ? "RECORDING" : "RECORDER"}</h2>
                 </div>
+                <audio src={this.state.blobURL} controls="controls"/>
             </div>
         );
     }
