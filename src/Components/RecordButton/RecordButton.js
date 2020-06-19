@@ -31,11 +31,6 @@ class RecordButton extends Component {
         }).catch((error) => console.log(error));
     }
 
-    // switchButton = () => {
-    //     this.setState({ isRecording: !this.state.isRecording });
-    //     this.props.handleButtonPressed(this.state.isRecording);
-    // };
-
     componentDidMount() {
         navigator.getUserMedia({ audio: true },
           () => {

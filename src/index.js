@@ -44,10 +44,6 @@ class App extends Component {
         return parseInt(Math.random() * (max - min) + min);
     }
 
-    startingRecording = (isRecording) => {
-        console.log(isRecording);
-    }
-
     didTapNext = () => {
         this.numberAsk = this.getRandomNumber(0, DATA[this.state.choosenState].length);
         this.setState({ appState: STATE.GamePage });

@@ -18,7 +18,7 @@ class GamePage extends Component {
                 question={this.props.question}
                 title={this.props.name}
                 />
-                <RecordButton handleButtonPressed={this.props.startingRecording}/>
+                <RecordButton/>
             </div>
         );
     }
