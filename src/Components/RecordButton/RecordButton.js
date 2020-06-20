@@ -55,24 +55,18 @@ class RecordButton extends Component {
 
     render() {
         return (
-            <div className="recordClass">
-                <button
-                    className={this.state.isRecording ? "Rec" : "notRec"}
-                    id="recButton"
-                    onClick={!this.state.isRecording ? this.start : this.stop}>
-                </button>
-                <div className="record">
-                    <h2 id="pharseRecord">{this.state.isRecording ? "RECORDING" : "RECORDER"}</h2>
+            <div>
+                <div className="recordClass">
+                    <button
+                        className={this.state.isRecording ? "Rec" : "notRec"}
+                        id="recButton"
+                        onClick={!this.state.isRecording ? this.start : this.stop}></button>
+                    <audio id="recording" src={this.state.blobURL} controls="controls"/>
                 </div>
-                <audio id="recordingsList" src={this.state.blobURL} controls="controls"/>
-                <div className= "Submit">
-                    <a>Submit</a>
-                </div>
-                <div className= "clear" onClick = {this.clear}>
-                    <a>Clear</a>
-                </div>
-                <div>
-                    <progress value="0" max="100"></progress>
+
+                <div id = "ButtonsAudio">
+                    <div className= "Submit"><a>Submit</a></div>
+                    <div className= "clear" onClick = {this.clear}><a>Clear</a></div>
                 </div>
             </div>
         );

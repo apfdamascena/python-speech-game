@@ -1,15 +1,14 @@
 button {
-    position: absolute;
-    top : 503px;
-    left : 592px;
-    width: 35px;
-    height: 35px;
-    font-size: 0;
-    background-color: red;
-    border: 0;
-    border-radius: 35px;
-    margin: 18px;
-    outline: none;
+  position: absolute;
+  top: 20%;
+  left: 4%;
+  width: 35px;
+  height: 35px;
+  font-size: 0;
+  background-color: red;
+  border: 0;
+  border-radius: 35px;
+  outline: none;
 }
     
 .notRec{
@@ -35,22 +34,19 @@ button {
     }
 }
 
-.record h2 {
-  color: #424848;
-  position: absolute;
-  top : 540px;
-  left : 550px;
-  font-family: lato;
-  font-size: 28px;
-  text-shadow:0px 4px 3px rgba(0,0,0,0,4),
-              0px 8px 13px rgba(0,0,0,0.1),
-              0px 18px 23px rgba(0,0,0,0.1);
+.recordClass {
+  background-color:#F0F0F0;
+  width: 500px;
+  height: 60px;
+  position : absolute;
+  top: 79%;
+  left: 30%;
+  border-radius: 40px;
+  opacity: 0.9;
 }
 
-#recordingsList{
-  position: absolute;
-  top: 240px;
-  left: 960px;
+#ButtonsAudio{
+  display: inline-block;
 }
 
 .Submit, .clear{
@@ -63,14 +59,23 @@ button {
   position: absolute;
 }
 
+#recording{
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  opacity: 0.8;
+  width: 400px;
+  outline : none;
+}
+
 .Submit{
-  top: 48%;
-  left: 77%;
+  top: 90%;
+  left: 38%;
 }
 
 .clear {
-  top : 48%;
-  left: 88%;
+  top : 90%;
+  left: 52%;
 }
 
 .Submit:hover, .clear:hover, .active{
