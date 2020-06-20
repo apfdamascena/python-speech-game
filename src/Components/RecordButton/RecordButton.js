@@ -11,6 +11,7 @@ class RecordButton extends Component {
             isRecording: false,
             blobURL: '',
             isBlocked: false,
+            position: ''
         }
     }
 
@@ -25,10 +26,15 @@ class RecordButton extends Component {
     }
 
     stop = () => {
+        console.log(this.state.position.coords.latitude)
         recorder.stop().getMp3().then(([buffer, blob]) => {
             const blobURL = URL.createObjectURL(blob)
             this.setState({ blobURL, isRecording: false });
         }).catch((error) => console.log(error));
+    }
+
+    clear = () => {
+        this.setState({blobURL:''});
     }
 
     componentDidMount() {
@@ -36,6 +42,9 @@ class RecordButton extends Component {
           () => {
             console.log('Permission Granted');
             this.setState({ isBlocked: false});
+            navigator.geolocation.getCurrentPosition((position) => {
+                this.setState({position : position});
+            });
           },
           () => {
             console.log('Permission Denied');
@@ -55,7 +64,16 @@ class RecordButton extends Component {
                 <div className="record">
                     <h2 id="pharseRecord">{this.state.isRecording ? "RECORDING" : "RECORDER"}</h2>
                 </div>
-                <audio src={this.state.blobURL} controls="controls"/>
+                <audio id="recordingsList" src={this.state.blobURL} controls="controls"/>
+                <div className= "Submit">
+                    <a>Submit</a>
+                </div>
+                <div className= "clear" onClick = {this.clear}>
+                    <a>Clear</a>
+                </div>
+                <div>
+                    <progress value="0" max="100"></progress>
+                </div>
             </div>
         );
     }

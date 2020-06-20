@@ -71,7 +71,7 @@ class App extends Component {
 
     didTapGoBack = () => {
         confirmAlert({
-            title: 'Confirm to leave',
+            title: 'Confirm to leave.',
             message: 'Are you sure?',
             buttons: [
               {

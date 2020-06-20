@@ -16,7 +16,6 @@ class Answer extends Component {
                     <p id="question">{this.props.question}</p>
                     <p id="content">{this.props.content}</p>
                 </div>
-                <div id="recordingsList"></div>
             </div>
         );
     }
