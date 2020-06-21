@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import './RecordButton.css'
 import MicRecorder from 'mic-recorder-to-mp3';
-import Geocoder from 'react-native-geocoding';
 import firebase from 'firebase';
-import fire from '../../FireBase/FireBase';
 
 const recorder = new MicRecorder({ bitRate: 128 });
-Geocoder.init("AIzaSyAbV6LIVdJB-z7v0Dn1mOaQQhO2PDk8YqM");
 
 class RecordButton extends Component {
     constructor(props) {
@@ -24,6 +21,7 @@ class RecordButton extends Component {
         firebase.storage().ref("audios/"+this.state.blobURL).put(this.state.blob).then( (snapshot) => {
             console.log("teve upload");
             this.setState({blobURL : ''});
+            alert("Audio was sent");
         }).catch((error) => console.log(error));
     }
 
