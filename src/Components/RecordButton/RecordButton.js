@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import './RecordButton.css'
 import MicRecorder from 'mic-recorder-to-mp3';
+import Geocoder from 'react-native-geocoding';
+import firebase from 'firebase';
+import fire from '../../FireBase/FireBase';
 
 const recorder = new MicRecorder({ bitRate: 128 });
+Geocoder.init("AIzaSyAbV6LIVdJB-z7v0Dn1mOaQQhO2PDk8YqM");
 
 class RecordButton extends Component {
     constructor(props) {
@@ -10,9 +14,17 @@ class RecordButton extends Component {
         this.state = {
             isRecording: false,
             blobURL: '',
+            blob: '',
             isBlocked: false,
-            position: ''
+            position : '',
         }
+    }
+
+    submit = () => {
+        firebase.storage().ref("audios/"+this.state.blobURL).put(this.state.blob).then( (snapshot) => {
+            console.log("teve upload");
+            this.setState({blobURL : ''});
+        }).catch((error) => console.log(error));
     }
 
     start = () => {
@@ -26,9 +38,9 @@ class RecordButton extends Component {
     }
 
     stop = () => {
-        console.log(this.state.position.coords.latitude)
         recorder.stop().getMp3().then(([buffer, blob]) => {
             const blobURL = URL.createObjectURL(blob)
+            this.setState({blob : blob});
             this.setState({ blobURL, isRecording: false });
         }).catch((error) => console.log(error));
     }
@@ -65,7 +77,7 @@ class RecordButton extends Component {
                 </div>
 
                 <div id = "ButtonsAudio">
-                    <div className= "Submit"><a>Submit</a></div>
+                    <div className= "Submit" onClick = {this.submit}><a>Submit</a></div>
                     <div className= "clear" onClick = {this.clear}><a>Clear</a></div>
                 </div>
             </div>
