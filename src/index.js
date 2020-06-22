@@ -10,14 +10,15 @@ import NewUserPage from './Components/NewUserPage/NewUserPage';
 import fire from './FireBase/FireBase';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
-
+import AboutPage from './Components/AboutPage/AboutPage';
 
 const STATE = {
     HomePage: 0,
     LoginPage: 1,
     OptionPage: 2,
     GamePage: 3,
-    NewUser: 4
+    NewUser: 4,
+    AboutPage: 5
 }
 
 const DATA = data
@@ -101,8 +102,12 @@ class App extends Component {
         this.setState({ appState: STATE.LoginPage });
     }
 
+    didTapAboutPage = () => {
+        this.setState({appState: STATE.AboutPage});
+    }
+
     maybeRenderHomePage() {
-        if (this.state.appState == STATE.HomePage) {
+        if (this.state.appState == STATE.HomePage){
             return (
                 <div>
                     <HomePage didTapPlayButton={this.didTapPlayButton} />
@@ -112,7 +117,7 @@ class App extends Component {
     }
 
     maybeRenderNewUserPage() {
-        if (this.state.appState == STATE.NewUser) {
+        if (this.state.appState == STATE.NewUser){
             return (
                 <div>
                     <NewUserPage didTapRegister={this.didTapRegister} />
@@ -128,6 +133,7 @@ class App extends Component {
                     <LoginPage didTapLoginButton={this.didTapLoginButton}
                         createNewUser={this.createNewUser}
                         didTapGoBack={this.didTapGoBack}
+                        didTapAboutPage={this.didTapAboutPage}
                     />
                 </div>
             );
@@ -153,7 +159,6 @@ class App extends Component {
                         question={ASK[this.state.choosenState]}
                         name={this.state.choosenState}
                         data={DATA[this.state.choosenState]}
-                        startingRecording={this.startingRecording}
                         didTapGoBackOption={this.didTapGoBackOption}
                         didTapNext={this.didTapNext}>
                     </GamePage>
@@ -162,11 +167,22 @@ class App extends Component {
         }
     }
 
-    render() {
+    maybeRenderAboutPage(){
+        if(this.state.appState == STATE.AboutPage){
+            return(
+                <div>
+                    <AboutPage/>
+                </div>
+            );
+        }
+    }
+
+    render(){
         return (
             <div>
                 {this.maybeRenderHomePage()}
                 {this.maybeRenderLoginPage()}
+                {this.maybeRenderAboutPage()}
                 {this.maybeRenderNewUserPage()}
                 {this.maybeRenderOptionPage()}
                 {this.maybeRenderGamePage()}
