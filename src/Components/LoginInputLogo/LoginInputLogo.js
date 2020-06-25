@@ -10,7 +10,6 @@ class LogoInputLogo extends Component {
                 <div className="imageLogin">
                     <img src={logoImageInput}/>
                 </div>
-                <OrangeButton idButton="rightOrangeButton" action="About" handleButtonPressed={this.props.didTapAboutPage}/>
             </div>
         );
     }

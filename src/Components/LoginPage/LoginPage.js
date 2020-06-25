@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LogoInputLogo from '../LoginInputLogo/LoginInputLogo';
 import LoginInput from '../LoginInput/LoginInput';
-import fire from '../../FireBase/FireBase'
+import OrangeButton from '../OrangeButton/OrangeButton';
 
 class LoginPage extends Component {
     constructor(props){
@@ -12,6 +12,7 @@ class LoginPage extends Component {
     render() {
         return (
             <div>
+                <OrangeButton idButton="rightOrangeButton" action="About" handleButtonPressed={this.props.didTapAboutPage}/>
                 <LogoInputLogo/>
                 <LoginInput 
                     handleButtonPressed={this.props.didTapLoginButton}
