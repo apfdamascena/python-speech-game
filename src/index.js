@@ -59,7 +59,7 @@ class App extends Component {
     }
 
     didTapRegister = () => {
-        this.setState({appState: STATE.LoginPage});
+        this.setState({ appState: STATE.LoginPage });
     }
 
     didTapGoBackOption = () => {
@@ -103,11 +103,11 @@ class App extends Component {
     }
 
     didTapAboutPage = () => {
-        this.setState({appState: STATE.AboutPage});
+        this.setState({ appState: STATE.AboutPage });
     }
 
     maybeRenderHomePage() {
-        if (this.state.appState == STATE.HomePage){
+        if (this.state.appState == STATE.HomePage) {
             return (
                 <div>
                     <HomePage didTapPlayButton={this.didTapPlayButton} />
@@ -117,7 +117,7 @@ class App extends Component {
     }
 
     maybeRenderNewUserPage() {
-        if (this.state.appState == STATE.NewUser){
+        if (this.state.appState == STATE.NewUser) {
             return (
                 <div>
                     <NewUserPage didTapRegister={this.didTapRegister} />
@@ -167,17 +167,17 @@ class App extends Component {
         }
     }
 
-    maybeRenderAboutPage(){
-        if(this.state.appState == STATE.AboutPage){
-            return(
+    maybeRenderAboutPage() {
+        if (this.state.appState == STATE.AboutPage) {
+            return (
                 <div>
-                    <AboutPage/>
+                    <AboutPage didTapBackLogin={this.didTapGoBackLogin} />
                 </div>
             );
         }
     }
 
-    render(){
+    render() {
         return (
             <div>
                 {this.maybeRenderHomePage()}

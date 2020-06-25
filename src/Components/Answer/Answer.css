@@ -54,3 +54,9 @@ p#content {
     height:200px;
     width:630px;
 }
+
+#imageCharacter {
+    position: absolute;
+    top: 53%;
+    left: 75.5%;
+}
