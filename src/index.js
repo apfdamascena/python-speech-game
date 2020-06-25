@@ -78,6 +78,7 @@ class App extends Component {
               {
                 label: 'Yes',
                 onClick: () => fire.auth().signOut().then(() => {
+                                console.log("sign out")
                                 this.setState({ appState: STATE.HomePage });
                                 }).catch((error) => {
                                     console.log(error);

@@ -1,11 +1,10 @@
-button {
+#recButton{
   position: absolute;
   top: 20%;
   left: 4%;
   width: 35px;
   height: 35px;
   font-size: 0;
-  background-color: red;
   border: 0;
   border-radius: 35px;
   outline: none;
@@ -16,6 +15,7 @@ button {
 }
     
 .Rec{
+    background-color: red;
     animation-name: pulse;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
