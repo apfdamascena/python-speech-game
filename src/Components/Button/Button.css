@@ -85,23 +85,23 @@ path.two{
 
 #first {
     position: absolute;
-    top: 200px;
+    top: 240px;
     left : 200px; 
 }
 #second{
     position: absolute;
-    top: 300px;
+    top: 340px;
     left: 720px;
 
 }
 #third{
     position: absolute;
-    top: 360px;
+    top: 400px;
     left: 195px;
 }
 
 #four{
     position: absolute;
-    top: 450px;
+    top: 490px;
     left: 710px;
 }

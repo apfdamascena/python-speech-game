@@ -19,7 +19,6 @@ class RecordButton extends Component {
 
     submit = () => {
         firebase.storage().ref("audios/"+this.state.blobURL).put(this.state.blob).then( (snapshot) => {
-            console.log("teve upload");
             this.setState({blobURL : ''});
             alert("Audio was sent");
         }).catch((error) => console.log(error));

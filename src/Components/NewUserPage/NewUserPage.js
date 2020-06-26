@@ -41,14 +41,18 @@ class NewUserPage extends Component {
     }
 
     signUp = (event) => {
-        fire.auth().createUserWithEmailAndPassword(this.state.email[0], this.state.password[0]).then((user) => {
-            console.log(user);
-            let curr_user = fire.auth().currentUser;
-            this.writeUserData(curr_user.uid, this.state.score);
-            this.props.didTapRegister();
-        }).catch((error) => {
-            console.log(error);
-        });
+        if(this.state.password[0] == this.state.confirmPassword[0]){
+            fire.auth().createUserWithEmailAndPassword(this.state.email[0], this.state.password[0]).then((user) => {
+                console.log(user);
+                let curr_user = fire.auth().currentUser;
+                this.writeUserData(curr_user.uid, this.state.score);
+                this.props.didTapRegister();
+            }).catch((error) => {
+                console.log(error);
+            });
+        } else {
+            alert("Passwords aren't the same");
+        }
     }
 
     render() {
