@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './RecordButton.css'
 import MicRecorder from 'mic-recorder-to-mp3';
 import firebase from 'firebase';
+import fire from '../../FireBase/FireBase';
 
 const recorder = new MicRecorder({ bitRate: 128 });
 
@@ -14,6 +15,7 @@ class RecordButton extends Component {
             blob: '',
             isBlocked: false,
             position : '',
+            score : 0,
         }
     }
 
@@ -21,6 +23,13 @@ class RecordButton extends Component {
         firebase.storage().ref("audios/"+this.state.blobURL).put(this.state.blob).then( (snapshot) => {
             this.setState({blobURL : ''});
             alert("Audio was sent");
+            this.state.score += 10;
+            let store = firebase.firestore(fire);
+            let user  = firebase.auth().currentUser;
+            let scoreRef = store.collection("users").doc(user.uid);
+            scoreRef.update({
+                score : this.state.score
+            }).catch((error) => console.log(error));
         }).catch((error) => console.log(error));
     }
 
@@ -46,6 +55,20 @@ class RecordButton extends Component {
         this.setState({blobURL:''});
     }
 
+    getScore = () => {
+        let store = firebase.firestore(fire);
+        let user  = firebase.auth().currentUser;
+        let scoreRef = store.collection("users").doc(user.uid);
+        scoreRef.get().then(doc => {
+            if(!doc.exists){
+                console.log("dont't exist");
+            } else{
+                let object = doc.data();
+                this.setState({score : object.score});
+            }
+        })
+    }
+
     componentDidMount() {
         navigator.getUserMedia({ audio: true },
           () => {
@@ -60,6 +83,7 @@ class RecordButton extends Component {
             this.setState({ isBlocked: true });
           },
         );
+        this.getScore();
     }
 
     render() {
