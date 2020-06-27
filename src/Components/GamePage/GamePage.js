@@ -46,7 +46,7 @@ class GamePage extends Component {
                 content={this.props.content}
                 question={this.props.question}
                 />
-                <RecordButton/>
+                <RecordButton handleButtonPressed = {this.getScore()}/>
                 <div id="title">
                     <Title name = {this.props.name}></Title>
                 </div>

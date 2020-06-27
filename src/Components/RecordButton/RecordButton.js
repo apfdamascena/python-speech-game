@@ -30,6 +30,7 @@ class RecordButton extends Component {
             scoreRef.update({
                 score : this.state.score
             }).catch((error) => console.log(error));
+            this.props.handleButtonPressed();
         }).catch((error) => console.log(error));
     }
 
