@@ -7,15 +7,25 @@
 
 #login,#anony {
     float: left;
-    margin-left: 10px;
+    margin-left: 15px;
+
+}
+
+.newUser{
+    margin-top: 3%;
+    margin-left:1%;
+
 }
 
 .emailUser{
+    position : relative;
+    left: 180px;
     transform: translate(-50%,-50%);
     background: #2f3640;
     height: 40px;
     border-radius: 40px;
     padding: 4px;
+    margin: 15px 0px 15px 0px;
 }
 
 .iconUser{
@@ -45,6 +55,8 @@
 }
 
 .passwordUser{
+    position: relative;
+    left: 180px;
     transform: translate(-50%,-50%);
     background: #2f3640;
     height: 40px;

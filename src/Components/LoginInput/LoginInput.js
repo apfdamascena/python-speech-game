@@ -62,13 +62,13 @@ class LoginInput extends Component {
                     ></input>
                 </div>
 
-                <div class= "buttonsBlackLoginPage">
+                <div className= "buttonsBlackLoginPage">
                     <div  id = "login" className= "buttonLogin" onClick={this.login}><a>Login</a></div>
                     <div id="anony" className= "buttonLogin" onClick={this.anonymousLogin}><a>Anonymous</a></div>
                 </div>
 
                 <div className="newUser">
-                    <a className="newUserIcon"href="#" onClick={this.props.newUser}><FontAwesomeIcon icon={faUserPlus}/> New to PythonTest? SIGN UP</a>
+                    <a className="newUserIcon" onClick={this.props.newUser}><FontAwesomeIcon icon={faUserPlus}/> New to PythonTest? SIGN UP</a>
                 </div>
             </div>
         );

@@ -1,11 +1,23 @@
+.containerNewUser{
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    max-height: 630px;
+}
+
+
 .UserName, .UserEmail, .UserPassword, .ConfirmUserPassword{
-    position: absolute;
-    left: 50%;
     transform: translate(-50%,-50%);
     background: #2f3640;
     height: 40px;
     border-radius: 40px;
     padding: 4px;
+    position: relative;
+    left: 180px;
+    margin-bottom: 10px;
+    position: relative;
+    bottom: 80px;
 }
 
 .UserIcon, .EmailIcon, .PasswordIcon, .iconConfirmUserPassword{
@@ -34,22 +46,6 @@
     width: 280px
 }
 
-.UserName{
-    top: 56%;
-}
-
-.UserEmail{
-    top: 65%;
-}
-
-.UserPassword{
-    top: 74%;
-}
-
-.ConfirmUserPassword{
-    top: 83%;
-}
-
 .buttonCreateUser{
     text-decoration: none;
     background-color:#2f3640;
@@ -57,9 +53,18 @@
     padding: 8px 60px 8px 60px;
     border-radius: 27px;
     font-size:14px;
-    position: absolute;
-    top: 90%;
-    left: 43%;
+    position: relative;
+    bottom: 95px;
+}
+
+#leftSide{
+    align-self: flex-start;
+    margin-right: 4%;
+}
+
+#imageNewUSer{
+    position: relative;
+    bottom: 70px;
 }
 
 

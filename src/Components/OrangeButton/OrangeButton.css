@@ -30,7 +30,7 @@
 
 #rightOrangeButton{
     position: absolute;
-    left: 1000px;
+    left: 80%;
 }
 
 .OrangeButton:hover, .active{

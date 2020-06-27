@@ -57,9 +57,13 @@ class NewUserPage extends Component {
 
     render() {
         return (
-            <div>
-                <OrangeButton action="GO BACK" handleButtonPressed={this.props.didTapRegister} />
-                <LogoInputLogo />
+            <div className = "containerNewUser">
+                <div id="leftSide">
+                    <OrangeButton  action="GO BACK" handleButtonPressed={this.props.didTapRegister} />
+                </div>
+                <div id ="imageNewUSer">
+                    <LogoInputLogo />
+                </div>
                 <div className="UserName">
                     <a className="UserIcon"><FontAwesomeIcon icon={faUserEdit} /></a>
                     <input className="name"
