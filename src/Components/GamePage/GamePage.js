@@ -18,23 +18,22 @@ class GamePage extends Component {
     }
     
     getScore = () => {
-        let store = firebase.firestore(fire);
         let user  = firebase.auth().currentUser;
-        let scoreRef = store.collection("users").doc(user.uid);
-        scoreRef.get().then(doc => {
-            if(!doc.exists){
-                console.log("dont't exist");
-            } else{
-                let object = doc.data();
-                this.setState({score : object.score});
-            }
-        })
+        if(!user.isAnonymous){
+            firebase.firestore(fire).collection("users").doc(user.uid).get().then(doc => {
+                if(!doc.exists){
+                    console.log("dont't exist");
+                } else{
+                    let object = doc.data();
+                    this.setState({score : object.score});
+                }
+            })
+        }
     }
 
     componentDidMount (){
         this.getScore();
     }
-
 
     render() {
         return (

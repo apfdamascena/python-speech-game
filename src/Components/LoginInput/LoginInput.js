@@ -61,12 +61,12 @@ class LoginInput extends Component {
                     value={this.state.password}
                     ></input>
                 </div>
-                <div className= "buttonLogin" onClick={this.login}>
-                    <a>Login</a>
+
+                <div class= "buttonsBlackLoginPage">
+                    <div  id = "login" className= "buttonLogin" onClick={this.login}><a>Login</a></div>
+                    <div id="anony" className= "buttonLogin" onClick={this.anonymousLogin}><a>Anonymous</a></div>
                 </div>
-                <div id="anony" className= "buttonLogin" onClick={this.anonymousLogin}>
-                    <a>Anonymous</a>
-                </div>
+
                 <div className="newUser">
                     <a className="newUserIcon"href="#" onClick={this.props.newUser}><FontAwesomeIcon icon={faUserPlus}/> New to PythonTest? SIGN UP</a>
                 </div>

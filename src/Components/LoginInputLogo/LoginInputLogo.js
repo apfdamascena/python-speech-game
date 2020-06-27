@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './LoginInputLogo.css'
-import logoImageInput from './logoLogin.png'
+import logoImageInput from './logo.png'
 
 class LogoInputLogo extends Component {
     render() {

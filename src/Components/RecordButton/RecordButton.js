@@ -24,13 +24,13 @@ class RecordButton extends Component {
             this.setState({blobURL : ''});
             alert("Audio was sent");
             this.state.score += 10;
-            let store = firebase.firestore(fire);
             let user  = firebase.auth().currentUser;
-            let scoreRef = store.collection("users").doc(user.uid);
-            scoreRef.update({
-                score : this.state.score
-            }).catch((error) => console.log(error));
-            this.props.handleButtonPressed();
+            if(!user.isAnonymous){
+                firebase.firestore(fire).collection("users").doc(user.uid).update({
+                    score : this.state.score
+                }).catch((error) => console.log(error));
+                this.props.handleButtonPressed();
+            }
         }).catch((error) => console.log(error));
     }
 
@@ -57,17 +57,17 @@ class RecordButton extends Component {
     }
 
     getScore = () => {
-        let store = firebase.firestore(fire);
         let user  = firebase.auth().currentUser;
-        let scoreRef = store.collection("users").doc(user.uid);
-        scoreRef.get().then(doc => {
-            if(!doc.exists){
-                console.log("dont't exist");
-            } else{
-                let object = doc.data();
-                this.setState({score : object.score});
-            }
-        })
+        if(!user.isAnonymous){
+            firebase.firestore(fire).collection("users").doc(user.uid).get().then(doc => {
+                if(!doc.exists){
+                    console.log("dont't exist");
+                } else{
+                    let object = doc.data();
+                    this.setState({score : object.score});
+                }
+            })
+        }
     }
 
     componentDidMount() {

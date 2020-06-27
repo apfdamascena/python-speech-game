@@ -1,13 +1,16 @@
-#anony{
-    position : absolute;
-    top: 79%;
-    left: 38.5%;
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#login,#anony {
+    float: left;
+    margin-left: 10px;
 }
 
 .emailUser{
-    position: absolute;
-    top: 60%;
-    left: 50%;
     transform: translate(-50%,-50%);
     background: #2f3640;
     height: 40px;
@@ -42,9 +45,6 @@
 }
 
 .passwordUser{
-    position: absolute;
-    top: 70%;
-    left: 50%;
     transform: translate(-50%,-50%);
     background: #2f3640;
     height: 40px;
@@ -91,9 +91,6 @@
     padding: 8px 35px;
     border-radius: 27px;
     font-size:14px;
-    position: absolute;
-    top: 79%;
-    left: 52.5%;
 }
 
 .buttonLogin:hover, .active{
@@ -112,9 +109,6 @@
 .newUserIcon {
     color: white;
     text-decoration: none;
-    position: absolute;
-    top: 90%;
-    left: 41%;
     font-size: 14px;
 }
 
