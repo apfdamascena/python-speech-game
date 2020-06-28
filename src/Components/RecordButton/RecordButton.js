@@ -89,7 +89,7 @@ class RecordButton extends Component {
 
     render() {
         return (
-            <div>
+            <div className = "containerRecordButton">
                 <div className="recordClass">
                     <button
                         className={this.state.isRecording ? "Rec" : "notRec"}
@@ -98,7 +98,7 @@ class RecordButton extends Component {
                     <audio id="recording" src={this.state.blobURL} controls="controls"/>
                 </div>
 
-                <div id = "ButtonsAudio">
+                <div id= "ButtonsAudio">
                     <div className= "Submit" onClick = {this.submit}><a>Submit</a></div>
                     <div className= "clear" onClick = {this.clear}><a>Clear</a></div>
                 </div>

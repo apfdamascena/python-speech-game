@@ -10,44 +10,46 @@ import fire from '../../FireBase/FireBase';
 
 
 class GamePage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            score : 0
+            score: 0
         }
     }
-    
+
     getScore = () => {
-        let user  = firebase.auth().currentUser;
-        if(!user.isAnonymous){
+        let user = firebase.auth().currentUser;
+        if (!user.isAnonymous) {
             firebase.firestore(fire).collection("users").doc(user.uid).get().then(doc => {
-                if(!doc.exists){
+                if (!doc.exists) {
                     console.log("dont't exist");
-                } else{
+                } else {
                     let object = doc.data();
-                    this.setState({score : object.score});
+                    this.setState({ score: object.score });
                 }
             })
         }
     }
 
-    componentDidMount (){
+    componentDidMount() {
         this.getScore();
     }
 
     render() {
         return (
             <div>
-                <OrangeButton action="GO BACK" idButton="leftOrangeButton" handleButtonPressed={this.props.didTapGoBackOption}/>
-                <OrangeButton id = "next" action={"SCORE: "+this.state.score} idButton="rightOrangeButton"/>
-                <NextButton action="Next" handleButtonPressed = {this.props.didTapNext}/>
-                <Answer
-                content={this.props.content}
-                question={this.props.question}
-                />
-                <RecordButton handleButtonPressed = {this.getScore()}/>
-                <div id="title">
-                    <Title name = {this.props.name}></Title>
+                <div className="containerGamePage">
+                    <OrangeButton action="GO BACK" idButton="leftOrangeButton" handleButtonPressed={this.props.didTapGoBackOption} />
+                    <OrangeButton id="next" action={"SCORE: " + this.state.score} idButton="rightOrangeButton" />
+                    <div id="title">
+                        <Title name={this.props.name}></Title>
+                    </div>
+                    <Answer
+                        content={this.props.content}
+                        question={this.props.question}
+                    />
+                    <NextButton action="Next" handleButtonPressed={this.props.didTapNext} />
+                    <RecordButton handleButtonPressed={this.getScore()} />
                 </div>
             </div>
         );

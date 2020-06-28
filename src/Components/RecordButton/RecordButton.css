@@ -1,7 +1,14 @@
+.containerRecordButton{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #recButton{
-  position: absolute;
-  top: 20%;
-  left: 4%;
+  position: relative;
+  left:15px;
+  bottom: 7px;
   width: 35px;
   height: 35px;
   font-size: 0;
@@ -38,9 +45,6 @@
   background-color:#F0F0F0;
   width: 500px;
   height: 60px;
-  position : absolute;
-  top: 79%;
-  left: 30%;
   border-radius: 40px;
   opacity: 0.9;
 }
@@ -56,28 +60,26 @@
   padding: 8px 35px;
   border-radius: 27px;
   font-size:14px;
-  position: absolute;
+  margin-right: 10%;
 }
 
 #recording{
-  position: absolute;
-  top: 5%;
-  left: 15%;
+  position: relative;
+  left: 20px;
   opacity: 0.8;
   width: 400px;
   outline : none;
 }
 
-.Submit{
-  top: 90%;
-  left: 38%;
-}
-
-.clear {
-  top : 90%;
-  left: 52%;
-}
-
 .Submit:hover, .clear:hover, .active{
   background-color: #262C34;
+}
+
+
+#ButtonsAudio{
+  position: relative;
+  top: 15px;
+  right:5px;
+  display: flex;
+  flex-direction: row;
 }

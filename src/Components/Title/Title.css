@@ -18,7 +18,7 @@
 
 a#cta1 {
     width: 230px;
-    position: absolute;
-    left: 36.90%;
-
+    position: relative;
+    left: 460px;
+    top: 20px;
 }

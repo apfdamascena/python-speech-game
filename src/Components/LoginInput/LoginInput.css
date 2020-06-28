@@ -128,3 +128,11 @@
     color: #ACACAC;
 }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #2f3640 inset;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: white !important;
+}
+

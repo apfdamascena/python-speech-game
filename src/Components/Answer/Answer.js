@@ -11,11 +11,13 @@ class Answer extends Component {
     render() {
         return (
             <div className="answer">
-                <div id="box"></div>
-                <p id="figcap">{this.props.title}</p>
-                <p id="question">{this.props.question}</p>
-                <p id="content">{this.props.content}</p>
-                <img id="imageCharacter"src={character}/>
+                <div id="box">
+                    <p id="question">{this.props.question}</p>
+                    <p id="content">{this.props.content}</p>
+                </div>
+                <div className = "imageCharacter">
+                    <img id="imageCharacter" src={character} />
+                </div>
             </div>
         );
     }

@@ -1,8 +1,5 @@
 
 #container p {
-    position: absolute;
-    top: 125px;
-    left:320px;
     color : #292D2D;
     text-shadow: 0px 4px 3px rgba(0,0,0,0,4),
                  0px 8px 13px rgba(0,0,0,0.1),
@@ -12,51 +9,55 @@
 }
 
 #figcap {
-    position: absolute;
     font-size: 25px;
-    top: 30px;
-    left: 450px;
 }
 
 #question{
-    position: absolute;
+    position: relative;
+    left: 180px;
     color : #353844;
-    top: 23%; 
-    left: 36%;
     width: 400px;
     font-size: 22px;
 }
 
 #content{
-    position: aboslute;
-    top : 35%;
-    left: 25%;
+    position: relative;
+    left: 40px;
     color:#4D4D4D;
     width: 500px;
     height: 250px;
-    position: absolute;
     font-size: 19px;
 }
 
 
 #box {
+    position: relative;
+    top: 60px;
     width : 700px;
     height: 350px;
-    position: absolute;
     opacity: 0.6;
-    top: 23%; 
-    left: 22%;
     background-color: white;
     border-radius: 25px;
 } 
 
 p#content {
+    position: relative;
+    top: 50px;
     height:200px;
     width:630px;
 }
 
 #imageCharacter {
+    display: flex;
     position: absolute;
     top: 53%;
     left: 75.5%;
+}
+
+
+.answer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
