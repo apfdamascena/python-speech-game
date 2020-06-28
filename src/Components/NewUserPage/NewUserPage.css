@@ -76,7 +76,9 @@ input:-webkit-autofill {
 }
 
 
-
+.buttonCreateUser:hover, .active{
+    background-color: #262C34;
+}
 
 
 

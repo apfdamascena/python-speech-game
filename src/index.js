@@ -60,6 +60,12 @@ class App extends Component {
     }
 
     didTapRegister = () => {
+        alert("User was created")
+        fire.auth().signOut().then( () => {
+            console.log("create new user")
+        }).catch((error) => {
+            console.log(error);
+        });
         this.setState({ appState: STATE.LoginPage });
     }
 
