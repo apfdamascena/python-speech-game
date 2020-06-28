@@ -64,7 +64,20 @@ class App extends Component {
     }
 
     didTapGoBackOption = () => {
-        this.setState({ appState: STATE.OptionPage });
+        confirmAlert({
+            title: 'Confirm to exit the game.',
+            message: 'Are you sure?',
+            buttons: [
+              {
+                label: 'Yes',
+                onClick: () => this.setState({appState : STATE.OptionPage})
+              },
+              {
+                label: 'No',
+                onClick: () => console.log("don't want")
+              }
+            ]
+        });
     }
 
     didChooseSection = (section) => {

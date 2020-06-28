@@ -12,7 +12,7 @@ class LoginPage extends Component {
     render() {
         return (
             <div>
-                <OrangeButton idButton="rightOrangeButton" action="About" handleButtonPressed={this.props.didTapAboutPage}/>
+                <OrangeButton idButton="rightOrangeButton" action="ABOUT" handleButtonPressed={this.props.didTapAboutPage}/>
                 <LogoInputLogo/>
                 <LoginInput 
                     handleButtonPressed={this.props.didTapLoginButton}
