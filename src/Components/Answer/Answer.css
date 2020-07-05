@@ -22,9 +22,9 @@
 
 #content{
     position: relative;
-    left: 12px;
+    left: 8px;
     color:#4D4D4D;
-    width: 500px;
+    width: 600px;
     height: 250px;
     font-size: 19px;
 }
@@ -44,7 +44,7 @@ p#content {
     position: relative;
     top:30px;
     height:200px;
-    width:650px;
+    width:680px;
 }
 
 #imageCharacter {

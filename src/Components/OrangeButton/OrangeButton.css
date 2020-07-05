@@ -1,5 +1,7 @@
+
 .OrangeButton{
-    display: inline-block;
+    position: relative;
+    top:30px;
     padding: 8px 35px;
     margin-top: 40px;
     margin-left: 60px;
@@ -10,7 +12,6 @@
 }
 
 .OrangeButton a > span {
-    display: inline-block;
     padding: 0 15px;
     height: 40px;
     line-height: 40px;
@@ -25,15 +26,23 @@
     -webkit-text-fill-color: transparent;
 }
 
-#leftOrangeButton{
-    position: absolute;
-}
-
-#rightOrangeButton{
-    position: absolute;
-    left: 80%;
-}
-
 .OrangeButton:hover, .active{
     background: linear-gradient(#FD4E53,#FF844A);
 }
+
+#rightOrangeButton{
+    position: relative;
+    left:980px;
+}
+
+#rightOrangeButtonGamePage{
+    position: relative;
+    left: 350px;
+}
+
+#leftOrangeButtonGamePage{
+    position: relative;
+    right: 450px;
+
+}
+

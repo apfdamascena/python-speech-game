@@ -37,21 +37,19 @@ class GamePage extends Component {
 
     render() {
         return (
-            <div>
-                <div className="containerGamePage">
-                    <OrangeButton action="GO BACK" idButton="leftOrangeButton" handleButtonPressed={this.props.didTapGoBackOption} />
-                    <OrangeButton id="next" action={"SCORE: " + this.state.score} idButton="rightOrangeButton" />
-                    <div className="containerCentro">
-                        <div id="title">
-                            <Title name={this.props.name}></Title>
-                        </div>
-                        <Answer
-                            content={this.props.content}
-                            question={this.props.question}
-                        />
-                        <NextButton action="Next" handleButtonPressed={this.props.didTapNext} />
-                        <RecordButton handleButtonPressed={this.getScore()} />
-                    </div>
+            <div className="containerGamePage">
+                <div className="buttonsGamePage">
+                    <OrangeButton action="GO BACK" idButton="leftOrangeButtonGamePage" handleButtonPressed={this.props.didTapGoBackOption} />
+                    <OrangeButton id="next" action={"SCORE: " + this.state.score} idButton="rightOrangeButtonGamePage" />
+                </div>
+                <Title name={this.props.name}></Title>
+                <div id="containerGamePageCenter">
+                    <Answer
+                        content={this.props.content}
+                        question={this.props.question}
+                    />
+                    <NextButton action="Next" handleButtonPressed={this.props.didTapNext} />
+                    <RecordButton handleButtonPressed={this.getScore()} />
                 </div>
             </div>
         );

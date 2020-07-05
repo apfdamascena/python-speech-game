@@ -1,16 +1,22 @@
 #next {
     padding: 10px 38px 10px 38px;
 }
-
-.containerHomePage{
-    display : flex;
-    align-items: center;
+.containerGamePage{
+    width: 1000px;;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
-.containerCentro{
+.buttonsGamePage{
+    width: 800px;
     display: flex;
-    align-items: center;
-    flex-direction: center;
+    width: 1000px;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#containerGamePageCenter{
+    position: relative;
+    bottom: 100px;
 }
