@@ -17,7 +17,7 @@
     left: 180px;
     margin-bottom: 10px;
     position: relative;
-    bottom: 80px;
+    bottom: 40px;
 }
 
 .UserIcon, .EmailIcon, .PasswordIcon, .iconConfirmUserPassword{
@@ -54,7 +54,7 @@
     border-radius: 27px;
     font-size:14px;
     position: relative;
-    bottom: 95px;
+    bottom: 45px;
 }
 
 #leftSide{
@@ -64,7 +64,7 @@
 
 #imageNewUSer{
     position: relative;
-    bottom: 70px;
+    bottom: 35px;
 }
 
 input:-webkit-autofill {
