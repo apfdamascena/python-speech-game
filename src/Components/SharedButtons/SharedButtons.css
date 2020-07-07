@@ -5,3 +5,7 @@
     left: 19%;
     top:30%;
 }
+
+.shareButtonFaceboook,.shareButtonTelegram,.shareButtonTwitter,.shareButtonWhats{
+    outline : none;
+}

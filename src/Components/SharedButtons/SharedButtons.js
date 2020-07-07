@@ -11,7 +11,7 @@ import {
 
 const SharedButtons = () => {
     const shareUrl = 'https://python-speech-game.firebaseapp.com/';
-    const shareTitle = 'Game in python';
+    const shareTitle = 'I played a game for python developers and my score was. Try to play too and help those guys!';
     return (
         <div className="sharedButtons">
             <FacebookShareButton
