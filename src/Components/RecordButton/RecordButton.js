@@ -16,13 +16,14 @@ class RecordButton extends Component {
             isBlocked: false,
             position : '',
             score : 0,
+            showSent: false
         }
     }
+
 
     submit = () => {
         firebase.storage().ref("audios/"+this.state.blobURL).put(this.state.blob).then( (snapshot) => {
             this.setState({blobURL : ''});
-            alert("Audio was sent");
             this.state.score += 10;
             let user  = firebase.auth().currentUser;
             if(!user.isAnonymous){
@@ -31,10 +32,12 @@ class RecordButton extends Component {
                 }).catch((error) => console.log(error));
                 this.props.handleButtonPressed();
             }
+            this.setState({showSent : !this.state.showSent});
         }).catch((error) => console.log(error));
     }
 
     start = () => {
+        this.setState({showSent : false});
         if (this.state.isBlocked) {
             console.log('Permission Denied');
         } else {
@@ -90,6 +93,9 @@ class RecordButton extends Component {
     render() {
         return (
             <div className = "containerRecordButton">
+                <div className="audioSent">
+                    <h2>{this.state.showSent ? "AUDIO WAS SENT" : ""}</h2>
+                </div>
                 <div className="recordClass">
                     <button
                         className={this.state.isRecording ? "Rec" : "notRec"}

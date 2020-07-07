@@ -46,6 +46,8 @@
   height: 60px;
   border-radius: 40px;
   opacity: 0.9;
+  position: relative;
+  bottom: 10px;
 }
 
 #ButtonsAudio{
@@ -77,8 +79,13 @@
 
 #ButtonsAudio{
   position: relative;
-  top: 15px;
   right:5px;
   display: flex;
   flex-direction: row;
+}
+
+.audioSent {
+  position: absolute;
+  bottom: 18%;
+  color : #353844;
 }
