@@ -7,7 +7,7 @@ import NextButton from '../NextButton/NextButton';
 import Title from '../Title/Title';
 import firebase from 'firebase';
 import fire from '../../FireBase/FireBase';
-
+import SharedButtons from '../SharedButtons/SharedButtons';
 
 class GamePage extends Component {
     constructor(props) {
@@ -48,6 +48,7 @@ class GamePage extends Component {
                         content={this.props.content}
                         question={this.props.question}
                     />
+                    <SharedButtons/>
                     <NextButton action="Next" handleButtonPressed={this.props.didTapNext} />
                     <RecordButton handleButtonPressed={this.getScore()} />
                 </div>
