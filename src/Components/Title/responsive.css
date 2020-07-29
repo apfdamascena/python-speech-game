@@ -1,0 +1,14 @@
+@media (max-width: 320px) {
+    a#cta1 {
+        width: 150px;
+    }
+
+    #cta1 {
+        font-size: 24px;
+        padding: 2px 30px;
+    }
+
+    #cta1 span:first-child {
+        margin-top: 6px;
+    }
+}

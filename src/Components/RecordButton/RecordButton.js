@@ -3,6 +3,7 @@ import './RecordButton.css'
 import MicRecorder from 'mic-recorder-to-mp3';
 import firebase from 'firebase';
 import fire from '../../FireBase/FireBase';
+import './responsive.css';
 
 const recorder = new MicRecorder({ bitRate: 128 });
 

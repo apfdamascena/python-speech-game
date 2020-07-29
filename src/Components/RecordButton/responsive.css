@@ -1,0 +1,17 @@
+@media (max-width: 320px) {
+    .recordClass {
+        width: 290px;
+    }
+
+    #recButton {
+        height: 40px;
+        width: 40px;
+        left: 5px;
+        bottom: 5px;
+    }
+
+    #recording {
+        width: 230px;
+        left: 15px;
+    } 
+} 

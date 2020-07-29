@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './NextButton.css';
+import './responsive.css';
 
 class NextButton extends Component{
     constructor(props){

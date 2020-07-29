@@ -2,6 +2,6 @@
     .sharedButtons {
         flex-direction: row;
         left: 28%;
+        top: 25%;
     }
-
 }

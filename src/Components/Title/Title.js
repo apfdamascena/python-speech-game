@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Title.css';
+import './responsive.css';
+
 class Title extends Component {
     constructor(props) {
         super(props);
