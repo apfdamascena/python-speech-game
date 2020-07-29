@@ -5,6 +5,7 @@ import {faUser} from '@fortawesome/free-solid-svg-icons'
 import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {faUserPlus} from '@fortawesome/free-solid-svg-icons'
 import fire from '../../FireBase/FireBase';
+import './responsive.css'
 
 class LoginInput extends Component {
     constructor(props){

@@ -1,11 +1,13 @@
-@media (min-width: 321px) and (max-width: 768px){
-    .cta {
-        font-size: 28px;
-        padding: 8px 15px;
+@media (max-width: 320px){
+    #first .cta, #second .cta, #third .cta, #four .cta{
+        font-size: 20px;
+        padding: 8px 20px;
     }
 
-    .cta span:nth-child(1) {
-        margin-top: 8px;
-        margin-left: 6px;
+    #first .cta span:first-child,
+    #second .cta span:first-child,
+    #third .cta span:first-child,
+    #four .cta span:first-child{
+        margin-top: 10px;
     }
 }

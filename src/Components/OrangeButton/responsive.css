@@ -1,0 +1,9 @@
+@media (max-width: 320px){
+    .OrangeButton {
+        margin-left: 10px;
+    }
+
+    #rightOrangeButton{
+        left: 160px;
+    }
+}

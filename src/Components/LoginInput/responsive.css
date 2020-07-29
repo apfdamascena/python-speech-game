@@ -1,0 +1,13 @@
+@media (max-width: 320px) {
+    .emailUser, .passwordUser {
+        left: 150px;
+    }
+
+    .email, .password{
+        width: 230px;
+    }
+
+    .newUser {
+        margin-top: 5%;
+    }
+} 
