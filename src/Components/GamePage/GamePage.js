@@ -8,6 +8,7 @@ import Title from '../Title/Title';
 import firebase from 'firebase';
 import fire from '../../FireBase/FireBase';
 import SharedButtons from '../SharedButtons/SharedButtons';
+import './responsive.css';
 
 class GamePage extends Component {
     constructor(props) {

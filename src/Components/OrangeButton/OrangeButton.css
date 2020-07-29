@@ -9,6 +9,7 @@
     border-radius: 35px;
     text-decoration: none;
     z-index: 1;
+    cursor: pointer;
 }
 
 .OrangeButton a > span {

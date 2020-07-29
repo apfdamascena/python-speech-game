@@ -1,0 +1,15 @@
+@media (max-width: 320px) {
+    #imageChar {
+        display: none;
+    }
+
+    #contentAbout {
+        width: 300px;
+    }
+
+    #text {
+        margin-top: 25px;
+        font-size: 14px;
+    }
+
+}

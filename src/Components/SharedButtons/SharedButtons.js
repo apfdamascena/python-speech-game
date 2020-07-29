@@ -8,6 +8,7 @@ import {
     FacebookIcon, TelegramIcon,
     TwitterIcon, WhatsappIcon
 } from 'react-share';
+import './responsive.css';
 
 const SharedButtons = () => {
     const shareUrl = 'https://python-speech-game.firebaseapp.com/';

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './AboutPage.css';
 import imageCharacter from './personagem.png';
 import OrangeButton from '../OrangeButton/OrangeButton';
+import './responsive.css';
 
 class AboutPage extends Component {
     render() {

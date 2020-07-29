@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Answer.css';
 import '../OrangeButton/OrangeButton.js';
 import character from './personagem.png';
+import './responsive.css';
 
 class Answer extends Component {
     constructor(props) {
