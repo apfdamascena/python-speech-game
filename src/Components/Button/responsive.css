@@ -1,0 +1,11 @@
+@media (min-width: 321px) and (max-width: 768px){
+    .cta {
+        font-size: 28px;
+        padding: 8px 15px;
+    }
+
+    .cta span:nth-child(1) {
+        margin-top: 8px;
+        margin-left: 6px;
+    }
+}

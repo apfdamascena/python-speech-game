@@ -5,7 +5,7 @@ import logoImage from './logo.png';
 class Logo extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="containerLogo">
                 <div className="image">
                     <img src={logoImage} alt="logo"/>
                 </div>

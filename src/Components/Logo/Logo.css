@@ -1,4 +1,4 @@
-h1{
+.namelogo h1{
 	font-weight: 700;
     font-size:3em;
     font-family: lato;
@@ -9,7 +9,7 @@ h1{
 				 0px 18px 23px rgba(0,0,0,0.1);
 }
 
-hr{
+.namelogo hr{
     width: 278px;
     margin-bottom: 45px;
     border-top: 1px solid #f8f8f8;
@@ -20,7 +20,7 @@ hr{
     padding-bottom: 40px;
 }
 
-.container {
+.containerLogo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,4 +31,5 @@ hr{
     position: relative;
     top : 70px;
 }
+
 

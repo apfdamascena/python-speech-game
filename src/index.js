@@ -46,18 +46,15 @@ class App extends Component {
         return parseInt(Math.random() * (max - min) + min);
     }
 
+    goToLoginPage = () => {
+        this.setState({ appState: STATE.LoginPage });
+    }
+
     didTapNext = () => {
         this.numberAsk = this.getRandomNumber(0, DATA[this.state.choosenState].length);
         this.setState({ appState: STATE.GamePage });
     }
 
-    didTapPlayButton = () => {
-        this.setState({ appState: STATE.LoginPage });
-    }
-
-    didTapLoginButton = () => {
-        this.setState({ appState: STATE.OptionPage });
-    }
 
     didTapRegister = () => {
         fire.auth().signOut().then( () => {
@@ -65,6 +62,10 @@ class App extends Component {
             console.log(error);
         });
         this.setState({ appState: STATE.LoginPage });
+    }
+
+    didTapLoginButton = () => {
+        this.setState({ appState: STATE.OptionPage });
     }
 
     didTapGoBackOption = () => {
@@ -110,16 +111,11 @@ class App extends Component {
           });
     }
 
-    didTapGoBackLogin = () => {
-        this.setState({ appState: STATE.LoginPage });
-    }
 
     createNewUser = () => {
         this.setState({ appState: STATE.NewUser });
     }
-    didTapGoBackLogin = () => {
-        this.setState({ appState: STATE.LoginPage });
-    }
+
 
     didTapAboutPage = () => {
         this.setState({ appState: STATE.AboutPage });
@@ -129,7 +125,7 @@ class App extends Component {
         if (this.state.appState == STATE.HomePage) {
             return (
                 <div>
-                    <HomePage didTapPlayButton={this.didTapPlayButton} />
+                    <HomePage didTapPlayButton={this.goToLoginPage} />
                 </div>
             );
         }
@@ -190,7 +186,7 @@ class App extends Component {
         if (this.state.appState == STATE.AboutPage) {
             return (
                 <div>
-                    <AboutPage didTapBackLogin={this.didTapGoBackLogin} />
+                    <AboutPage didTapBackLogin={this.goToLoginPage} />
                 </div>
             );
         }
@@ -209,6 +205,7 @@ class App extends Component {
         );
     }
 }
+
 ReactDOM.render(
     <App />,
     document.getElementById('root')
