@@ -53,6 +53,7 @@
     }
 }
 
+
 @media (min-width: 376px) and (max-width: 425px){
     .recordClass {
         width: 380px;
@@ -78,5 +79,17 @@
         font-size: 12px;
         bottom: 110%;
         left: 35px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .audioSent {
+        bottom: 2%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .audioSent {
+        bottom: 1%;
     }
 }
