@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LogoInputLogo from '../LoginInputLogo/LoginInputLogo';
 import LoginInput from '../LoginInput/LoginInput';
 import OrangeButton from '../OrangeButton/OrangeButton';
+import './responsive.css';
 
 class LoginPage extends Component {
     constructor(props){
@@ -11,7 +12,7 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className = "containerLoginPage">
                 <OrangeButton idButton="rightOrangeButton" action="ABOUT" handleButtonPressed={this.props.didTapAboutPage}/>
                 <LogoInputLogo/>
                 <LoginInput 

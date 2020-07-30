@@ -1,0 +1,6 @@
+@media (min-width: 376px) and (max-width: 425px) {
+    .containerLoginPage {
+        position: relative;
+        bottom: 80px;
+    }
+}
