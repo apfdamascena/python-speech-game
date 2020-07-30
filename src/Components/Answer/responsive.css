@@ -57,3 +57,42 @@
         top: 12px;
     }
 }
+
+@media(min-width: 376px) and (max-width: 425px) {
+    #imageCharacter {
+        display: none;
+    }
+
+    #box {
+        width : 410px;
+        height: 240px;
+    }
+
+    #question {
+        font-size: 14px;
+        left: 100px;
+    }
+
+    #content{
+        font-size: 14px;
+        width: 400px;
+    }
+
+    p#content {
+        width: 400px;
+        height: 140px;
+        position: relative;
+        bottom: 60px;
+    }
+    
+    .answer {
+        position: relative;
+        top: 12px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    #imageCharacter {
+        display: none;
+    }
+}

@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import OrangeButton from '../OrangeButton/OrangeButton';
 import CharacterLeft from './personagem_left.png';
 import './OptionPage.css';
+import './responsive.css';
 
 class OptionPage extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class OptionPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className = "containerOptionPage">
                 <OrangeButton action="HOME" handleButtonPressed={this.props.didTapGoBack}></OrangeButton>
                 <img id="photo" src={CharacterLeft} />
 

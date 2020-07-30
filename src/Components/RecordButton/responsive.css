@@ -48,6 +48,35 @@
 
     .audioSent {
         font-size: 12px;
-        bottom: 108%;
+        bottom: 110%;
+        left: 35px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 425px){
+    .recordClass {
+        width: 380px;
+    }
+
+    #recButton {
+        height: 45px;
+        width: 45px;
+        left: 7px;
+        bottom: 3px;
+    }
+
+    #recording {
+        width: 300px;
+        left: 15px;
+    }
+    .containerRecordButton{
+        position: relative;
+        top: 12px;
+    }
+
+    .audioSent {
+        font-size: 12px;
+        bottom: 110%;
+        left: 35px;
     }
 }

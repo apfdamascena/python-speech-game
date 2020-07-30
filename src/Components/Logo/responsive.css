@@ -22,3 +22,11 @@
         bottom: 90px;
     }
 }
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .containerLogo{
+        position: relative;
+        bottom: 100px;
+    }
+}
+

@@ -13,3 +13,11 @@
         top: 23%;
     }
 }
+
+@media(min-width: 376px) and (max-width: 425px) {
+    .sharedButtons {
+        flex-direction: row;
+        left: 34%;
+        top: 22.5%;
+    }
+}

@@ -14,7 +14,7 @@
 
 }
 
-@media (min-width: 321px) and (max-width:375px) {
+@media (min-width: 321px) and (max-width:425px) {
     #imageChar {
         display: none;
     }

@@ -3,3 +3,17 @@
         left: 55px;
     } 
 } 
+
+@media (min-width: 321px) and (max-width: 375px){
+    .NextButton {
+        left: 85px;
+        top: -15px;
+    } 
+}
+
+@media (min-width: 376px) and (max-width: 425px){
+    .NextButton {
+        left: 105px;
+        top: -20px;
+    } 
+} 
