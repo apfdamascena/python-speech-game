@@ -24,3 +24,11 @@
         right: 10px;
     }
 }
+
+
+@media (min-width: 376px) and (max-width: 425px) {
+    .login {
+        position: relative;
+        top: 65px;
+    }
+}
