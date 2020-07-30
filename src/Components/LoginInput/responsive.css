@@ -10,11 +10,17 @@
     .newUser {
         margin-top: 5%;
     }
+
+    .login {
+        position: relative;
+        top: 60px;
+    }
 } 
 
 @media (min-width: 321px) and (max-width: 375px) {
     .login {
-        position: absolute;
-        top: 335px;
+        position: relative;
+        top: 50px;
+        right: 10px;
     }
 }

@@ -13,14 +13,14 @@
 
     .wrapper {
         position: relative;
-        bottom: 70px;
+        bottom: 20px;
     } 
 }
 
 @media (min-width: 321px) and (max-width: 375px) {
     .wrapper {
         position: relative;
-        bottom: 85px;
+        bottom: 40px;
     }
 
     #first .cta, #second .cta, #third .cta, #four .cta{
@@ -39,7 +39,7 @@
 @media (min-width: 376px) and (max-width: 425px) {
     .wrapper {
         position: relative;
-        bottom: 110px;
+        bottom: 40px;
     }
 
     #first .cta, #second .cta, #third .cta, #four .cta{

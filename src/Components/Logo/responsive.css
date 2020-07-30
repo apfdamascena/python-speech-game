@@ -4,7 +4,7 @@
     }
     .containerLogo {
         position: relative;
-        bottom: 70px;
+        bottom: 10px;
     }
 }
 
@@ -12,21 +12,21 @@
 @media (min-width: 321px) and (max-width: 375px) {
     .containerLogo{
         position: relative;
-        bottom: 76px;
+        bottom: 30px;
     }
 }
 
 @media (min-width: 376px) and (max-width: 425px) {
     .containerLogo{
         position: relative;
-        bottom: 90px;
+        bottom: 35px;
     }
 }
 
 @media (min-width: 426px) and (max-width: 768px) {
     .containerLogo{
         position: relative;
-        bottom: 100px;
+        bottom: 30px;
     }
 }
 
