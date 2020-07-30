@@ -62,8 +62,8 @@
     }
 
     #first .cta, #second .cta, #third .cta, #four .cta{
-        font-size: 20px;
-        padding: 0px 20px;
+        font-size: 26px;
+        padding: 4px 20px;
     }
 
     #first .cta span:first-child,
