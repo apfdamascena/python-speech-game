@@ -6,4 +6,22 @@
     #rightOrangeButton{
         left: 160px;
     }
+
+    #rightOrangeButtonGamePage{
+        left: 58px;
+        padding: 8px 16px;
+        margin-right: 45px; 
+    }
+
+    #leftOrangeButtonGamePage {
+        right: 21px;
+        padding: 8px 16px;
+    }
+}
+
+@media(min-width: 321px) and (max-width: 375px) {
+    #rightOrangeButton{
+        left: 160px;
+    }
+
 }

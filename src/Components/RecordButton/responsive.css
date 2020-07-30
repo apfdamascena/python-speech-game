@@ -13,5 +13,14 @@
     #recording {
         width: 230px;
         left: 15px;
-    } 
+    }
+    .containerRecordButton{
+        position: relative;
+        top: 12px;
+    }
+
+    .audioSent {
+        font-size: 12px;
+        bottom: 108%;
+    }
 } 

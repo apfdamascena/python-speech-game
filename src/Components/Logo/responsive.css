@@ -3,3 +3,11 @@
         max-width: 550px;
     }
 }
+
+
+@media (min-width: 321px) and (max-width: 375px) {
+    .containerLogo{
+        position: relative;
+        bottom: 76px;
+    }
+}

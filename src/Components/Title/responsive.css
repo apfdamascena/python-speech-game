@@ -5,10 +5,15 @@
 
     #cta1 {
         font-size: 24px;
-        padding: 2px 30px;
+        padding: 0px 30px;
     }
 
     #cta1 span:first-child {
         margin-top: 6px;
+    }
+
+    .containerTitle {
+        position: relative;
+        top: 20px;
     }
 }

@@ -20,4 +20,9 @@
     p#content {
         width: 300px;
     }
+    
+    .answer {
+        position: relative;
+        top: 12px;
+    }
 }

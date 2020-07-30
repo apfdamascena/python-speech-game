@@ -1,7 +1,7 @@
 @media (max-width: 320px) {
     .sharedButtons {
         flex-direction: row;
-        left: 28%;
-        top: 25%;
+        left: 29%;
+        top: 22.5%;
     }
 }
