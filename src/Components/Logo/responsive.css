@@ -2,6 +2,10 @@
     .image img {
         max-width: 550px;
     }
+    .containerLogo {
+        position: relative;
+        bottom: 70px;
+    }
 }
 
 

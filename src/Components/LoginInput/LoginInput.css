@@ -8,12 +8,14 @@
 #login,#anony {
     float: left;
     margin-left: 15px;
+    cursor: pointer;
 
 }
 
 .newUser{
     margin-top: 3%;
     margin-left:1%;
+    cursor: pointer;
 
 }
 

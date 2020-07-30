@@ -1,0 +1,21 @@
+@media (max-width: 320px){
+    #leftSide{
+        position: relative;
+        left: 5px;
+        bottom: 15px;
+    }
+
+    .UserName, .UserEmail, .UserPassword, .ConfirmUserPassword{
+        width: 230px;
+        left: 130px;
+        bottom: 35px;
+    }
+
+    .name, .Email, .Password, .ConfirmPassword {
+        width: 170px;
+    }
+
+    .buttonCreateUser {
+        bottom: 60px;
+    }
+}

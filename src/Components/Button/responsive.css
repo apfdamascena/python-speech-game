@@ -10,6 +10,11 @@
     #four .cta span:first-child{
         margin-top: 10px;
     }
+
+    .wrapper {
+        position: relative;
+        bottom: 70px;
+    } 
 }
 
 @media (min-width: 321px) and (max-width: 375px) {

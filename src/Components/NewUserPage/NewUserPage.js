@@ -9,6 +9,7 @@ import './NewUserPage.css';
 import OrangeButton from '../OrangeButton/OrangeButton';
 import fire from '../../FireBase/FireBase';
 import firebase from 'firebase';
+import './responsive.css';
 
 
 class NewUserPage extends Component {

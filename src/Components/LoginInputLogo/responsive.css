@@ -7,5 +7,6 @@
 @media (min-width: 321px) and (max-width: 375px) {
     .imageLogin {
         top: 0;
+        bottom: 10px;
     }
 }
