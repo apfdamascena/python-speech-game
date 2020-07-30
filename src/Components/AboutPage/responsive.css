@@ -31,3 +31,14 @@
         margin-top: 30px;
     }
 }
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #imageChar {
+        display: none;
+    }
+
+    .mainBox {
+        margin-top: 50px;
+    }
+}

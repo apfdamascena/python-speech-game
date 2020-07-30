@@ -65,3 +65,21 @@
         padding: 8px 16px;
     }
 }
+
+@media(min-width: 769px) and (max-width: 1024px) {
+
+    #rightOrangeButtonGamePage{
+        top: 60px;
+        left: 270px;
+    }
+
+    #leftOrangeButtonGamePage {
+        top: 60px;
+        right: 350px;
+    }
+
+    #rightOrangeButton {
+        left: 760px;
+        top: 60px;
+    }
+}

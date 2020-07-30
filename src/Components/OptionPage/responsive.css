@@ -6,3 +6,9 @@
         bottom: 20px;
     } 
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #photo {
+        max-width: 305px;
+    }
+}

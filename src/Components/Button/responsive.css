@@ -73,3 +73,29 @@
         margin-top: 10px;
     }
 }
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .wrapper {
+        position: relative;
+        bottom: 110px;
+    }
+
+    #first .cta, #second .cta, #third .cta, #four .cta{
+        font-size: 26px;
+        padding: 4px 20px;
+    }
+
+    #first .cta span:first-child,
+    #second .cta span:first-child,
+    #third .cta span:first-child,
+    #four .cta span:first-child{
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .wrapper {
+        position: relative;
+        bottom: 55px;
+    }
+}

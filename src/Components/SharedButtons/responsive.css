@@ -29,3 +29,10 @@
         top: 25%;
     }
 }
+
+@media(min-width: 769px) and (max-width: 1024px) {
+    .sharedButtons {
+        left: 12%;
+        top: 35%;
+    }
+}
