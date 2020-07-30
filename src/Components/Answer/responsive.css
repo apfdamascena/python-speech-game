@@ -26,3 +26,34 @@
         top: 12px;
     }
 }
+
+@media(min-width: 321px) and (max-width: 375px) {
+    #imageCharacter {
+        display: none;
+    }
+
+    #box {
+        width : 355px;
+        height: 250px;
+    }
+
+    #question {
+        font-size: 14px;
+        left: 60px;
+    }
+
+    #content{
+        font-size: 14px;
+        width: 320px;
+    }
+
+    p#content {
+        width: 320px;
+        height: 150px;
+    }
+    
+    .answer {
+        position: relative;
+        top: 12px;
+    }
+}

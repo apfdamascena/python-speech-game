@@ -23,4 +23,31 @@
         font-size: 12px;
         bottom: 108%;
     }
-} 
+}
+
+@media (min-width: 321px) and (max-width: 375px){
+    .recordClass {
+        width: 290px;
+    }
+
+    #recButton {
+        height: 40px;
+        width: 40px;
+        left: 5px;
+        bottom: 5px;
+    }
+
+    #recording {
+        width: 230px;
+        left: 15px;
+    }
+    .containerRecordButton{
+        position: relative;
+        top: 12px;
+    }
+
+    .audioSent {
+        font-size: 12px;
+        bottom: 108%;
+    }
+}

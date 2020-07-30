@@ -24,4 +24,14 @@
     #rightOrangeButton{
         left: 160px;
     }
+
+    #rightOrangeButtonGamePage{
+        left: 2px;
+        padding: 8px 16px;
+    }
+
+    #leftOrangeButtonGamePage {
+        right: 60px;
+        padding: 8px 16px;
+    }
 }
