@@ -5,8 +5,8 @@
 }
 
 @media (min-width: 321px) and (max-width: 375px) {
-    .imageLogin {
+    .containerLogin{
         top: 0;
-        bottom: 10px;
+        bottom: 50px;
     }
 }
