@@ -22,4 +22,16 @@
         position: relative;
         bottom: 85px;
     }
+
+    #first .cta, #second .cta, #third .cta, #four .cta{
+        font-size: 20px;
+        padding: 2px 20px;
+    }
+
+    #first .cta span:first-child,
+    #second .cta span:first-child,
+    #third .cta span:first-child,
+    #four .cta span:first-child{
+        margin-top: 10px;
+    }
 }

@@ -13,3 +13,21 @@
     }
 
 }
+
+@media (min-width: 321px) and (max-width:375px) {
+    #imageChar {
+        display: none;
+    }
+
+    #contentAbout {
+        width: 360px;
+    }
+
+    #text {
+        margin-top: 20px;
+    }
+
+    .mainBox {
+        margin-top: 30px;
+    }
+}

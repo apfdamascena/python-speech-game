@@ -19,3 +19,20 @@
         bottom: 60px;
     }
 }
+
+@media(min-width: 321px) and (max-width: 375px){
+    #leftSide {
+        position: relative;
+        bottom: 15px;
+        left: 140px;
+    }
+
+    .UserName, .UserEmail, .UserPassword, .ConfirmUserPassword {
+        left: 170px;
+        bottom: 70px;
+    }
+
+    .buttonCreateUser {
+        bottom: 90px;
+    }
+}
