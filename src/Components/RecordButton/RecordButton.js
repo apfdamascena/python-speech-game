@@ -34,7 +34,7 @@ class RecordButton extends Component {
                 this.props.handleButtonPressed();
             }
             this.setState({showSent : !this.state.showSent});
-            this.props.handleButtonPressed();
+            
         }).catch((error) => console.log(error));
     }
 
@@ -92,6 +92,11 @@ class RecordButton extends Component {
         this.getScore();
     }
 
+    callTwoFunctions = () => {
+        this.submit();
+        this.props.handleButtonPressedSubmit();
+    }
+
     render() {
         return (
             <div className = "containerRecordButton">
@@ -107,7 +112,7 @@ class RecordButton extends Component {
                 </div>
 
                 <div id= "ButtonsAudio">
-                    <div className= "Submit" onClick = {this.submit}><a>Submit</a></div>
+                    <div className= "Submit" onClick = {this.callTwoFunctions} ><a>Submit</a></div>
                     <div className= "clear" onClick = {this.clear}><a>Clear</a></div>
                 </div>
             </div>

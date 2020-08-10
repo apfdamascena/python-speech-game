@@ -3,7 +3,6 @@ import OrangeButton from '../OrangeButton/OrangeButton';
 import Answer from '../Answer/Answer';
 import RecordButton from '../RecordButton/RecordButton';
 import './GamePage';
-import NextButton from '../NextButton/NextButton';
 import Title from '../Title/Title';
 import firebase from 'firebase';
 import fire from '../../FireBase/FireBase';
@@ -51,8 +50,7 @@ class GamePage extends Component {
                         question={this.props.question}
                     />
                     <SharedButtons/>
-                    <NextButton action="Next" handleButtonPressed={this.props.didTapNext} />
-                    <RecordButton handleButtonPressed={this.getScore()} />
+                    <RecordButton handleButtonPressed={this.getScore()} handleButtonPressedSubmit = {this.props.didTapNext}/>
                 </div>
             </div>
         );

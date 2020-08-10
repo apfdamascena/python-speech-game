@@ -16,7 +16,7 @@
     }
     .containerRecordButton{
         position: relative;
-        top: 12px;
+        top: 90px;
     }
 
     .audioSent {
@@ -43,7 +43,7 @@
     }
     .containerRecordButton{
         position: relative;
-        top: 12px;
+        top: 100px;
     }
 
     .audioSent {
@@ -72,7 +72,7 @@
     }
     .containerRecordButton{
         position: relative;
-        top: 12px;
+        top: 100px;
     }
 
     .audioSent {
@@ -84,12 +84,12 @@
 
 @media (min-width: 426px) and (max-width: 768px) {
     .audioSent {
-        bottom: 2%;
+        bottom: 108%;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .audioSent {
-        bottom: 1%;
+        bottom: 108%;
     }
 }

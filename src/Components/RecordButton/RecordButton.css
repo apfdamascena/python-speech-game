@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  top: 90px;
 }
 
 #recButton{
@@ -87,6 +89,6 @@
 
 .audioSent {
   position: absolute;
-  bottom: 25%;
+  bottom: 106%;
   color : #353844;
 }
