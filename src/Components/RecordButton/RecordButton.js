@@ -34,6 +34,7 @@ class RecordButton extends Component {
                 this.props.handleButtonPressed();
             }
             this.setState({showSent : !this.state.showSent});
+            this.props.handleButtonPressed();
         }).catch((error) => console.log(error));
     }
 

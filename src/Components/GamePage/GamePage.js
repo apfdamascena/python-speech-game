@@ -34,6 +34,7 @@ class GamePage extends Component {
 
     componentDidMount() {
         this.getScore();
+        this.props.didTapNext();
     }
 
     render() {

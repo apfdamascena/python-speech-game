@@ -9,7 +9,7 @@ class HomePage extends Component {
     }
     render() {
         return (
-            <div classNam = "containerHomePage">
+            <div className = "containerHomePage">
                 <Logo/>
                 <Button name="PLAY" handleButtonPressed={this.props.didTapPlayButton}/>
             </div>
