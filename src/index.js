@@ -11,6 +11,7 @@ import fire from './FireBase/FireBase';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import AboutPage from './Components/AboutPage/AboutPage';
+import RankingPage from './Components/RankingPage/RankingPage';
 
 const STATE = {
     HomePage: 0,
@@ -176,6 +177,16 @@ class App extends Component {
             return (
                 <div>
                     <AboutPage didTapBackLogin={this.goToLoginPage} />
+                </div>
+            );
+        }
+    }
+
+    maybeRenderRankingPage(){
+        if(this.state.appState == STATE.RankingPage){
+            return (
+                <div>
+                    <RankingPage/>
                 </div>
             );
         }

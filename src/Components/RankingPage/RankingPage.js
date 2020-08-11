@@ -1,19 +1,32 @@
 import React, {Component} from  'react';
+import fire from '../../FireBase/FireBase';
+import './RankingPage.css';
 
 class RankingPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-
+            amountOfUsers: []
         }
     }
 
+    getAllUsers = () => {
+        let store = firebase.firestore(fire);
+        store.collection("users").get().then( (querySnapshot) => {
+            console.log(querySnapshot);
+        })
+    }
+
     componentDidMount(){
+        console.log("10");
+        this.getAllUsers();
     }
 
     render(){
         return(
-            <h2>hello world</h2>
+            <div className = "container-RankingPage">
+                <h2>alex paulo ferreira Damascena</h2>
+            </div>
         );
     }
 }
