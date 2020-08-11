@@ -8,6 +8,10 @@ class RankingPage extends Component {
         }
     }
 
+    componentDidMount(){
+        // catchalldadosandsort and show to user
+    }
+
     render(){
         return(
             <h2>hello world</h2>

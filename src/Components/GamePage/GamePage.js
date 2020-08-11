@@ -41,7 +41,7 @@ class GamePage extends Component {
             <div className="containerGamePage">
                 <div className="buttonsGamePage">
                     <OrangeButton action="GO BACK" idButton="leftOrangeButtonGamePage" handleButtonPressed={this.props.didTapGoBackOption} />
-                    <OrangeButton id="next" action={"SCORE: " + this.state.score} idButton="rightOrangeButtonGamePage" />
+                    <OrangeButton id="next" action={"SCORE: " + this.state.score} idButton="rightOrangeButtonGamePage" handleButtonPressed = {this.props.didTapRanking}/>
                 </div>
                 <Title name={this.props.name}></Title>
                 <div id="containerGamePageCenter">

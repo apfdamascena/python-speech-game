@@ -18,7 +18,8 @@ const STATE = {
     OptionPage: 2,
     GamePage: 3,
     NewUser: 4,
-    AboutPage: 5
+    AboutPage: 5,
+    RankingPage: 6
 }
 
 const DATA = data
@@ -42,13 +43,14 @@ class App extends Component {
         }
     }
 
-    getRandomNumber = (min, max) => {
-        return parseInt(Math.random() * (max - min) + min);
-    }
+    getRandomNumber = (min, max) => {return parseInt(Math.random() * (max - min) + min);}
 
-    goToLoginPage = () => {
-        this.setState({ appState: STATE.LoginPage });
-    }
+    createNewUser = () => {this.setState({ appState: STATE.NewUser });}
+    didTapAboutPage = () => {this.setState({ appState: STATE.AboutPage });}
+    goToLoginPage = () => {this.setState({ appState: STATE.LoginPage });}
+    didTapLoginButton = () => {this.setState({ appState: STATE.OptionPage });}
+    didChooseSection = (section) => {this.setState({ appState: STATE.GamePage, choosenState: section });}
+    didTapNext = () => { this.setState({appState: STATE.RankingPage});}
 
     didTapNext = () => {
         this.numberAsk = this.getRandomNumber(0, DATA[this.state.choosenState].length);
@@ -64,9 +66,6 @@ class App extends Component {
         this.setState({ appState: STATE.LoginPage });
     }
 
-    didTapLoginButton = () => {
-        this.setState({ appState: STATE.OptionPage });
-    }
 
     didTapGoBackOption = () => {
         confirmAlert({
@@ -83,10 +82,6 @@ class App extends Component {
               }
             ]
         });
-    }
-
-    didChooseSection = (section) => {
-        this.setState({ appState: STATE.GamePage, choosenState: section });
     }
 
     didTapGoBack = () => {
@@ -109,16 +104,6 @@ class App extends Component {
               }
             ]
           });
-    }
-
-
-    createNewUser = () => {
-        this.setState({ appState: STATE.NewUser });
-    }
-
-
-    didTapAboutPage = () => {
-        this.setState({ appState: STATE.AboutPage });
     }
 
     maybeRenderHomePage() {
@@ -174,6 +159,7 @@ class App extends Component {
                         question={ASK[this.state.choosenState]}
                         name={this.state.choosenState}
                         data={DATA[this.state.choosenState]}
+                        didTapRanking = {this.didTapRanking}
                         didTapGoBackOption={this.didTapGoBackOption}
                         didTapNext={this.didTapNext}>
                     </GamePage>
