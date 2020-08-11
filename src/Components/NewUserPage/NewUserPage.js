@@ -24,11 +24,11 @@ class NewUserPage extends Component {
         }
     }
 
-    writeUserData = (userId,score) => {
+    writeUserData = (userId,score, username) => {
         let store = firebase.firestore(fire);
         store.collection("users").doc(userId).set({
-            score,
-            username
+            score: score,
+            username: username
         }).then(() => {
             console.log("foi");
         }).catch(() => {
@@ -46,7 +46,7 @@ class NewUserPage extends Component {
         if(this.state.password[0] == this.state.confirmPassword[0]){
             fire.auth().createUserWithEmailAndPassword(this.state.email[0], this.state.password[0]).then((user) => {
                 let curr_user = fire.auth().currentUser;
-                this.writeUserData(curr_user.uid, this.state.score);
+                this.writeUserData(curr_user.uid, this.state.score, this.state.username[0]);
                 this.props.didTapRegister();
             }).catch((error) => {
                 console.log(error);
