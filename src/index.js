@@ -11,7 +11,6 @@ import fire from './FireBase/FireBase';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import AboutPage from './Components/AboutPage/AboutPage';
-import RankingPage from './Components/RankingPage/RankingPage';
 
 const STATE = {
     HomePage: 0,
@@ -44,14 +43,17 @@ class App extends Component {
         }
     }
 
-    getRandomNumber = (min, max) => {return parseInt(Math.random() * (max - min) + min);}
+    getRandomNumber = (min, max) => {
+        return parseInt(Math.random() * (max - min) + min);
+    }
+
 
     createNewUser = () => {this.setState({ appState: STATE.NewUser });}
     didTapAboutPage = () => {this.setState({ appState: STATE.AboutPage });}
     goToLoginPage = () => {this.setState({ appState: STATE.LoginPage });}
     didTapLoginButton = () => {this.setState({ appState: STATE.OptionPage });}
     didChooseSection = (section) => {this.setState({ appState: STATE.GamePage, choosenState: section });}
-    didTapNext = () => { this.setState({appState: STATE.RankingPage});}
+    didTapRanking = () => {this.setState({appState: STATE.RankingPage});}
 
     didTapNext = () => {
         this.numberAsk = this.getRandomNumber(0, DATA[this.state.choosenState].length);
@@ -179,16 +181,6 @@ class App extends Component {
         }
     }
 
-    maybeRenderRankingPage(){
-        if(this.state.appState == STATE.RankingPage){
-            return(
-                <div>
-                    <RankingPage/>
-                </div>
-            );
-        }
-    }
-
     render() {
         return (
             <div>
@@ -198,7 +190,6 @@ class App extends Component {
                 {this.maybeRenderNewUserPage()}
                 {this.maybeRenderOptionPage()}
                 {this.maybeRenderGamePage()}
-                {this.maybeRenderRankingPage()}
             </div>
         );
     }

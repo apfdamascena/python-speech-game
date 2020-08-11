@@ -9,7 +9,6 @@ class RankingPage extends Component {
     }
 
     componentDidMount(){
-        // catchalldadosandsort and show to user
     }
 
     render(){
