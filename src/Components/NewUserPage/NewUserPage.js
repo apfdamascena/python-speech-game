@@ -27,7 +27,8 @@ class NewUserPage extends Component {
     writeUserData = (userId,score) => {
         let store = firebase.firestore(fire);
         store.collection("users").doc(userId).set({
-            score : score
+            score,
+            username
         }).then(() => {
             console.log("foi");
         }).catch(() => {
@@ -44,7 +45,6 @@ class NewUserPage extends Component {
     signUp = (event) => {
         if(this.state.password[0] == this.state.confirmPassword[0]){
             fire.auth().createUserWithEmailAndPassword(this.state.email[0], this.state.password[0]).then((user) => {
-                console.log(user);
                 let curr_user = fire.auth().currentUser;
                 this.writeUserData(curr_user.uid, this.state.score);
                 this.props.didTapRegister();
