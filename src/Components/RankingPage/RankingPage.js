@@ -14,12 +14,22 @@ class RankingPage extends Component {
     getAllUsers = () => {
         let store = firebase.firestore(fire);
         store.collection("users").get().then( (querySnapshot) => {
-            console.log(querySnapshot);
-        })
+            querySnapshot.forEach( (doc) => {
+                let dataUser = doc.data()
+                let infoUser = [dataUser.username, dataUser.score]
+                const users = this.state.amountOfUsers
+                users.push(infoUser);
+                this.setState({ amountOfUsers: users})
+            });
+            let users = this.state.amountOfUsers;
+            users.sort(function(a,b){
+                return b[1]-a[1];
+            });
+        });
+        console.log(this.state.amountOfUsers);
     }
 
-    componentDidMount(){
-        console.log("10");
+    componentWillMount(){
         this.getAllUsers();
     }
 
