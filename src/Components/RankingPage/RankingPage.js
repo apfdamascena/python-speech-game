@@ -1,5 +1,6 @@
 import React, {Component} from  'react';
 import fire from '../../FireBase/FireBase';
+import firebase from 'firebase';
 import './RankingPage.css';
 
 class RankingPage extends Component {

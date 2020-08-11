@@ -201,6 +201,7 @@ class App extends Component {
                 {this.maybeRenderNewUserPage()}
                 {this.maybeRenderOptionPage()}
                 {this.maybeRenderGamePage()}
+                {this.maybeRenderRankingPage()}
             </div>
         );
     }
