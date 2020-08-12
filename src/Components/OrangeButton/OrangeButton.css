@@ -39,11 +39,13 @@
 #rightOrangeButtonGamePage{
     position: relative;
     left: 350px;
+    top: 50px;
 }
 
 #leftOrangeButtonGamePage{
     position: relative;
     right: 450px;
+    top: 50px; 
 
 }
 

@@ -12,6 +12,7 @@
     transform: skewX(-15deg);
     box-shadow: 10px 0px 10px #69A0D9;
     margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
 
@@ -21,4 +22,20 @@
     justify-content: center;
     position: relative;
     left: 100px;
+}
+
+#score-username {
+    border-left: 2px solid #B0B7B7;
+    border-right: 2px solid #B0B7B7;
+    padding: 36px 150px;
+}
+
+.position {
+    position: relative;
+    left: 20px;
+}
+
+.score {
+    position: relative;
+    right: 20px;
 }
