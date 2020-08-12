@@ -34,6 +34,11 @@
         right: 60px;
         padding: 8px 16px;
     }
+
+    #leftOrangeButtonRankingPage{
+        right: 140px;
+        padding: 8px 16px ;
+    }
 }
 
 @media(min-width: 376px) and (max-width: 425px) {
@@ -50,6 +55,11 @@
     #leftOrangeButtonGamePage {
         right: 60px;
         padding: 8px 16px;
+    }
+
+    #leftOrangeButtonRankingPage{
+        right: 140px;
+        padding: 8px 16px ;
     }
 }
 

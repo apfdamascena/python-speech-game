@@ -5,6 +5,7 @@ import './RankingPage.css';
 import RankingItem from '../RankingItem/RankingItem';
 import Title from '../Title/Title';
 import OrangeButton from '../OrangeButton/OrangeButton';
+import './responsive.css';
 
 class RankingPage extends Component {
     constructor(props) {
@@ -39,7 +40,7 @@ class RankingPage extends Component {
     render() {
         return (
             <div className="container-RankingPage">
-                <OrangeButton action="GO BACK" idButton="leftOrangeButtonGamePage" handleButtonPressed={this.props.didTapGoBackGamePage} />
+                <OrangeButton action="GO BACK" idButton="leftOrangeButtonRankingPage" handleButtonPressed={this.props.didTapGoBackGamePage} />
                 <div id = "title">
                     <Title name="...RANKING" />
                 </div>

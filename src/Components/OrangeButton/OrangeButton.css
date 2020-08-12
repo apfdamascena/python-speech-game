@@ -42,7 +42,7 @@
     top: 50px;
 }
 
-#leftOrangeButtonGamePage{
+#leftOrangeButtonGamePage, #leftOrangeButtonRankingPage{
     position: relative;
     right: 450px;
     top: 50px; 
