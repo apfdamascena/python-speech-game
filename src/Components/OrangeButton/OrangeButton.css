@@ -42,10 +42,17 @@
     top: 50px;
 }
 
-#leftOrangeButtonGamePage, #leftOrangeButtonRankingPage{
+#leftOrangeButtonGamePage{
     position: relative;
     right: 450px;
     top: 50px; 
-
 }
+
+#leftOrangeButtonRankingPage{
+    position: relative;
+    right: 540px;
+    top: 50px; 
+}
+
+
 

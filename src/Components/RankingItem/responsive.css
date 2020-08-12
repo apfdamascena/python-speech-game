@@ -1,29 +1,4 @@
-@media (max-width: 375px) {
-    .container-TeacherItem{
-        width: 280px;
-        height: 70px;
-    }
-
-    #score-username {
-        padding: 23px 40px;
-    }
-
-    .position {
-        left: 15px;
-    }
-
-    .score {
-        position: relative;
-        right: 10px;
-    }
-
-    #title {
-        margin-top: 80px;
-    }
-}
-
-
-@media(min-width: 376px) and (max-width: 425px) {
+@media (max-width: 768px) {
     .container-TeacherItem{
         width: 280px;
         height: 70px;

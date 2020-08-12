@@ -74,6 +74,11 @@
         right: 240px;
         padding: 8px 16px;
     }
+
+    #leftOrangeButtonRankingPage{
+        right: 300px;
+        padding: 8px 16px ;
+    }
 }
 
 @media(min-width: 769px) and (max-width: 1024px) {
