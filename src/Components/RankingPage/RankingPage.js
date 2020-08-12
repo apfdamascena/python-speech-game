@@ -1,10 +1,12 @@
-import React, {Component} from  'react';
+import React, { Component } from 'react';
 import fire from '../../FireBase/FireBase';
 import firebase from 'firebase';
 import './RankingPage.css';
+import RankingItem from '../RankingItem/RankingItem';
+import Title from '../Title/Title';
 
 class RankingPage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             amountOfUsers: []
@@ -13,30 +15,41 @@ class RankingPage extends Component {
 
     getAllUsers = () => {
         let store = firebase.firestore(fire);
-        store.collection("users").get().then( (querySnapshot) => {
-            querySnapshot.forEach( (doc) => {
+        store.collection("users").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
                 let dataUser = doc.data()
                 let infoUser = [dataUser.username, dataUser.score]
                 const users = this.state.amountOfUsers
                 users.push(infoUser);
-                this.setState({ amountOfUsers: users})
+                this.setState({ amountOfUsers: users })
             });
             let users = this.state.amountOfUsers;
-            users.sort(function(a,b){
-                return b[1]-a[1];
+            users.sort(function (a, b) {
+                return b[1] - a[1];
             });
+            this.setState({ amountOfUsers: users });
         });
-        console.log(this.state.amountOfUsers);
     }
 
-    componentWillMount(){
+    componentWillMount() {
         this.getAllUsers();
     }
 
-    render(){
-        return(
-            <div className = "container-RankingPage">
-                <h2>alex paulo ferreira Damascena</h2>
+    render() {
+        return (
+            <div className="container-RankingPage">
+                <div id = "title">
+                    <Title name="...RANKING" />
+                </div>
+                {
+                    this.state.amountOfUsers.map((users, index) => {
+                        return (
+                            <RankingItem key={index} index={index + 1} username={users[0]}
+                                score={users[1]}
+                            />
+                        );
+                    })
+                }
             </div>
         );
     }

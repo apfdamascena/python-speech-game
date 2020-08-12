@@ -1,3 +1,14 @@
-.container-RankingPage h2 {
-    color: '#FFF';
+.container-RankingPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+    top: 70px;
+}
+
+#title {
+    margin-bottom: 60px;
 }
