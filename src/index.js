@@ -55,6 +55,7 @@ class App extends Component {
     didTapLoginButton = () => {this.setState({ appState: STATE.OptionPage });}
     didChooseSection = (section) => {this.setState({ appState: STATE.GamePage, choosenState: section });}
     didTapRanking = () => {this.setState({appState: STATE.RankingPage});}
+    didTapGoBackGamePage = () => { this.setState({appState: STATE.GamePage});}
 
     didTapNext = () => {
         this.numberAsk = this.getRandomNumber(0, DATA[this.state.choosenState].length);
@@ -186,7 +187,7 @@ class App extends Component {
         if(this.state.appState == STATE.RankingPage){
             return (
                 <div>
-                    <RankingPage/>
+                    <RankingPage didTapGoBackGamePage = {this.didTapGoBackGamePage}/>
                 </div>
             );
         }
