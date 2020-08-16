@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './AboutPage.css';
 import imageCharacter from './personagem.png';
-import OrangeButton from '../OrangeButton/OrangeButton';
+import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import './responsive.css';
 
 class AboutPage extends Component {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import fire from '../../FireBase/FireBase';
+import fire from '../../../FireBase/FireBase';
 import firebase from 'firebase';
 import './RankingPage.css';
-import RankingItem from '../RankingItem/RankingItem';
-import Title from '../Title/Title';
-import OrangeButton from '../OrangeButton/OrangeButton';
+import RankingItem from '../../helpComponents/RankingItem/RankingItem';
+import Title from '../../helpComponents/Title/Title';
+import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import './responsive.css';
 
 class RankingPage extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import LogoInputLogo from '../LoginInputLogo/LoginInputLogo';
-import LoginInput from '../LoginInput/LoginInput';
-import OrangeButton from '../OrangeButton/OrangeButton';
+import LogoInputLogo from '../../helpComponents/LoginInputLogo/LoginInputLogo';
+import LoginInput from '../../LoginInput/LoginInput';
+import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import './responsive.css';
 
 class LoginPage extends Component {

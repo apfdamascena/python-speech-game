@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import OrangeButton from '../OrangeButton/OrangeButton';
-import Answer from '../Answer/Answer';
-import RecordButton from '../RecordButton/RecordButton';
+import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
+import Answer from '../../Answer/Answer';
+import RecordButton from '../../RecordButton/RecordButton';
 import './GamePage';
-import Title from '../Title/Title';
+import Title from '../../helpComponents/Title/Title';
 import firebase from 'firebase';
-import fire from '../../FireBase/FireBase';
-import SharedButtons from '../SharedButtons/SharedButtons';
+import fire from '../../../FireBase/FireBase';
+import SharedButtons from '../../helpComponents/SharedButtons/SharedButtons';
 import './responsive.css';
 
 class GamePage extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Button from '../Button/Button';
-import OrangeButton from '../OrangeButton/OrangeButton';
+import Button from '../../helpComponents/Button/Button';
+import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import CharacterLeft from './personagem_left.png';
 import './OptionPage.css';
 import './responsive.css';

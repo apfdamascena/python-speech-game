@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import LogoInputLogo from '../LoginInputLogo/LoginInputLogo';
+import LogoInputLogo from '../../helpComponents/LoginInputLogo/LoginInputLogo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserEdit } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faUserLock } from '@fortawesome/free-solid-svg-icons'
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import './NewUserPage.css';
-import OrangeButton from '../OrangeButton/OrangeButton';
-import fire from '../../FireBase/FireBase';
+import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
+import fire from '../../../FireBase/FireBase';
 import firebase from 'firebase';
 import './responsive.css';
 

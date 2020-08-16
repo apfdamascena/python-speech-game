@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Button from '../Button/Button';
-import Logo from '../Logo/Logo';
+import Button from '../../helpComponents/Button/Button';
+import Logo from '../../helpComponents/Logo/Logo';
 
 class HomePage extends Component {
     constructor(props){
