@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
-import Answer from '../../Answer/Answer';
-import RecordButton from '../../RecordButton/RecordButton';
+import Answer from '../../helpComponents/Answer/Answer';
+import RecordButton from '../../helpComponents/RecordButton/RecordButton';
 import './GamePage';
 import Title from '../../helpComponents/Title/Title';
 import firebase from 'firebase';
@@ -17,24 +17,24 @@ class GamePage extends Component {
         }
     }
 
-    getScore = () => {
-        let user = firebase.auth().currentUser;
-        if (!user.isAnonymous) {
-            firebase.firestore(fire).collection("users").doc(user.uid).get().then(doc => {
-                if (!doc.exists) {
-                    console.log("dont't exist");
-                } else {
-                    let object = doc.data();
-                    this.setState({ score: object.score });
-                }
-            })
-        }
-    }
+    // getScore = () => {
+    //     let user = firebase.auth().currentUser;
+    //     if (!user.isAnonymous) {
+    //         firebase.firestore(fire).collection("users").doc(user.uid).get().then(doc => {
+    //             if (!doc.exists) {
+    //                 console.log("dont't exist");
+    //             } else {
+    //                 let object = doc.data();
+    //                 this.setState({ score: object.score });
+    //             }
+    //         })
+    //     }
+    // }
 
-    componentWillMount() {
-        this.props.didTapNext();
-        this.getScore();
-    }
+    // componentWillMount() {
+    //     this.props.didTapNext();
+    //     this.getScore();
+    // }
 
     render() {
         return (
@@ -50,7 +50,7 @@ class GamePage extends Component {
                         question={this.props.question}
                     />
                     <SharedButtons/>
-                    <RecordButton handleButtonPressed={this.getScore()} handleButtonPressedSubmit = {this.props.didTapNext}/>
+                    <RecordButton handleButtonPressedSubmit = {this.props.didTapNext}/>
                 </div>
             </div>
         );

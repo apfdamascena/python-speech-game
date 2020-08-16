@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import LogoInputLogo from '../../helpComponents/LoginInputLogo/LoginInputLogo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserEdit } from '@fortawesome/free-solid-svg-icons'
@@ -59,9 +60,9 @@ class NewUserPage extends Component {
     render() {
         return (
             <div className = "containerNewUser">
-                <div id="leftSide">
+                <Link to = "/login-page" id="leftSide">
                     <OrangeButton  action="GO BACK" handleButtonPressed={this.props.didTapRegister} />
-                </div>
+                </Link>
                 <div id ="imageNewUSer">
                     <LogoInputLogo />
                 </div>

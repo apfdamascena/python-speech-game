@@ -9,15 +9,7 @@ class Button extends Component {
     }
     render() {
         return (
-        <div className="wrapper" id={this.props.id} onClick={
-            event => {
-                if(this.props.id == undefined){
-                    this.props.handleButtonPressed();
-                } else {
-                    this.props.handleButtonPressed(this.props.name)
-                }
-            }
-        }>
+        <div className="wrapper" id={this.props.id}>
             <a className="cta" href="#">
                 <span>{this.props.name}</span>
                 <span>

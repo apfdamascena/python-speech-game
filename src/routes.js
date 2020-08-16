@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 
-import HomePage from './Components/Pages/GamePage/GamePage';
+import HomePage from './Components/Pages/HomePage/HomePage';
 import LoginPage from './Components/Pages/LoginPage/LoginPage';
 import AboutPage from './Components/Pages/AboutPage/AboutPage';
 import NewUserPage from './Components/Pages/NewUserPage/NewUserPage';

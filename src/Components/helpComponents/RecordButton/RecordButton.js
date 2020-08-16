@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './RecordButton.css'
 import MicRecorder from 'mic-recorder-to-mp3';
 import firebase from 'firebase';
-import fire from '../../FireBase/FireBase';
+import fire from '../../../FireBase/FireBase';
 import './responsive.css';
 
 const recorder = new MicRecorder({ bitRate: 128 });
@@ -73,22 +73,22 @@ class RecordButton extends Component {
         }
     }
 
-    componentDidMount() {
-        navigator.getUserMedia({ audio: true },
-          () => {
-            console.log('Permission Granted');
-            this.setState({ isBlocked: false});
-            navigator.geolocation.getCurrentPosition((position) => {
-                this.setState({position : position});
-            });
-          },
-          () => {
-            console.log('Permission Denied');
-            this.setState({ isBlocked: true });
-          },
-        );
-        this.getScore();
-    }
+    // componentDidMount() {
+    //     navigator.getUserMedia({ audio: true },
+    //       () => {
+    //         console.log('Permission Granted');
+    //         this.setState({ isBlocked: false});
+    //         navigator.geolocation.getCurrentPosition((position) => {
+    //             this.setState({position : position});
+    //         });
+    //       },
+    //       () => {
+    //         console.log('Permission Denied');
+    //         this.setState({ isBlocked: true });
+    //       },
+    //     );
+    //     this.getScore();
+    // }
 
     callTwoFunctions = () => {
         this.submit();

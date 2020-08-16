@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import './AboutPage.css';
+import { Link } from 'react-router-dom';
 import imageCharacter from './personagem.png';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
+import './AboutPage.css';
 import './responsive.css';
 
 class AboutPage extends Component {
     render() {
         return (
             <div id="boxAbout">
-                <OrangeButton action="GO BACK" handleButtonPressed={this.props.didTapBackLogin} />
+                <Link to = "/login-page">
+                    <OrangeButton action="GO BACK"/>
+                </Link>
                 <div className="mainBox">
                     <div id="contentAbout">
                         <div id="text">

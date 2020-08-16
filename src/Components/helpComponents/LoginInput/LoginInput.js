@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './LoginInput.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
 import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {faUserPlus} from '@fortawesome/free-solid-svg-icons'
-import fire from '../../FireBase/FireBase';
+import fire from '../../../FireBase/FireBase';
 import './responsive.css'
 
 class LoginInput extends Component {
@@ -68,9 +69,9 @@ class LoginInput extends Component {
                     <div id="anony" className= "buttonLogin" onClick={this.anonymousLogin}><a>Anonymous</a></div>
                 </div>
 
-                <div className="newUser">
+                <Link to= "/new-user-page" className="newUser">
                     <a className="newUserIcon" onClick={this.props.newUser}><FontAwesomeIcon icon={faUserPlus}/> New to PythonTest? SIGN UP</a>
-                </div>
+                </Link>
             </div>
         );
     }
