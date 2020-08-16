@@ -1,45 +1,59 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './LoginInput.css'
+import { Link, Redirect } from 'react-router-dom';
+import API from '../../../services/API';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUser} from '@fortawesome/free-solid-svg-icons'
-import {faLock} from '@fortawesome/free-solid-svg-icons'
-import {faUserPlus} from '@fortawesome/free-solid-svg-icons'
-import fire from '../../../FireBase/FireBase';
+import {faUser, faLock, faUserPlus} from '@fortawesome/free-solid-svg-icons';
+import './LoginInput.css'
 import './responsive.css'
 
 class LoginInput extends Component {
     constructor(props){
         super(props);
-        this.state={
+        this.state = {
             email: "",
             password: ""
         }
     }
 
     anonymousLogin = (event) => {
-        event.preventDefault();
-        fire.auth().signInAnonymously().then((user) => {
-            this.props.handleButtonPressed();
-        }).catch((error) => {
-            console.log(error);
-        });
+        //code chamando API
     }
 
-    login = (event) => {
-        event.preventDefault();
-        fire.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then((user) => {
-            this.props.handleButtonPressed();
-        }).catch((error) => {
-            console.log(error);
-        });
+    login = () => {
+        const [user, password] =[this.state.email, this.state.password];
+        API.post('login-page', {
+            user,password
+        }).then(() => {
+            console.log(10);
+        }).catch((error) => { console.log(error);})
+        
     }
+
+    // anonymousLogin = (event) => {
+    //     event.preventDefault();
+    //     fire.auth().signInAnonymously().then((user) => {
+    //         this.props.handleButtonPressed();
+    //     }).catch((error) => {
+    //         console.log(error);
+    //     });
+    // }
+
+    // login = (event) => {
+    //     event.preventDefault();
+    //     fire.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then((user) => {
+    //         this.props.handleButtonPressed();
+    //     }).catch((error) => {
+    //         console.log(error);
+    //     });
+    // }
     
     handleChange = (event) => {
         this.setState({
             [event.target.name] : event.target.value
         });
     }
+
     render() {
         return (
             <div className="login">

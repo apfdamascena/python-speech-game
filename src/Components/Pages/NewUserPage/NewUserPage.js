@@ -59,7 +59,7 @@ class NewUserPage extends Component {
 
     render() {
         return (
-            <div className = "containerNewUser">
+            <form className = "containerNewUser">
                 <Link to = "/login-page" id="leftSide">
                     <OrangeButton  action="GO BACK" handleButtonPressed={this.props.didTapRegister} />
                 </Link>
@@ -108,7 +108,7 @@ class NewUserPage extends Component {
                 <div className="buttonCreateUser" onClick={this.signUp}>
                     <a>Create</a>
                 </div>
-            </div>
+            </form>
         );
     }
 }
