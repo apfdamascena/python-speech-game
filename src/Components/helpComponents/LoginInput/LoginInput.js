@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import API from '../../../services/API';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,12 +21,14 @@ class LoginInput extends Component {
     }
 
     login = () => {
-        const [user, password] =[this.state.email, this.state.password];
-        API.post('new-user-page', {
-            user,password
+        const [email, password] =[this.state.email, this.state.password];
+        API.post('login-page', {
+            email: email, password: password
         }).then(() => {
-            console.log(10);
-        }).catch((error) => { console.log(error);}) 
+            console.log("foi");
+        }).catch((error) => {
+            console.log("deu ruim");
+        })
     }
 
     // anonymousLogin = (event) => {
