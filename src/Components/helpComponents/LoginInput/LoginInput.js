@@ -22,12 +22,11 @@ class LoginInput extends Component {
 
     login = () => {
         const [user, password] =[this.state.email, this.state.password];
-        API.post('login-page', {
+        API.post('new-user-page', {
             user,password
         }).then(() => {
             console.log(10);
-        }).catch((error) => { console.log(error);})
-        
+        }).catch((error) => { console.log(error);}) 
     }
 
     // anonymousLogin = (event) => {

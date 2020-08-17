@@ -8,8 +8,6 @@ import { faUserLock } from '@fortawesome/free-solid-svg-icons'
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import './NewUserPage.css';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
-import fire from '../../../FireBase/FireBase';
-import firebase from 'firebase';
 import './responsive.css';
 
 
@@ -25,37 +23,37 @@ class NewUserPage extends Component {
         }
     }
 
-    writeUserData = (userId,score, username) => {
-        let store = firebase.firestore(fire);
-        store.collection("users").doc(userId).set({
-            score: score,
-            username: username
-        }).then(() => {
-            console.log("foi");
-        }).catch(() => {
-            console.log("nao foi");
-        });
-    }
+    // writeUserData = (userId,score, username) => {
+    //     let store = firebase.firestore(fire);
+    //     store.collection("users").doc(userId).set({
+    //         score: score,
+    //         username: username
+    //     }).then(() => {
+    //         console.log("foi");
+    //     }).catch(() => {
+    //         console.log("nao foi");
+    //     });
+    // }
 
-    handleChange = (event) => {
-        this.setState({
-            [event.target.name]: [event.target.value]
-        });
-    }
+    // handleChange = (event) => {
+    //     this.setState({
+    //         [event.target.name]: [event.target.value]
+    //     });
+    // }
 
-    signUp = (event) => {
-        if(this.state.password[0] == this.state.confirmPassword[0]){
-            fire.auth().createUserWithEmailAndPassword(this.state.email[0], this.state.password[0]).then((user) => {
-                let curr_user = fire.auth().currentUser;
-                this.writeUserData(curr_user.uid, this.state.score, this.state.username[0]);
-                this.props.didTapRegister();
-            }).catch((error) => {
-                console.log(error);
-            });
-        } else {
-            alert("Passwords aren't the same");
-        }
-    }
+    // signUp = (event) => {
+    //     if(this.state.password[0] == this.state.confirmPassword[0]){
+    //         fire.auth().createUserWithEmailAndPassword(this.state.email[0], this.state.password[0]).then((user) => {
+    //             let curr_user = fire.auth().currentUser;
+    //             this.writeUserData(curr_user.uid, this.state.score, this.state.username[0]);
+    //             this.props.didTapRegister();
+    //         }).catch((error) => {
+    //             console.log(error);
+    //         });
+    //     } else {
+    //         alert("Passwords aren't the same");
+    //     }
+    // }
 
     render() {
         return (

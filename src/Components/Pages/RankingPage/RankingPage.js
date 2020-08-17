@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import fire from '../../../FireBase/FireBase';
-import firebase from 'firebase';
 import './RankingPage.css';
 import RankingItem from '../../helpComponents/RankingItem/RankingItem';
 import Title from '../../helpComponents/Title/Title';
@@ -15,23 +13,23 @@ class RankingPage extends Component {
         }
     }
 
-    getAllUsers = () => {
-        let store = firebase.firestore(fire);
-        store.collection("users").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                let dataUser = doc.data()
-                let infoUser = [dataUser.username, dataUser.score]
-                const users = this.state.amountOfUsers
-                users.push(infoUser);
-                this.setState({ amountOfUsers: users })
-            });
-            let users = this.state.amountOfUsers;
-            users.sort(function (a, b) {
-                return b[1] - a[1];
-            });
-            this.setState({ amountOfUsers: users });
-        });
-    }
+    // getAllUsers = () => {
+    //     let store = firebase.firestore(fire);
+    //     store.collection("users").get().then((querySnapshot) => {
+    //         querySnapshot.forEach((doc) => {
+    //             let dataUser = doc.data()
+    //             let infoUser = [dataUser.username, dataUser.score]
+    //             const users = this.state.amountOfUsers
+    //             users.push(infoUser);
+    //             this.setState({ amountOfUsers: users })
+    //         });
+    //         let users = this.state.amountOfUsers;
+    //         users.sort(function (a, b) {
+    //             return b[1] - a[1];
+    //         });
+    //         this.setState({ amountOfUsers: users });
+    //     });
+    // }
 
     componentWillMount() {
         this.getAllUsers();

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './RecordButton.css'
 import MicRecorder from 'mic-recorder-to-mp3';
-import firebase from 'firebase';
-import fire from '../../../FireBase/FireBase';
 import './responsive.css';
 
 const recorder = new MicRecorder({ bitRate: 128 });
@@ -22,56 +20,56 @@ class RecordButton extends Component {
     }
 
 
-    submit = () => {
-        firebase.storage().ref("audios/"+this.state.blobURL).put(this.state.blob).then( (snapshot) => {
-            this.setState({blobURL : ''});
-            this.state.score += 10;
-            let user  = firebase.auth().currentUser;
-            if(!user.isAnonymous){
-                firebase.firestore(fire).collection("users").doc(user.uid).update({
-                    score : this.state.score
-                }).catch((error) => console.log(error));
-            }
-            this.setState({showSent : true});
-        }).catch((error) => console.log(error));
-    }
+    // submit = () => {
+    //     firebase.storage().ref("audios/"+this.state.blobURL).put(this.state.blob).then( (snapshot) => {
+    //         this.setState({blobURL : ''});
+    //         this.state.score += 10;
+    //         let user  = firebase.auth().currentUser;
+    //         if(!user.isAnonymous){
+    //             firebase.firestore(fire).collection("users").doc(user.uid).update({
+    //                 score : this.state.score
+    //             }).catch((error) => console.log(error));
+    //         }
+    //         this.setState({showSent : true});
+    //     }).catch((error) => console.log(error));
+    // }
 
-    start = () => {
-        this.setState({showSent : false});
-        if (this.state.isBlocked) {
-            console.log('Permission Denied');
-        } else {
-            recorder.start().then(() => {
-                this.setState({ isRecording: true });
-            }).catch((error) => console.error(error));
-        }
-    }
+    // start = () => {
+    //     this.setState({showSent : false});
+    //     if (this.state.isBlocked) {
+    //         console.log('Permission Denied');
+    //     } else {
+    //         recorder.start().then(() => {
+    //             this.setState({ isRecording: true });
+    //         }).catch((error) => console.error(error));
+    //     }
+    // }
 
-    stop = () => {
-        recorder.stop().getMp3().then(([buffer, blob]) => {
-            const blobURL = URL.createObjectURL(blob)
-            this.setState({blob : blob});
-            this.setState({ blobURL, isRecording: false });
-        }).catch((error) => console.log(error));
-    }
+    // stop = () => {
+    //     recorder.stop().getMp3().then(([buffer, blob]) => {
+    //         const blobURL = URL.createObjectURL(blob)
+    //         this.setState({blob : blob});
+    //         this.setState({ blobURL, isRecording: false });
+    //     }).catch((error) => console.log(error));
+    // }
 
-    clear = () => {
-        this.setState({blobURL:''});
-    }
+    // clear = () => {
+    //     this.setState({blobURL:''});
+    // }
 
-    getScore = () => {
-        let user  = firebase.auth().currentUser;
-        if(!user.isAnonymous){
-            firebase.firestore(fire).collection("users").doc(user.uid).get().then(doc => {
-                if(!doc.exists){
-                    console.log("dont't exist");
-                } else{
-                    let object = doc.data();
-                    this.setState({score : object.score});
-                }
-            })
-        }
-    }
+    // getScore = () => {
+    //     let user  = firebase.auth().currentUser;
+    //     if(!user.isAnonymous){
+    //         firebase.firestore(fire).collection("users").doc(user.uid).get().then(doc => {
+    //             if(!doc.exists){
+    //                 console.log("dont't exist");
+    //             } else{
+    //                 let object = doc.data();
+    //                 this.setState({score : object.score});
+    //             }
+    //         })
+    //     }
+    // }
 
     // componentDidMount() {
     //     navigator.getUserMedia({ audio: true },

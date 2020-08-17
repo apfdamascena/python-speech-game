@@ -4,8 +4,6 @@ import Answer from '../../helpComponents/Answer/Answer';
 import RecordButton from '../../helpComponents/RecordButton/RecordButton';
 import './GamePage';
 import Title from '../../helpComponents/Title/Title';
-import firebase from 'firebase';
-import fire from '../../../FireBase/FireBase';
 import SharedButtons from '../../helpComponents/SharedButtons/SharedButtons';
 import './responsive.css';
 
