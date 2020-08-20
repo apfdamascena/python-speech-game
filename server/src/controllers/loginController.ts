@@ -8,7 +8,7 @@ export default class LoginController {
         if(!email && !password){
             try {
                 firebaseRef.auth().signInAnonymously().then((user) => {
-                    console.log("anony");
+                    return response.send(user);
                 }).catch((error) => {
                     console.log(error);
                 });
@@ -21,8 +21,8 @@ export default class LoginController {
 
         if(email && password){
             try {
-                await firebaseRef.auth().signInWithEmailAndPassword(email, password).then(() => {
-                    console.log(10);
+                await firebaseRef.auth().signInWithEmailAndPassword(email, password).then((user) => {
+                    return response.send(user);
                 }).catch( (error) => { console.log(error)})
             }   catch(error){
                 return response.send(402).json({message: "error"});

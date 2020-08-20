@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import API from '../../../services/API';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,28 +7,27 @@ import {faUser, faLock, faUserPlus} from '@fortawesome/free-solid-svg-icons';
 import './LoginInput.css'
 import './responsive.css'
 
-class LoginInput extends Component {
+export default class LoginInput extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            email: null,
-            password: null
+            email: "",
+            password: "",
+            redirect: false
         }
     }
 
     login = () => {
-        const [email, password] =[this.state.email, this.state.password];
         API.post('login-page', {
-            email: email, password: password
-        }).then(() => {
-            let history = useHistory();
-            history.push('/option-page');
+            email: this.state.email, password: this.state.password
+        }).then((object) => {
+            this.setState({redirect: true})
         }).catch((error) => {
             console.log("deu ruim");
         })
     }
-    
+
     handleChange = (event) => {
         this.setState({
             [event.target.name] : event.target.value
@@ -36,6 +35,11 @@ class LoginInput extends Component {
     }
 
     render() {
+        if(this.state.redirect){
+            return(
+                <Link to = "/option-page "/>
+            );
+        }
         return (
             <div className="login">
                 <div className= "emailUser">
@@ -61,7 +65,7 @@ class LoginInput extends Component {
 
                 <div className= "buttonsBlackLoginPage">
                     <div  id = "login" className= "buttonLogin" onClick={this.login}><a>Login</a></div>
-                    <div id="anony" className= "buttonLogin" onClick={this.anonymousLogin}><a>Anonymous</a></div>
+                    <div id="anony" className= "buttonLogin" onClick={this.login}><a>Anonymous</a></div>
                 </div>
 
                 <Link to= "/new-user-page" className="newUser">
@@ -71,4 +75,3 @@ class LoginInput extends Component {
         );
     }
 }
-export default LoginInput;
