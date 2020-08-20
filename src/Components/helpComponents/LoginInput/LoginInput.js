@@ -17,10 +17,6 @@ class LoginInput extends Component {
         }
     }
 
-    anonymousLogin = (event) => {
-        //code chamando API
-    }
-
     login = () => {
         const [email, password] =[this.state.email, this.state.password];
         API.post('login-page', {
@@ -32,15 +28,6 @@ class LoginInput extends Component {
             console.log("deu ruim");
         })
     }
-
-    // login = (event) => {
-    //     event.preventDefault();
-    //     fire.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then((user) => {
-    //         this.props.handleButtonPressed();
-    //     }).catch((error) => {
-    //         console.log(error);
-    //     });
-    // }
     
     handleChange = (event) => {
         this.setState({
