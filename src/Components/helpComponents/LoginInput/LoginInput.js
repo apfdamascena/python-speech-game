@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import API from '../../../services/API';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,11 +8,12 @@ import './LoginInput.css'
 import './responsive.css'
 
 class LoginInput extends Component {
+
     constructor(props){
         super(props);
         this.state = {
-            email: "",
-            password: ""
+            email: null,
+            password: null
         }
     }
 
@@ -25,20 +26,12 @@ class LoginInput extends Component {
         API.post('login-page', {
             email: email, password: password
         }).then(() => {
-            console.log("foi");
+            let history = useHistory();
+            history.push('/option-page');
         }).catch((error) => {
             console.log("deu ruim");
         })
     }
-
-    // anonymousLogin = (event) => {
-    //     event.preventDefault();
-    //     fire.auth().signInAnonymously().then((user) => {
-    //         this.props.handleButtonPressed();
-    //     }).catch((error) => {
-    //         console.log(error);
-    //     });
-    // }
 
     // login = (event) => {
     //     event.preventDefault();

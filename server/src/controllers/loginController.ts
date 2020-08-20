@@ -5,16 +5,28 @@ export default class LoginController {
     async index(request: Request, response: Response){
         const {email, password} = request.body;
 
-        if(!email || !password){
-            return response.send(404).json({message: "fields missing"});
+        if(!email && !password){
+            try {
+                firebaseRef.auth().signInAnonymously().then((user) => {
+                    console.log("anony");
+                }).catch((error) => {
+                    console.log(error);
+                });
+            } catch (error) { console.log(error); }
         }
 
-        try {
-            await firebaseRef.auth().signInWithEmailAndPassword(email, password).then(() => {
-                console.log(10);
-            }).catch((error) => {console.log(error)})
-        } catch(error){
-            return response.send(402).json({message: "error"});
+        if((!email && password) || (email && !password)){
+            return response.send(404).json({message: "fields missing"})
+        }
+
+        if(email && password){
+            try {
+                await firebaseRef.auth().signInWithEmailAndPassword(email, password).then(() => {
+                    console.log(10);
+                }).catch( (error) => { console.log(error)})
+            }   catch(error){
+                return response.send(402).json({message: "error"});
+            }
         }
     }
 }
