@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import { Link, Redirect} from 'react-router-dom';
 import API from '../../../services/API';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -37,7 +37,7 @@ export default class LoginInput extends Component {
     render() {
         if(this.state.redirect){
             return(
-                <Link to = "/option-page "/>
+                <Redirect to = "/option-page"/>
             );
         }
         return (
