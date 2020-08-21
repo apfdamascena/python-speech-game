@@ -4,16 +4,15 @@ import firebase from 'firebase';
 
 export default class scoreController {
     async index(request: Request, response: Response) {
-        let user = firebase.auth().currentUser;
-        if (!user.isAnonymous) {
-            firebase.firestore(firebaseRef).collection("users").doc(user.uid).get().then(doc => {
-                if (!doc.exists) {
-                    console.log("dont't exist");
-                } else {
-                    let object = doc.data();
-                    return response.send({ score: object.score })
-                }
-            })
-        }
+        const { id } = request.params;
+        firebase.firestore(firebaseRef).collection("users").doc(id).get().then(doc => {
+            if (!doc.exists) {
+                return response.send({score: 0});
+            } else {
+                let object = doc.data();
+                var score = object.score
+                return response.send({score: score});
+            }
+        }).catch((error) => {console.log(error)})
     }
 }

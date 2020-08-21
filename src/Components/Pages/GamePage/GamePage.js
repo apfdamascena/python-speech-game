@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from '../../../services/API';
+import axios from 'axios';
 
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import Answer from '../../helpComponents/Answer/Answer';
@@ -36,8 +37,8 @@ class GamePage extends Component {
 
     componentDidMount() {
         API.get(window.location.pathname).then((response) => {
-            const {SIGNATURE} = response.data;
-            this.setState({data: SIGNATURE});
+            const {SIGNATURE, score} = response.data;
+            this.setState({data: SIGNATURE, score: score});
         }).catch((error) => { console.log(error)});
     }
 
