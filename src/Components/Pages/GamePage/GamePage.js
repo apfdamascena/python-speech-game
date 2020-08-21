@@ -35,8 +35,8 @@ class GamePage extends Component {
     componentDidMount() {
         console.log(window.location.pathname);
         API.get(window.location.pathname).then((response) => {
-            this.setState({data: response.data});
-            console.log(this.state.data);
+            const {SIGNATURE} = response.data;
+            this.setState({data: SIGNATURE});
         }).catch((error) => { console.log(error)})
     }
 

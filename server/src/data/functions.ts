@@ -1,5 +1,5 @@
 export default{
-    "FUNCTIONS": [
+    "SIGNATURE": [
         "def p_simple_statement_list(s, ct, first_statement):",
         "def p_compile_time_exp(s):",
         "def p_def_statement(s):",
@@ -81780,17 +81780,5 @@ export default{
         "def horsewhip(file):",
         "def view_Texaco(file):",
         "def horsewhip(filename, file_format):",
-        "def registry(encoding):",
-        ""
-    ],
-    "CLASSES": [
-        "CLASS LINKEDLIST"
-    ],
-    "STRUCTURES": [
-        "DALDKJASDLKASJDA",
-        ""
-    ],
-    "CONTROL FLOW": [
-        "SKDAJADJALKDJ"
-    ]
-};
+        "def registry(encoding):"]
+}
