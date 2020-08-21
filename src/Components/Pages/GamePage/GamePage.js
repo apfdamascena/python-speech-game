@@ -14,7 +14,9 @@ class GamePage extends Component {
         super(props);
         this.state = {
             score: 0,
-            data: ""
+            data: "",
+            name : this.props.location.name,
+            user: this.props.location.state
         }
     }
 
@@ -33,11 +35,10 @@ class GamePage extends Component {
     // }
 
     componentDidMount() {
-        console.log(window.location.pathname);
         API.get(window.location.pathname).then((response) => {
             const {SIGNATURE} = response.data;
             this.setState({data: SIGNATURE});
-        }).catch((error) => { console.log(error)})
+        }).catch((error) => { console.log(error)});
     }
 
     render() {
@@ -47,7 +48,7 @@ class GamePage extends Component {
                     <OrangeButton action="GO BACK" idButton="leftOrangeButtonGamePage" handleButtonPressed={this.props.didTapGoBackOption} />
                     <OrangeButton id="next" action={"SCORE: " + this.state.score} idButton="rightOrangeButtonGamePage" handleButtonPressed = {this.props.didTapRanking}/>
                 </div>
-                <Title name={this.props.name}></Title>
+                <Title name={this.state.name}></Title>
                 <div id="containerGamePageCenter">
                     <Answer
                         content={this.props.content}

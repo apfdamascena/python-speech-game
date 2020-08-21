@@ -16,9 +16,9 @@ export default function Routes(){
             <Route path = "/login-page"  component = {LoginPage}/>
             <Route path = "/about-page"  component = {AboutPage}/>
             <Route path = "/new-user-page"  component = {NewUserPage}/>
-            <Route path = "/game-page/:optionChosen"  component = {GamePage}/>
+            <Route path = "/game-page/:id/:optionChosen"  component = {GamePage}/>
             <Route path = "/ranking-page"  component = {RankingPage}/>
-            <Route path = "/option-page"  component = {OptionPage}/>
+            <Route path = "/option-page/:id"  component = {OptionPage}/>
         </BrowserRouter>
     );
 }

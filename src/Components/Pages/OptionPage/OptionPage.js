@@ -14,13 +14,16 @@ class OptionPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            redirect : ""
+            redirect : "",
+            user : this.props.location.state,
+            optionChosen: ""
         }
     }
 
     handleClick = (event) => {
         event.persist();
-        this.setState({redirect: `/game-page/${event.target.textContent}`});
+        this.setState({redirect: `/game-page/${this.state.user.uid}/${event.target.textContent}`,
+                      optionChosen: event.target.textContent});
     }
 
     changePage = () => {
@@ -32,22 +35,22 @@ class OptionPage extends Component {
             title: 'Confirm to exit the game.',
             message: 'Are you sure?',
             buttons: [
-              {
-                label: 'Yes',
+              { label: 'Yes',
                 onClick: () => this.changePage()
               },
-              {
-                label: 'No',
-                onClick: () => console.log("don't want")
-              }
-            ]
+              { label: 'No',
+                onClick: () => console.log("don't want")}]
         });
     }
 
     render() {
         if(this.state.redirect){
             return(
-                <Redirect to = {this.state.redirect}/>
+                <Redirect to = {{
+                    pathname: this.state.redirect,
+                    state: this.state.user,
+                    name: this.state.optionChosen
+                }}/>
             );
         }
 

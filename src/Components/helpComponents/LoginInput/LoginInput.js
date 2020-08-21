@@ -14,7 +14,8 @@ export default class LoginInput extends Component {
         this.state = {
             email: "",
             password: "",
-            redirect: false
+            redirect: false,
+            user: ""
         }
     }
 
@@ -22,9 +23,11 @@ export default class LoginInput extends Component {
         API.post('login-page', {
             email: this.state.email, password: this.state.password
         }).then((object) => {
+            const { user } = object.data;
+            this.setState({user : user})
             this.setState({redirect: true})
         }).catch((error) => {
-            console.log("deu ruim");
+            console.log(error);
         })
     }
 
@@ -37,7 +40,10 @@ export default class LoginInput extends Component {
     render() {
         if(this.state.redirect){
             return(
-                <Redirect to = "/option-page"/>
+                <Redirect to = {{
+                    pathname: `/option-page/${this.state.user.uid}`,
+                    state: this.state.user
+                }}/>
             );
         }
         return (

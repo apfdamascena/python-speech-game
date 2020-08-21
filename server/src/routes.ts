@@ -13,8 +13,8 @@ const scoreController = new ScoreController();
 
 routes.post('/login-page', loginController.index);
 routes.post('/new-user-page', newUserController.index);
-routes.get('game-page/', scoreController.index);
-routes.get('/game-page/FUNCTIONS', dataFunctions.index);
+routes.get('game-page/:id/:optionChosen', scoreController.index);
+routes.get('/game-page/:id/FUNCTIONS', dataFunctions.index);
 
 
 export default routes;

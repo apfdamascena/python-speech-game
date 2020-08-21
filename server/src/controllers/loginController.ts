@@ -1,5 +1,6 @@
 import {Request, Response} from "express";
 import firebaseRef from '../database/firebaseConfig';
+import { useState } from "react";
 
 export default class LoginController {
     async index(request: Request, response: Response){
