@@ -8,6 +8,15 @@ import './responsive.css';
 class OptionPage extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            redirect : ""
+        }
+    }
+
+    handleClick = (event) => {
+        event.persist();
+        console.log(event);
+        console.log(event.target.textContent)
     }
 
     render() {
@@ -18,7 +27,7 @@ class OptionPage extends Component {
 
                 <div className="ButtonsOptions">
                     <Button name="CONTROL FLOW" id="first" handleButtonPressed={this.props.didTapSection} />
-                    <Button name="FUNCTIONS" id="second" handleButtonPressed={this.props.didTapSection} />
+                    <Button name="FUNCTIONS" id="second" onClick = {this.handleClick} />
                     <Button name="STRUCTURES" id="third" handleButtonPressed={this.props.didTapSection} />
                     <Button name="CLASSES" id="four" handleButtonPressed={this.props.didTapSection} />
                 </div>

@@ -9,7 +9,7 @@ class Button extends Component {
     }
     render() {
         return (
-        <div className="wrapper" id={this.props.id}>
+        <div className="wrapper" id={this.props.id} onClick = {this.props.onClick}>
             <a className="cta" href="#">
                 <span>{this.props.name}</span>
                 <span>
