@@ -33,11 +33,11 @@ class GamePage extends Component {
     // }
 
     componentDidMount() {
-        const response = API.get('game-page/FUNCTIONS', {
-            data: this.state.data
-        })
-        console.log(this.state.data);
-
+        console.log(window.location.pathname);
+        API.get(window.location.pathname).then((response) => {
+            this.setState({data: response.data});
+            console.log(this.state.data);
+        }).catch((error) => { console.log(error)})
     }
 
     render() {
