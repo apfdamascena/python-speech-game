@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
+import API from '../../../services/API';
+
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import Answer from '../../helpComponents/Answer/Answer';
 import RecordButton from '../../helpComponents/RecordButton/RecordButton';
-import './GamePage';
 import Title from '../../helpComponents/Title/Title';
 import SharedButtons from '../../helpComponents/SharedButtons/SharedButtons';
+
 import './responsive.css';
 
 class GamePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            score: 0
+            score: 0,
+            data: ""
         }
     }
 
@@ -29,10 +32,13 @@ class GamePage extends Component {
     //     }
     // }
 
-    // componentWillMount() {
-    //     this.props.didTapNext();
-    //     this.getScore();
-    // }
+    componentDidMount() {
+        const response = API.get('game-page/FUNCTIONS', {
+            data: this.state.data
+        })
+        console.log(this.state.data);
+
+    }
 
     render() {
         return (

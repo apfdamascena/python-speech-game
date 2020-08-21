@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
+import { confirmAlert } from 'react-confirm-alert';
+
 import Button from '../../helpComponents/Button/Button';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import CharacterLeft from './personagem_left.png';
+
 import './OptionPage.css';
 import './responsive.css';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class OptionPage extends Component {
     constructor(props) {
@@ -19,6 +23,27 @@ class OptionPage extends Component {
         this.setState({redirect: `/game-page/${event.target.textContent}`});
     }
 
+    changePage = () => {
+        this.setState({redirect: "/login-page"})
+    }
+
+    didTapGoBack = () => {
+        confirmAlert({
+            title: 'Confirm to exit the game.',
+            message: 'Are you sure?',
+            buttons: [
+              {
+                label: 'Yes',
+                onClick: () => this.changePage()
+              },
+              {
+                label: 'No',
+                onClick: () => console.log("don't want")
+              }
+            ]
+        });
+    }
+
     render() {
         if(this.state.redirect){
             return(
@@ -28,7 +53,7 @@ class OptionPage extends Component {
 
         return (
             <div className = "containerOptionPage">
-                <OrangeButton action="HOME" handleButtonPressed={this.props.didTapGoBack}></OrangeButton>
+                <OrangeButton action="HOME" handleButtonPressed={this.didTapGoBack}></OrangeButton>
                 <img id="photo" src={CharacterLeft} />
 
                 <div className="ButtonsOptions">
