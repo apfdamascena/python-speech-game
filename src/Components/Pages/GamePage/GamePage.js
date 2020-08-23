@@ -17,29 +17,23 @@ class GamePage extends Component {
             score: 0,
             data: "",
             name : this.props.location.name,
-            user: this.props.location.state
+            user: this.props.location.state,
+            randomNumber: 0
         }
     }
 
-    // getScore = () => {
-    //     let user = firebase.auth().currentUser;
-    //     if (!user.isAnonymous) {
-    //         firebase.firestore(fire).collection("users").doc(user.uid).get().then(doc => {
-    //             if (!doc.exists) {
-    //                 console.log("dont't exist");
-    //             } else {
-    //                 let object = doc.data();
-    //                 this.setState({ score: object.score });
-    //             }
-    //         })
-    //     }
-    // }
+    getRandomNumber = (min, max) => { return parseInt(Math.random() * (max-min) + min); }
+
+
+
 
     componentDidMount() {
         API.get(window.location.pathname).then((response) => {
             const {SIGNATURE, score} = response.data;
-            this.setState({data: SIGNATURE, score: score});
+            this.setState({data: SIGNATURE.SIGNATURE, score: score});
         }).catch((error) => { console.log(error)});
+        console.log(this.state.data);
+        this.setState({randomNumber: this.getRandomNumber(0, this.state.data.length)})
     }
 
     render() {
@@ -52,7 +46,7 @@ class GamePage extends Component {
                 <Title name={this.state.name}></Title>
                 <div id="containerGamePageCenter">
                     <Answer
-                        content={this.props.content}
+                        content={this.state.data[this.state.randomNumber]}
                         question={this.props.question}
                     />
                     <SharedButtons/>
