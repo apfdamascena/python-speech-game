@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './RecordButton.css'
 import MicRecorder from 'mic-recorder-to-mp3';
+import './RecordButton.css';
 import './responsive.css';
 
 const recorder = new MicRecorder({ bitRate: 128 });
@@ -20,19 +20,9 @@ class RecordButton extends Component {
     }
 
 
-    // submit = () => {
-    //     firebase.storage().ref("audios/"+this.state.blobURL).put(this.state.blob).then( (snapshot) => {
-    //         this.setState({blobURL : ''});
-    //         this.state.score += 10;
-    //         let user  = firebase.auth().currentUser;
-    //         if(!user.isAnonymous){
-    //             firebase.firestore(fire).collection("users").doc(user.uid).update({
-    //                 score : this.state.score
-    //             }).catch((error) => console.log(error));
-    //         }
-    //         this.setState({showSent : true});
-    //     }).catch((error) => console.log(error));
-    // }
+    submit = () => {
+        API
+    }
 
     start = () => {
         this.setState({showSent : false});

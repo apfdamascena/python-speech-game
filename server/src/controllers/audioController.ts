@@ -12,6 +12,7 @@ export default class AudioController {
                     score : (points+10)
                 }).catch((error) => console.log(error));
             }
+            return response.send(202).json({message: "audio was sent"});
         }).catch((error) => console.log(error));
     }
     }
