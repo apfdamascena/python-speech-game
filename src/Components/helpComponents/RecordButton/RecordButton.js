@@ -34,28 +34,28 @@ class RecordButton extends Component {
     //     }).catch((error) => console.log(error));
     // }
 
-    // start = () => {
-    //     this.setState({showSent : false});
-    //     if (this.state.isBlocked) {
-    //         console.log('Permission Denied');
-    //     } else {
-    //         recorder.start().then(() => {
-    //             this.setState({ isRecording: true });
-    //         }).catch((error) => console.error(error));
-    //     }
-    // }
+    start = () => {
+        this.setState({showSent : false});
+        if (this.state.isBlocked) {
+            console.log('Permission Denied');
+        } else {
+            recorder.start().then(() => {
+                this.setState({ isRecording: true });
+            }).catch((error) => console.error(error));
+        }
+    }
 
-    // stop = () => {
-    //     recorder.stop().getMp3().then(([buffer, blob]) => {
-    //         const blobURL = URL.createObjectURL(blob)
-    //         this.setState({blob : blob});
-    //         this.setState({ blobURL, isRecording: false });
-    //     }).catch((error) => console.log(error));
-    // }
+    stop = () => {
+        recorder.stop().getMp3().then(([buffer, blob]) => {
+            const blobURL = URL.createObjectURL(blob)
+            this.setState({blob : blob});
+            this.setState({ blobURL, isRecording: false });
+        }).catch((error) => console.log(error));
+    }
 
-    // clear = () => {
-    //     this.setState({blobURL:''});
-    // }
+    clear = () => {
+        this.setState({blobURL:''});
+    }
 
     // getScore = () => {
     //     let user  = firebase.auth().currentUser;
@@ -71,22 +71,19 @@ class RecordButton extends Component {
     //     }
     // }
 
-    // componentDidMount() {
-    //     navigator.getUserMedia({ audio: true },
-    //       () => {
-    //         console.log('Permission Granted');
-    //         this.setState({ isBlocked: false});
-    //         navigator.geolocation.getCurrentPosition((position) => {
-    //             this.setState({position : position});
-    //         });
-    //       },
-    //       () => {
-    //         console.log('Permission Denied');
-    //         this.setState({ isBlocked: true });
-    //       },
-    //     );
-    //     this.getScore();
-    // }
+    componentDidMount() {
+        navigator.getUserMedia({ audio: true },
+          () => {
+            console.log('Permission Granted');
+            this.setState({ isBlocked: false});
+          },
+          () => {
+            console.log('Permission Denied');
+            this.setState({ isBlocked: true });
+          },
+        );
+        // this.getScore();
+    }
 
     callTwoFunctions = () => {
         this.submit();
