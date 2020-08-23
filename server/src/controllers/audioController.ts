@@ -12,7 +12,6 @@ export default class AudioController {
                     score : (points+10)
                 }).catch((error) => console.log(error));
             }
-            this.setState({showSent : true});
         }).catch((error) => console.log(error));
     }
     }
