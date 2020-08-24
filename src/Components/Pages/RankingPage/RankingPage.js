@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import './RankingPage.css';
+import API from '../../../services/API';
+import {useHistory, Redirect} from 'react-router-dom';
+
 import RankingItem from '../../helpComponents/RankingItem/RankingItem';
 import Title from '../../helpComponents/Title/Title';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
+
+import './RankingPage.css';
 import './responsive.css';
 
 class RankingPage extends Component {
@@ -13,32 +17,24 @@ class RankingPage extends Component {
         }
     }
 
-    // getAllUsers = () => {
-    //     let store = firebase.firestore(fire);
-    //     store.collection("users").get().then((querySnapshot) => {
-    //         querySnapshot.forEach((doc) => {
-    //             let dataUser = doc.data()
-    //             let infoUser = [dataUser.username, dataUser.score]
-    //             const users = this.state.amountOfUsers
-    //             users.push(infoUser);
-    //             this.setState({ amountOfUsers: users })
-    //         });
-    //         let users = this.state.amountOfUsers;
-    //         users.sort(function (a, b) {
-    //             return b[1] - a[1];
-    //         });
-    //         this.setState({ amountOfUsers: users });
-    //     });
-    // }
+    componentDidMount() {
+        API.get(window.location.pathname).then((response) => {
+            const {users} = response.data
+            users.sort(function(user, otherUSer) {
+                return otherUSer[1] - user[1];
+            });
+            this.setState({amountOfUsers: users})
+        }).catch((error) => {console.log(error)})
+    }
 
-    componentWillMount() {
-        this.getAllUsers();
+    goBack = () => {
+        this.props.history.goBack();
     }
 
     render() {
         return (
             <div className="container-RankingPage">
-                <OrangeButton action="GO BACK" idButton="leftOrangeButtonRankingPage" handleButtonPressed={this.props.didTapGoBackGamePage} />
+                <OrangeButton action="GO BACK" idButton="leftOrangeButtonRankingPage" onClick = {this.goBack} />
                 <div id = "title">
                     <Title name="...RANKING" />
                 </div>
