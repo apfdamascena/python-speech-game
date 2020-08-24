@@ -5,6 +5,10 @@ import firebaseRef from "../database/firebaseConfig";
 export default class AudioController {
     async index(request: Request, response: Response){
         const {user, blobURL, blob, points } = request.body;
+        console.log(points);
+        console.log(blobURL);
+        console.log(blob);
+        console.log(user);
 
         firebase.storage().ref("audios/"+blobURL).put(blob).then( (snapshot) => {
             if(!user.isAnonymous){
@@ -14,6 +18,5 @@ export default class AudioController {
             }
             return response.send(202).json({message: "audio was sent"});
         }).catch((error) => console.log(error));
-    }
     }
 }

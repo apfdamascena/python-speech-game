@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import API from '../../../services/API';
 import MicRecorder from 'mic-recorder-to-mp3';
 import './RecordButton.css';
 import './responsive.css';
@@ -14,14 +15,21 @@ class RecordButton extends Component {
             blob: '',
             isBlocked: false,
             position : '',
-            score : 0,
-            showSent: false
+            showSent: false,
+            user: this.props.user,
+            score : this.props.score,
         }
     }
 
-
     submit = () => {
-        API
+        API.post(window.location.pathname,{
+            user: this.state.user,
+            blobURL: this.state.blobURL,
+            blob: this.state.blob,
+            points: this.state.score
+        }).then((response) => {
+            this.clear();
+        }).catch((error) => {console.log(error)})
     }
 
     start = () => {
@@ -64,20 +72,12 @@ class RecordButton extends Component {
     componentDidMount() {
         navigator.getUserMedia({ audio: true },
           () => {
-            console.log('Permission Granted');
             this.setState({ isBlocked: false});
           },
           () => {
-            console.log('Permission Denied');
             this.setState({ isBlocked: true });
           },
         );
-        // this.getScore();
-    }
-
-    callTwoFunctions = () => {
-        this.submit();
-        this.props.handleButtonPressedSubmit();
     }
 
     render() {
@@ -95,7 +95,7 @@ class RecordButton extends Component {
                 </div>
 
                 <div id= "ButtonsAudio">
-                    <div className= "Submit" onClick = {this.callTwoFunctions} ><a>Submit</a></div>
+                    <div className= "Submit" onClick = {this.submit} ><a>Submit</a></div>
                     <div className= "clear" onClick = {this.clear}><a>Clear</a></div>
                 </div>
             </div>

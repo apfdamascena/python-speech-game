@@ -28,6 +28,7 @@ class GamePage extends Component {
     componentDidMount() {
         API.get(window.location.pathname).then((response) => {
             const {SIGNATURE, score, ASK} = response.data;
+            console.log(score)
             this.setState({data: SIGNATURE.SIGNATURE, score: score, ask: ASK.ASK});
         }).catch((error) => { console.log(error)});
         this.setState({randomNumber: this.getRandomNumber(0, this.state.data.length),
@@ -48,7 +49,7 @@ class GamePage extends Component {
                         question={this.state.ask[this.state.askNumber]}
                     />
                     <SharedButtons/>
-                    <RecordButton handleButtonPressedSubmit = {this.props.didTapNext}/>
+                    <RecordButton user = {this.state.user} score = {this.state.score}/>
                 </div>
             </div>
         );
