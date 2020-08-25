@@ -7,6 +7,7 @@ import Answer from '../../helpComponents/Answer/Answer';
 import RecordButton from '../../helpComponents/RecordButton/RecordButton';
 import Title from '../../helpComponents/Title/Title';
 import SharedButtons from '../../helpComponents/SharedButtons/SharedButtons';
+import getName from '../../../utils/name';
 
 import './responsive.css';
 
@@ -17,8 +18,8 @@ class GamePage extends Component {
             score: 0,
             data: "",
             ask: "",
-            name: this.props.location.name,
             user: this.props.location.state,
+            name: getName(window.location.pathname),
             randomNumber: 0,
             askNumber: 0
         }

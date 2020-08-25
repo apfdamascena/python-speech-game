@@ -16,14 +16,12 @@ class OptionPage extends Component {
         this.state = {
             redirect : "",
             user : this.props.location.state,
-            optionChosen: ""
         }
     }
 
     handleClick = (event) => {
         event.persist();
-        this.setState({redirect: `/game-page/${this.state.user.uid}/${event.target.textContent}`,
-                      optionChosen: event.target.textContent});
+        this.setState({redirect: `/game-page/${this.state.user.uid}/${event.target.textContent}`});
     }
 
     changePage = () => {
@@ -49,7 +47,6 @@ class OptionPage extends Component {
                 <Redirect to = {{
                     pathname: this.state.redirect,
                     state: this.state.user,
-                    name: this.state.optionChosen
                 }}/>
             );
         }
@@ -60,10 +57,10 @@ class OptionPage extends Component {
                 <img id="photo" src={CharacterLeft} />
 
                 <div className="ButtonsOptions">
-                    <Button name="CONTROL FLOW" id="first" onClick = {this.handleClick} />
+                    <Button name="EXPRESSIONS" id="first" onClick = {this.handleClick} />
                     <Button name="FUNCTIONS" id="second" onClick = {this.handleClick} />
-                    <Button name="STRUCTURES" id="third" onClick = {this.handleClick}/>
-                    <Button name="CLASSES" id="four" onClick = {this.handleClick} />
+                    <Button name="CONDITIONAL" id="third" onClick = {this.handleClick}/>
+                    <Button name="STATEMENTS" id="four" onClick = {this.handleClick} />
                 </div>
             </div>
         );
