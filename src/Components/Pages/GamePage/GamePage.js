@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import API from '../../../services/API';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import Answer from '../../helpComponents/Answer/Answer';
@@ -21,7 +21,8 @@ class GamePage extends Component {
             user: this.props.location.state,
             name: getName(window.location.pathname),
             randomNumber: 0,
-            askNumber: 0
+            askNumber: 0,
+            redirect: ""
         }
     }
 
@@ -40,19 +41,34 @@ class GamePage extends Component {
 
     getScore = () => {
         API.get(window.location.pathname).then((response) => {
-            const {score} = response.data;
-            this.setState({score: score})
+            const { score } = response.data;
+            this.setState({ score: score })
         })
     }
 
+    handleChangePage = () => {
+        this.setState({ redirect: "/ranking-page" });
+    }
+
+    handleGoBack = () => {
+        this.setState({redirect: `/option-page/${this.state.user.uid}`})
+    }
+
     render() {
+        if (this.state.redirect) {
+            return (
+                <Redirect to={{
+                    pathname: this.state.redirect,
+                    state: this.state.user
+                }} />
+            );
+        }
+
         return (
             <div className="containerGamePage">
                 <div className="buttonsGamePage">
-                    <OrangeButton action="GO BACK" idButton="leftOrangeButtonGamePage"/>
-                    <Link to = "/ranking-page">
-                        <OrangeButton id="next" action={"SCORE: " + this.state.score} idButton="rightOrangeButtonGamePage"/>
-                    </Link>
+                    <OrangeButton action="GO BACK" idButton="leftOrangeButtonGamePage" onClick = {this.handleGoBack}/>
+                    <OrangeButton id="next" action={"SCORE: " + this.state.score} idButton="rightOrangeButtonGamePage" onClick= {this.handleChangePage}/>
                 </div>
                 <Title name={this.state.name}></Title>
                 <div id="containerGamePageCenter">
@@ -61,7 +77,7 @@ class GamePage extends Component {
                         question={this.state.ask[this.state.askNumber]}
                     />
                     <SharedButtons />
-                    <RecordButton user={this.state.user} score = {this.getScore}/>
+                    <RecordButton user={this.state.user} score={this.getScore} />
                 </div>
             </div>
         );
