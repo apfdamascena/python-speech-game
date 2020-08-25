@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import imageCharacter from './personagem.png';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import './AboutPage.css';
 import './responsive.css';
 
 class AboutPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            redirect: ""
+        }
+    }
+
+    handleChangePage = () => {
+        this.setState({ redirect: "/login-page" })
+    }
+
     render() {
+        if(this.state.redirect){
+            return(
+                <Redirect to = {this.state.redirect}/>
+            )
+        }
         return (
             <div id="boxAbout">
-                <Link to = "/login-page">
-                    <OrangeButton action="GO BACK"/>
-                </Link>
+                <OrangeButton action="GO BACK" onClick={this.handleChangePage} />
                 <div className="mainBox">
                     <div id="contentAbout">
                         <div id="text">

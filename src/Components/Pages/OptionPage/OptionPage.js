@@ -53,7 +53,7 @@ class OptionPage extends Component {
 
         return (
             <div className = "containerOptionPage">
-                <OrangeButton action="HOME" handleButtonPressed={this.didTapGoBack}></OrangeButton>
+                <OrangeButton action="HOME" onClick={this.didTapGoBack}></OrangeButton>
                 <img id="photo" src={CharacterLeft} />
 
                 <div className="ButtonsOptions">

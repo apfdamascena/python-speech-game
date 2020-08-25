@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import API from '../../../services/API';
 
 import LogoInputLogo from '../../helpComponents/LoginInputLogo/LoginInputLogo';
@@ -10,7 +10,6 @@ import { faUserEdit, faEnvelope, faUserLock, faLock } from '@fortawesome/free-so
 import './NewUserPage.css';
 import './responsive.css';
 
-
 class NewUserPage extends Component {
     constructor(props) {
         super(props);
@@ -19,8 +18,13 @@ class NewUserPage extends Component {
             email: "",
             password: "",
             confirmPassword: "",
-            score: 0
+            score: 0,
+            redirect: ""
         }
+    }
+
+    handleChangePage = () => {
+        this.setState({redirect: "/login-page"})
     }
 
     handleChange = (event) => {
@@ -41,16 +45,22 @@ class NewUserPage extends Component {
             confirmPassword:confirmPassword,
             score: score
         }).then(() => {
-            console.log("foi"); 
+            this.handleChangePage();
         }).catch((error) => {console.log(error)})
     }
 
     render() {
+
+        if(this.state.redirect){
+            return(
+                <Redirect to = {this.state.redirect}/>
+            );
+        }
         return (
             <form className = "containerNewUser">
-                <Link to = "/login-page" id="leftSide">
-                    <OrangeButton  action="GO BACK" handleButtonPressed={this.props.didTapRegister} />
-                </Link>
+                <div id="leftSide">
+                    <OrangeButton  action="GO BACK" onClick={this.handleChangePage} />
+                </div>
                 <div id ="imageNewUSer">
                     <LogoInputLogo />
                 </div>
