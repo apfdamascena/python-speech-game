@@ -5,6 +5,8 @@
 .pnp.js
 /server/src/database/
 
+/src/database/
+
 # testing
 /coverage
 
