@@ -27,7 +27,6 @@ class GamePage extends Component {
     getRandomNumber = (min, max) => { return parseInt(Math.random() * (max - min) + min); }
 
     componentDidMount() {
-        console.log(window.location)
         API.get(window.location.pathname).then((response) => {
             const { SIGNATURE, score, ASK } = response.data;
             this.setState({ data: SIGNATURE.SIGNATURE, score: score, ask: ASK.ASK });
@@ -35,6 +34,13 @@ class GamePage extends Component {
         this.setState({
             randomNumber: this.getRandomNumber(0, this.state.data.length),
             askNumber: this.getRandomNumber(0, this.state.ask)
+        })
+    }
+
+    getScore = () => {
+        API.get(window.location.pathname).then((response) => {
+            const {score} = response.data;
+            this.setState({score: score})
         })
     }
 
@@ -54,7 +60,7 @@ class GamePage extends Component {
                         question={this.state.ask[this.state.askNumber]}
                     />
                     <SharedButtons />
-                    <RecordButton user={this.state.user} score={this.state.score} />
+                    <RecordButton user={this.state.user} score = {this.getScore}/>
                 </div>
             </div>
         );

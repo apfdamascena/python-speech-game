@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import API from '../../../services/API';
+import firebase from 'firebase';
+import firebaseRef from '../../../database/firebaseConfig';
 import MicRecorder from 'mic-recorder-to-mp3';
 import './RecordButton.css';
 import './responsive.css';
+import API from '../../../services/API';
 
 const recorder = new MicRecorder({ bitRate: 128 });
 
@@ -22,13 +24,16 @@ class RecordButton extends Component {
     }
 
     submit = () => {
-        API.post(window.location.pathname,{
-            user: this.state.user,
-            blobURL: this.state.blobURL,
-            blob: this.state.blob,
-            points: this.state.score
-        }).then((response) => {
-            this.clear();
+        let store = firebase.storage(firebaseRef);
+        store.ref("audios/"+this.state.blobURL).put(this.state.blob).then((snapshot) => {
+            if(!this.state.user.isAnonymous){
+                firebase.firestore(firebaseRef).collection("users").doc(this.state.user.uid).update({
+                    score: (this.state.score+10)
+                }).then((response) => {
+                    this.clear();
+                    this.props.score();
+                }).catch((error) => {console.log(error)})
+            }
         }).catch((error) => {console.log(error)})
     }
 
@@ -55,20 +60,6 @@ class RecordButton extends Component {
         this.setState({blobURL:''});
     }
 
-    // getScore = () => {
-    //     let user  = firebase.auth().currentUser;
-    //     if(!user.isAnonymous){
-    //         firebase.firestore(fire).collection("users").doc(user.uid).get().then(doc => {
-    //             if(!doc.exists){
-    //                 console.log("dont't exist");
-    //             } else{
-    //                 let object = doc.data();
-    //                 this.setState({score : object.score});
-    //             }
-    //         })
-    //     }
-    // }
-
     componentDidMount() {
         navigator.getUserMedia({ audio: true },
           () => {
@@ -78,6 +69,12 @@ class RecordButton extends Component {
             this.setState({ isBlocked: true });
           },
         );
+
+        API.get(window.location.pathname).then((response) => {
+            const {score} = response.data;
+            this.setState({score: score})
+        }).catch((error) => {console.log(error)});
+
     }
 
     render() {
