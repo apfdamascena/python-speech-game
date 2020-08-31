@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import API from '../../../services/API';
 import { Redirect } from 'react-router-dom';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import Answer from '../../helpComponents/Answer/Answer';
@@ -8,6 +9,7 @@ import RecordButton from '../../helpComponents/RecordButton/RecordButton';
 import Title from '../../helpComponents/Title/Title';
 import SharedButtons from '../../helpComponents/SharedButtons/SharedButtons';
 import getName from '../../../utils/name';
+import 'react-notifications/lib/notifications.css';
 
 import './responsive.css';
 
@@ -37,6 +39,23 @@ class GamePage extends Component {
             randomNumber: this.getRandomNumber(0, this.state.data.length),
             askNumber: this.getRandomNumber(0, this.state.ask)
         })
+        this.showInfo(this.state.name);
+        console.log(10);
+    }
+
+    showInfo = (optionChosen) => {
+        console.log(20);
+        console.log(optionChosen);
+        let phrase = "";
+        switch(optionChosen){
+            case 'FUNCTIONS':
+                console.log(30);
+                phrase = `if def sum (a, b) appears, the audio should be "define a function called sum with parameters a and b"
+                            or ANYTHING LIKE THIS`;
+                break;
+        }
+        NotificationManager.info(phrase);
+
     }
 
     getScore = () => {
@@ -66,6 +85,7 @@ class GamePage extends Component {
 
         return (
             <div className="containerGamePage">
+                <NotificationContainer/>
                 <div className="buttonsGamePage">
                     <OrangeButton action="GO BACK" idButton="leftOrangeButtonGamePage" onClick = {this.handleGoBack}/>
                     <OrangeButton id="next" action={"SCORE: " + this.state.score} idButton="rightOrangeButtonGamePage" onClick= {this.handleChangePage}/>
