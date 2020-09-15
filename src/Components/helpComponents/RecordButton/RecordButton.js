@@ -24,10 +24,9 @@ class RecordButton extends Component {
     }
 
     submit = () => {
-        console.log(10);
         let store = firebase.storage(firebaseRef);
         store.ref("audios/"+this.state.blobURL).put(this.state.blob).then((snapshot) => {
-            console.log(12);
+            this.setState({showSent: true});
             if(!this.state.user.isAnonymous){
                 firebase.firestore(firebaseRef).collection("users").doc(this.state.user.uid).update({
                     score: (this.state.score+10)
@@ -36,6 +35,7 @@ class RecordButton extends Component {
                     this.props.score();
                 }).catch((error) => {console.log(error)})
             }
+            this.forceUpdate();
         }).catch((error) => {console.log(error)})
     }
 
@@ -76,7 +76,6 @@ class RecordButton extends Component {
             const {score} = response.data;
             this.setState({score: score})
         }).catch((error) => {console.log(error)});
-
     }
 
     render() {
