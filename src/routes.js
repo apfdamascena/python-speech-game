@@ -8,17 +8,19 @@ import NewUserPage from './Components/Pages/NewUserPage/NewUserPage';
 import GamePage from './Components/Pages/GamePage/GamePage';
 import RankingPage from './Components/Pages/RankingPage/RankingPage';
 import OptionPage from './Components/Pages/OptionPage/OptionPage';
+import LevelPage from './Components/Pages/LevelPage/LevelPage';
 
 export default function Routes(){
     return(
         <BrowserRouter>
-            <Route path = "/" exact component = {HomePage}/>
+            <Route path = "/" exact component = {LevelPage}/>
             <Route path = "/login-page"  component = {LoginPage}/>
             <Route path = "/about-page"  component = {AboutPage}/>
             <Route path = "/new-user-page"  component = {NewUserPage}/>
             <Route path = "/game-page/:id/:optionChosen"  component = {GamePage}/>
             <Route path = "/ranking-page"  component = {RankingPage}/>
             <Route path = "/option-page/:id"  component = {OptionPage}/>
+
         </BrowserRouter>
     );
 }
