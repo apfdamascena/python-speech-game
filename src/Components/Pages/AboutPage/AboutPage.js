@@ -36,7 +36,7 @@ class AboutPage extends Component {
                                 "functions", and the screen will show a sentence. Record your voice while you read the sentence and submit.</p>
                         </div>
                     </div>
-                    <img id="imageChar" src={imageCharacter} />
+                    <img id="imageChar" src={imageCharacter} alt = "character"/>
                 </div>
             </div>
         );

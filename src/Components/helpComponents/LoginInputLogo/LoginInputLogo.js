@@ -8,7 +8,7 @@ class LogoInputLogo extends Component {
         return (
             <div className="containerLogin">
                 <div className="imageLogin">
-                    <img src={logoImageInput}/>
+                    <img src={logoImageInput} alt = "Logo"/>
                 </div>
             </div>
         );

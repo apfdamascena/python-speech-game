@@ -10,7 +10,7 @@ class Button extends Component {
     render() {
         return (
         <div className="wrapper" id={this.props.id} onClick = {this.props.onClick}>
-            <a className="cta" href="#">
+            <a className="cta" href = "#" >
                 <span>{this.props.name}</span>
                 <span>
                     <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"

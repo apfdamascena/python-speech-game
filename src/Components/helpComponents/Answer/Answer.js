@@ -5,10 +5,6 @@ import character from './personagem.png';
 import './responsive.css';
 
 class Answer extends Component {
-    constructor(props) {
-        super(props);
-    }
-    // this.props.title
     render() {
         return (
             <div className="answer">

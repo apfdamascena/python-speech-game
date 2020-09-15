@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { useHistory, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 
 import Button from '../../helpComponents/Button/Button';
@@ -54,7 +54,7 @@ class OptionPage extends Component {
         return (
             <div className = "containerOptionPage">
                 <OrangeButton action="HOME" onClick={this.didTapGoBack}></OrangeButton>
-                <img id="photo" src={CharacterLeft} />
+                <img id="photo" src={CharacterLeft} alt = "character"/>
 
                 <div className="ButtonsOptions">
                     <Button name="EXPRESSIONS" id="first" onClick = {this.handleClick} />

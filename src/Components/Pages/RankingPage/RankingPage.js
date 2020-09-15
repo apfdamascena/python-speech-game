@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import API from '../../../services/API';
-import {useHistory, Redirect} from 'react-router-dom';
 
 import RankingItem from '../../helpComponents/RankingItem/RankingItem';
 import Title from '../../helpComponents/Title/Title';
