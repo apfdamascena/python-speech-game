@@ -1,7 +1,5 @@
 .level-page {
     display: flex;
-    position: relative;
-    top: 40px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -18,4 +16,13 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-} 
+}
+
+#box1 .elements {
+    margin-top: 45px;
+}
+
+#box1 .elements h4 {
+    margin-top: 60px;
+    color: rgba(0, 0,0, 0.7)
+}

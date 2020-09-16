@@ -1,0 +1,26 @@
+#cta3{
+    color: white;
+    display: flex;
+    padding: 2px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    background: #2F2F2F;
+    transition: 1s;
+    box-shadow: 6px 6px 0 black;
+    box-shadow: 3px 3px 0 #68DBAE;
+}
+  
+#cta3:focus{
+    outline: none; 
+}
+
+a#cta3 {
+    width: 30px;
+    position: relative;
+}
+
+a#cta3 span {
+    margin-left: 4px;
+}
