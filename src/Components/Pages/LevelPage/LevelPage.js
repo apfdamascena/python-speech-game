@@ -26,7 +26,7 @@ export default class LevelPage extends Component {
     render() {
         return (
             <div className="level-page">
-                <OrangeButton  action = {"SCORE: " + this.state.score} idButton="rightOrangeButtonGamePage"/>
+                <OrangeButton  action = {"SCORE: " + this.state.score} idButton="rightOrangeButtonLevelPage"/>
                 <Title name=" ....LEVELS" />
                 <div id="box1">
                     {
