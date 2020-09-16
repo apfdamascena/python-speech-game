@@ -21,7 +21,7 @@ class OptionPage extends Component {
 
     handleClick = (event) => {
         event.persist();
-        this.setState({redirect: `/game-page/${this.state.user.uid}/${event.target.textContent}`});
+        this.setState({redirect: `/level-page/${this.state.user.uid}/${event.target.textContent}`});
     }
 
     changePage = () => {
@@ -49,7 +49,7 @@ class OptionPage extends Component {
                     state: this.state.user,
                 }}/>
             );
-        }
+        } 
 
         return (
             <div className = "containerOptionPage">

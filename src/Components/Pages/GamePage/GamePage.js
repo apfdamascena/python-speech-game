@@ -40,12 +40,10 @@ class GamePage extends Component {
             askNumber: this.getRandomNumber(0, this.state.ask)
         })
         this.showInfo(this.state.name);
-        console.log(10);
+
     }
 
     showInfo = (optionChosen) => {
-        console.log(20);
-        console.log(optionChosen);
         let phrase = "";
         switch(optionChosen){
             case 'FUNCTIONS':

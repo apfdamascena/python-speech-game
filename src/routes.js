@@ -20,7 +20,7 @@ export default function Routes(){
             <Route path = "/game-page/:id/:optionChosen/:level"  component = {GamePage}/>
             <Route path = "/ranking-page"  component = {RankingPage}/>
             <Route path = "/option-page/:id"  component = {OptionPage}/>
-            <Route path = "level-page/:id/:optionChosen" component = {LevelPage}/>
+            <Route path = "/level-page/:id/:optionChosen" component = {LevelPage}/>
         </BrowserRouter>
     );
 }
