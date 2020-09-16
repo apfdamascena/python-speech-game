@@ -13,7 +13,7 @@ import LevelPage from './Components/Pages/LevelPage/LevelPage';
 export default function Routes(){
     return(
         <BrowserRouter>
-            <Route path = "/" exact component = {HomePage}/>
+            <Route path = "/" exact component = {LevelPage}/>
             <Route path = "/login-page"  component = {LoginPage}/>
             <Route path = "/about-page"  component = {AboutPage}/>
             <Route path = "/new-user-page"  component = {NewUserPage}/>

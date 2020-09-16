@@ -1,0 +1,21 @@
+.level-page {
+    display: flex;
+    position: relative;
+    top: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#box1 {
+    position: relative;
+    top: 80px;
+    width : 700px;
+    height: 350px;
+    background-color: white;
+    border-radius: 25px;
+    background-color: rgba(256, 256, 256, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+} 

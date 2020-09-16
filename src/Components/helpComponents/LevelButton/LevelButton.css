@@ -1,0 +1,27 @@
+#cta2{
+    color: white;
+    display: flex;
+    padding: 2px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    background: #6225E6;
+    transition: 1s;
+    box-shadow: 6px 6px 0 black;
+    /* transform: skewX(-15deg); */
+    box-shadow: 3px 3px 0 #68DBAE;
+}
+  
+#cta2:focus{
+    outline: none; 
+}
+
+a#cta2 {
+    width: 30px;
+    position: relative;
+}
+
+a#cta2 span {
+    margin-left: 4px;
+}
