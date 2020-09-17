@@ -1,21 +1,33 @@
 import {Request, Response} from "express";
-import dataFunctions from '../data/functions';
+import easyFunctions from '../data/functions/easyFunctions';
 import askTitle from '../data/ask';
-import firebase from 'firebase';
+import GetScore from "./getScore";
 import firebaseRef from "../database/firebaseConfig";
+import firebase from "firebase";
 
 export default class FunctionsController {
+
+    constructor(){
+        let getScore = new GetScore();
+    }
     async index(request: Request, response: Response){
-        const { id } = request.params;
-        
+        const {id, level} = request.params;
+
         firebase.firestore(firebaseRef).collection("users").doc(id).get().then(doc => {
-            if (!doc.exists) {
-                return response.send({SIGNATURE: dataFunctions, score: 0, ASK: askTitle});
-            } else {
+            var score = 0;
+            if (doc.exists) {
                 let object = doc.data();
-                var score = object.score
-                return response.send({SIGNATURE: dataFunctions, score: score, ASK: askTitle});
+                score = object.score
             }
+
+            switch(parseInt(level)){
+                case 1:
+                    return response.send({SIGNATURE: easyFunctions, ASK: askTitle, score: score})
+            }
+
         }).catch((error) => {console.log(error)})
+
+
+    
     }
 }

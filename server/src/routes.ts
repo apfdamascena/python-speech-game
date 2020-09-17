@@ -14,7 +14,7 @@ const getScore = new GetScore();
 
 routes.post('/login-page', loginController.index);
 routes.post('/new-user-page', newUserController.index);
-routes.get('/game-page/:id/:optionChosen/:level',dataFunctions.index);
+routes.get('/game-page/:id/FUNCTIONS/:level',dataFunctions.index);
 routes.get('/level-page/:id/:optionChosen', getScore.index);
 routes.get('/ranking-page', getUsers.index)
 
