@@ -15,15 +15,13 @@ export default class LevelPage extends Component {
             levels: [1, 2, 3, 4],
             nameLevels: ["Easy", "Easy +", "Hard", "Insane"],
             maxScore: [80, 140, 200, 300],
-            score: 100,
+            score: 0,
             user: this.props.location.state,
             redirect: ''
         }
     }
 
-    handleTapLevelButton = (event) => {
-        let level = event.target.innerHTML;
-        let nameLevel = this.state.nameLevels[level - 1];
+    handleTapLevelButton = (level) => {
         let whereIGo = rename(window.location.pathname,parseInt(level));
         this.setState({redirect: whereIGo});
         
@@ -56,7 +54,9 @@ export default class LevelPage extends Component {
                             if (this.state.score >= this.state.maxScore[index]) {
                                 return (
                                     <div className="elements">
-                                        <LevelButton level={level} key={index} onClick={this.handleTapLevelButton} />
+                                        <LevelButton level={level} key={index} onClick={() => {
+                                            this.handleTapLevelButton(level)
+                                        }} />
                                         <h2>{this.state.nameLevels[index]}</h2>
                                         <h4>{this.state.maxScore[index] + "pts."}</h4>
                                     </div>
