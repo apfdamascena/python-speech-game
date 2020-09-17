@@ -33,11 +33,7 @@ export default class FunctionsController {
                     return response.send({SIGNATURE: hardFunctions, ASK: askTitle, score: score});
                 case 4:
                     return response.send({SIGNATURE: insaneFunctions, ASK: askTitle, score: score});
-                    
-
+            }
         }).catch((error) => {console.log(error)})
-
-
-    
     }
 }
