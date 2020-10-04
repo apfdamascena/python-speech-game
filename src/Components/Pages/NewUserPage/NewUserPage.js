@@ -23,14 +23,15 @@ class NewUserPage extends Component {
         }
     }
 
-    handleChangePage = () => {
-        this.setState({redirect: "/login-page"})
-    }
-
     handleChange = (event) => {
         this.setState({
             [event.target.name]: [event.target.value]
         });
+    }
+
+    handleChangePage = () => {
+        console.log(10);
+        this.setState({redirect: "/login-page"});
     }
 
     signUp = () => {
@@ -44,9 +45,8 @@ class NewUserPage extends Component {
             password:password,
             confirmPassword:confirmPassword,
             score: score
-        }).then(() => {
-            this.handleChangePage();
-        }).catch((error) => {console.log(error)})
+        }).then(() => {}).catch((error) => {console.log(error)});
+        this.handleChangePage();
     }
 
     render() {

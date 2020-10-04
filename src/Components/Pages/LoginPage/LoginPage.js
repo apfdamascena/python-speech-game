@@ -12,7 +12,6 @@ class LoginPage extends Component {
         this.state = {
             redirect: ""
         }
-
     }
 
     handlePageChange = () => {
