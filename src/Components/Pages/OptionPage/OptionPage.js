@@ -3,13 +3,13 @@ import { Redirect } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 
 import Button from '../../helpComponents/Button/Button';
-import ButtonOff from '../../helpComponents/Button/ButtonOff';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import CharacterLeft from './personagem_left.png';
 
 import './OptionPage.css';
 import './responsive.css';
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import ButtonOff from '../../helpComponents/ButtonOff/ButtonOff';
 
 class OptionPage extends Component {
     constructor(props) {
@@ -58,10 +58,10 @@ class OptionPage extends Component {
                 <img id="photo" src={CharacterLeft} alt = "character"/>
 
                 <div className="ButtonsOptions">
-                    <ButtonOff name="EXPRESSIONS" id="first" />
+                    <ButtonOff name="EXPRESSIONS" id="first" /> 
                     <Button name="FUNCTIONS" id="second" onClick = {this.handleClick} />
-                    <Button name="CONDITIONAL" id="third"/>
-                    <Button name="STATEMENTS" id="four" />
+                    <ButtonOff name="CONDITIONAL" id="third"/>
+                    <ButtonOff name="STATEMENTS" id="four" />
                 </div>
             </div>
         );

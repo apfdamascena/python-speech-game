@@ -11,6 +11,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     background: #26232e;
+    opacity: 0.4;
     transition: 1s;
     box-shadow: 6px 6px 0 black;
     transform: skewX(-15deg);
