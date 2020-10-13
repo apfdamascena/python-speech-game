@@ -1,0 +1,101 @@
+@media (max-width: 320px){
+    #first .ctaOff, #second .ctaOff, #third .ctaOff, #four .ctaOff{
+        font-size: 20px;
+        padding: 8px 20px;
+    }
+
+    #first .ctaOff span:first-child,
+    #second .ctaOff span:first-child,
+    #third .ctaOff span:first-child,
+    #four .ctaOff span:first-child{
+        margin-top: 10px;
+    }
+
+    .wrapperOff {
+        position: relative;
+        bottom: 20px;
+    } 
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+    .wrapperOff {
+        position: relative;
+        bottom: 40px;
+    }
+
+    #first .ctaOff, #second .ctaOff, #third .ctaOff, #four .ctaOff{
+        font-size: 20px;
+        padding: 2px 20px;
+    }
+
+    #first .ctaOff span:first-child,
+    #second .ctaOff span:first-child,
+    #third .ctaOff span:first-child,
+    #four .ctaOff span:first-child{
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+    .wrapperOff {
+        position: relative;
+        bottom: 40px;
+    }
+
+    #first .ctaOff, #second .ctaOff, #third .ctaOff, #four .ctaOff{
+        font-size: 20px;
+        padding: 0px 20px;
+    }
+
+    #first .ctaOff span:first-child,
+    #second .ctaOff span:first-child,
+    #third .ctaOff span:first-child,
+    #four .ctaOff span:first-child{
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .wrapperOff {
+        position: relative;
+        bottom: 110px;
+    }
+
+    #first .ctaOff, #second .ctaOff, #third .ctaOff, #four .ctaOff{
+        font-size: 26px;
+        padding: 4px 20px;
+    }
+
+    #first .ctaOff span:first-child,
+    #second .ctaOff span:first-child,
+    #third .ctaOff span:first-child,
+    #four .ctaOff span:first-child{
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .wrapperOff {
+        position: relative;
+        bottom: 110px;
+    }
+
+    #first .ctaOff, #second .ctaOff, #third .ctaOff, #four .ctaOff{
+        font-size: 26px;
+        padding: 4px 20px;
+    }
+
+    #first .ctaOff span:first-child,
+    #second .ctaOff span:first-child,
+    #third .ctaOff span:first-child,
+    #four .ctaOff span:first-child{
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .wrapperOff {
+        position: relative;
+        bottom: 55px;
+    }
+}

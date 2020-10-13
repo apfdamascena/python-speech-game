@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 
 import Button from '../../helpComponents/Button/Button';
+import ButtonOff from '../../helpComponents/Button/ButtonOff';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import CharacterLeft from './personagem_left.png';
 
@@ -57,7 +58,7 @@ class OptionPage extends Component {
                 <img id="photo" src={CharacterLeft} alt = "character"/>
 
                 <div className="ButtonsOptions">
-                    <Button name="EXPRESSIONS" id="first" />
+                    <ButtonOff name="EXPRESSIONS" id="first" />
                     <Button name="FUNCTIONS" id="second" onClick = {this.handleClick} />
                     <Button name="CONDITIONAL" id="third"/>
                     <Button name="STATEMENTS" id="four" />
