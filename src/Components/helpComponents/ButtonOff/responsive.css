@@ -2,6 +2,7 @@
     #first .ctaOff, #second .ctaOff, #third .ctaOff, #four .ctaOff{
         font-size: 20px;
         padding: 8px 20px;
+        margin: 10px 0px;
     }
 
     #first .ctaOff span:first-child,
@@ -26,6 +27,7 @@
     #first .ctaOff, #second .ctaOff, #third .ctaOff, #four .ctaOff{
         font-size: 20px;
         padding: 2px 20px;
+        margin: 10px 0px;
     }
 
     #first .ctaOff span:first-child,
@@ -45,6 +47,27 @@
     #first .ctaOff, #second .ctaOff, #third .ctaOff, #four .ctaOff{
         font-size: 20px;
         padding: 0px 20px;
+        margin: 10px 0px;
+    }
+
+    #first .ctaOff span:first-child,
+    #second .ctaOff span:first-child,
+    #third .ctaOff span:first-child,
+    #four .ctaOff span:first-child{
+        margin-top: 10px
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .wrapperOff {
+        position: relative;
+        bottom: 110px;
+    }
+
+    #first .ctaOff, #second .ctaOff, #third .ctaOff, #four .ctaOff{
+        font-size: 26px;
+        padding: 4px 20px;
+        margin: 10px 0px;
     }
 
     #first .ctaOff span:first-child,
@@ -58,31 +81,13 @@
 @media (min-width: 426px) and (max-width: 768px) {
     .wrapperOff {
         position: relative;
-        bottom: 110px;
+        bottom: 100px;
     }
 
     #first .ctaOff, #second .ctaOff, #third .ctaOff, #four .ctaOff{
         font-size: 26px;
         padding: 4px 20px;
-    }
-
-    #first .ctaOff span:first-child,
-    #second .ctaOff span:first-child,
-    #third .ctaOff span:first-child,
-    #four .ctaOff span:first-child{
-        margin-top: 10px;
-    }
-}
-
-@media (min-width: 426px) and (max-width: 768px) {
-    .wrapperOff {
-        position: relative;
-        bottom: 110px;
-    }
-
-    #first .ctaOff, #second .ctaOff, #third .ctaOff, #four .ctaOff{
-        font-size: 26px;
-        padding: 4px 20px;
+        margin: 10px 0px;
     }
 
     #first .ctaOff span:first-child,

@@ -2,6 +2,7 @@
     #first .cta, #second .cta, #third .cta, #four .cta{
         font-size: 20px;
         padding: 8px 20px;
+        margin-top: 30px;
     }
 
     #first .cta span:first-child,
@@ -26,6 +27,7 @@
     #first .cta, #second .cta, #third .cta, #four .cta{
         font-size: 20px;
         padding: 2px 20px;
+        margin-top: 30px;
     }
 
     #first .cta span:first-child,
@@ -45,6 +47,7 @@
     #first .cta, #second .cta, #third .cta, #four .cta{
         font-size: 20px;
         padding: 0px 20px;
+        margin-top: 30px;
     }
 
     #first .cta span:first-child,
@@ -64,6 +67,7 @@
     #first .cta, #second .cta, #third .cta, #four .cta{
         font-size: 26px;
         padding: 4px 20px;
+        margin-top: 30px;
     }
 
     #first .cta span:first-child,
@@ -83,6 +87,7 @@
     #first .cta, #second .cta, #third .cta, #four .cta{
         font-size: 26px;
         padding: 4px 20px;
+        margin-top: 30px;
     }
 
     #first .cta span:first-child,
