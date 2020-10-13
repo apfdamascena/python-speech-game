@@ -1,0 +1,24 @@
+@media(max-width: 768px){
+    #box1 {
+        margin-top: 40px;
+        width: 320px;
+        height: 350px;
+    }
+
+    #box1 .elements {
+        margin-top: 0px;
+    }
+
+    #box1 .elements h2 {
+        font-size: 18px;
+    }
+
+    #rightOrangeButtonLevelPage{
+        position: relative;
+        bottom: 0px;
+        left: -30px;
+        top: 165px;
+        padding: 7px 12px;
+        margin-bottom: 10px;
+    }
+}

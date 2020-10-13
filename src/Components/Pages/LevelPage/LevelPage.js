@@ -7,6 +7,7 @@ import { Redirect } from 'react-router-dom';
 import Title from '../../helpComponents/Title/Title';
 import rename from '../../../utils/rename';
 import './LevelPage.css';
+import './responsive.css';
 
 export default class LevelPage extends Component {
     constructor(props) {
