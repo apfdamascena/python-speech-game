@@ -57,10 +57,10 @@ class OptionPage extends Component {
                 <img id="photo" src={CharacterLeft} alt = "character"/>
 
                 <div className="ButtonsOptions">
-                    <Button name="EXPRESSIONS" id="first" onClick = {this.handleClick} />
+                    <Button name="EXPRESSIONS" id="first" />
                     <Button name="FUNCTIONS" id="second" onClick = {this.handleClick} />
-                    <Button name="CONDITIONAL" id="third" onClick = {this.handleClick}/>
-                    <Button name="STATEMENTS" id="four" onClick = {this.handleClick} />
+                    <Button name="CONDITIONAL" id="third"/>
+                    <Button name="STATEMENTS" id="four" />
                 </div>
             </div>
         );
