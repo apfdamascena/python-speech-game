@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import imageCharacter from '../../../assets/images/personagem.png';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 
 export default function PrivacyPolicyPage() {
+
+    const history = useHistory();
+
+    function handleButtonGoBackPressed(){
+        history.goBack();
+    }
+
     return (
         <div id="boxAbout">
-            <OrangeButton action="GO BACK"/>
+            <OrangeButton action="GO BACK" onClick = {handleButtonGoBackPressed}/>
             <div className="mainBox">
                 <div id="contentAbout">
                     <div id="text">

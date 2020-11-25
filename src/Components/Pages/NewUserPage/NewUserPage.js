@@ -30,23 +30,31 @@ class NewUserPage extends Component {
     }
 
     handleChangePage = () => {
-        console.log(10);
         this.setState({redirect: "/login-page"});
     }
 
+    handleButtonPrivacyPolicyPressed = () => {
+        this.setState({redirect: "/privacy-policy"});
+    }
+
     signUp = () => {
-        const [username,email, password, confirmPassword, score] = [
-            this.state.username[0], this.state.email[0], this.state.password[0],
-            this.state.confirmPassword[0], this.state.score
-        ];
-        API.post('new-user-page', {
-            username:username,
-            email:email,
-            password:password,
-            confirmPassword:confirmPassword,
-            score: score
-        }).then(() => {}).catch((error) => {console.log(error)});
-        this.handleChangePage();
+        let checkbox = document.getElementById('checkbox');
+        if(checkbox.checked == true){
+            const [username,email, password, confirmPassword, score] = [
+                this.state.username[0], this.state.email[0], this.state.password[0],
+                this.state.confirmPassword[0], this.state.score];
+            API.post('new-user-page', {
+                username:username,
+                email:email,
+                password:password,
+                confirmPassword:confirmPassword,
+                score: score
+            }).then(() => {
+                this.handleChangePage();
+            }).catch((error) => {console.log(error)});
+        } else {
+            console.log("deu ruim")
+        }
     }
 
     render() {
@@ -56,10 +64,12 @@ class NewUserPage extends Component {
                 <Redirect to = {this.state.redirect}/>
             );
         }
+        
         return (
             <form className = "containerNewUser">
                 <div id="leftSide">
                     <OrangeButton  action="GO BACK" onClick={this.handleChangePage} />
+                    <OrangeButton action="PRIVACY POLICY" idButton = "rightOrangeButtonNewUser" onClick = {this.handleButtonPrivacyPolicyPressed}/>
                 </div>
                 <div id ="imageNewUSer">
                     <LogoInputLogo />
@@ -103,6 +113,12 @@ class NewUserPage extends Component {
                         value={this.state.confirmPassword}
                     ></input>
                 </div>
+
+                <div className = "check-box">
+                    <input id = "checkbox" type = "checkbox"></input>
+                    <p>Agree to the terms of the privacy policy</p>
+                </div>
+
                 <div className="buttonCreateUser" onClick={this.signUp}>
                     <a>Create</a>
                 </div>

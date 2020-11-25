@@ -54,8 +54,22 @@
     border-radius: 27px;
     font-size:14px;
     position: relative;
-    bottom: 45px;
+    bottom: 65px;
     cursor: pointer;
+}
+
+.check-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 70px;
+    left: 7px;
+}
+
+.check-box input{
+    margin-right: 10px;
 }
 
 #leftSide{

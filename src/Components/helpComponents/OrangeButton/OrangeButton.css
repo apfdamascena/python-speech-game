@@ -31,6 +31,11 @@
     background: linear-gradient(#FD4E53,#FF844A);
 }
 
+#leftOrangeButton {
+    position: relative;
+    right: 140px;
+}
+
 #rightOrangeButton{
     position: relative;
     left:980px;
@@ -58,6 +63,11 @@
     position: relative;
     left: 475px;
     bottom: 70px;
+}
+
+#rightOrangeButtonNewUser {
+    position: relative;
+    left: 740px;
 }
 
 

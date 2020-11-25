@@ -18,6 +18,10 @@ class LoginPage extends Component {
         this.setState({redirect : "/about-page"})
     }
 
+    handleProvacyPolicy = () => {
+        this.setState({ redirect : "/privacy-policy"})
+    }
+
     render() {
         if(this.state.redirect){
             return(
@@ -27,6 +31,7 @@ class LoginPage extends Component {
         return (
             <div className="containerLoginPage">
                 <OrangeButton idButton="rightOrangeButton" action="ABOUT" onClick = {this.handlePageChange}/>
+                <OrangeButton idButton = "leftOrangeButton"action="PPRIVACY POLICY" onClick = {this.handleProvacyPolicy}/>
                 <LogoInputLogo />
                 <LoginInput
                     handleButtonPressed={this.props.didTapLoginButton}
