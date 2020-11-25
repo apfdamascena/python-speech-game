@@ -10,9 +10,10 @@ import {
 } from 'react-share';
 import './responsive.css';
 
-const SharedButtons = () => {
+const SharedButtons = ({score}) => {
     const shareUrl = 'https://python-speech-game.firebaseapp.com/';
-    const shareTitle = 'I played a game for python developers and my score was. Try to play too and help those guys!';
+    const shareTitle = `I helped a machine learn, I answered ${score/10} times. Try to teach more than me, come on!`;
+    
     return (
         <div className="sharedButtons">
             <FacebookShareButton

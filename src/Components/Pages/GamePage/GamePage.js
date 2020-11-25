@@ -94,7 +94,7 @@ class GamePage extends Component {
                         content={this.state.data[this.state.randomNumber]}
                         question={this.state.ask[this.state.askNumber]}
                     />
-                    <SharedButtons />
+                    <SharedButtons score = {this.state.score} />
                     <RecordButton user={this.state.user} score={this.getScore} />
                 </div>
             </div>
