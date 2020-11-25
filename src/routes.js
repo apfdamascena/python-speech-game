@@ -9,6 +9,7 @@ import GamePage from './Components/Pages/GamePage/GamePage';
 import RankingPage from './Components/Pages/RankingPage/RankingPage';
 import OptionPage from './Components/Pages/OptionPage/OptionPage';
 import LevelPage from './Components/Pages/LevelPage/LevelPage';
+import PrivacyPolicyPage from './Components/Pages/PrivacyPolicyPage/PrivacyPolicyPage';
 
 export default function Routes(){
     return(
@@ -21,6 +22,7 @@ export default function Routes(){
             <Route path = "/ranking-page"  component = {RankingPage}/>
             <Route path = "/option-page/:id"  component = {OptionPage}/>
             <Route path = "/level-page/:id/:optionChosen" component = {LevelPage}/>
+            <Route path = "/privacy-policy" component = {PrivacyPolicyPage} />
         </BrowserRouter>
     );
 }

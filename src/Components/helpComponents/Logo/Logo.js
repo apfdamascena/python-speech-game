@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Logo.css';
-import logoImage from './logo.png';
+import logoImage from '../../../assets/images/logo.png';
 import './responsive.css';
 
 class Logo extends Component {

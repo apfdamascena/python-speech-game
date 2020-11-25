@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './LoginInputLogo.css'
-import logoImageInput from './logo.png'
+import logoImageInput from '../../../assets/images/logo.png';
 import './responsive.css';
 
 class LogoInputLogo extends Component {

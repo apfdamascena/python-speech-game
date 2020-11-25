@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import imageCharacter from './personagem.png';
+import imageCharacter from '../../../assets/images/personagem.png';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import './AboutPage.css';
 import './responsive.css';
