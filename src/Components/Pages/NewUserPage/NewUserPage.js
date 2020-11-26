@@ -6,6 +6,7 @@ import LogoInputLogo from '../../helpComponents/LoginInputLogo/LoginInputLogo';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserEdit, faEnvelope, faUserLock, faLock } from '@fortawesome/free-solid-svg-icons';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 import './NewUserPage.css';
 import './responsive.css';
@@ -53,7 +54,7 @@ class NewUserPage extends Component {
                 this.handleChangePage();
             }).catch((error) => {console.log(error)});
         } else {
-            console.log("deu ruim")
+            NotificationManager.error('You need to agree to the privacy terms! Read and come back here!')
         }
     }
 
@@ -125,6 +126,7 @@ class NewUserPage extends Component {
                 <div className="buttonCreateUser" onClick={this.signUp}>
                     <a>Create</a>
                 </div>
+                <NotificationContainer/>
             </form>
         );
     }
