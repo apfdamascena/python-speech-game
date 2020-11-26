@@ -61,7 +61,10 @@ class NewUserPage extends Component {
 
         if(this.state.redirect){
             return(
-                <Redirect to = {this.state.redirect}/>
+                <Redirect to = {{
+                    pathname:this.state.redirect,
+                    state : window.location.href
+                }}/>
             );
         }
         
