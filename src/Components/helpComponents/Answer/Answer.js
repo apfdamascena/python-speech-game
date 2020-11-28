@@ -1,6 +1,9 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import './Answer.css';
-import '../OrangeButton/OrangeButton.js';
+import '../OrangeButton/OrangeButton';
 import character from '../../../assets/images/personagem.png';
 import './responsive.css';
 
@@ -12,8 +15,8 @@ class Answer extends Component {
                     <p id="question">{this.props.question}</p>
                     <p id="content">{this.props.content}</p>
                 </div>
-                <div className = "imageCharacter">
-                    <img id="imageCharacter" src={character} />
+                <div className="imageCharacter">
+                    <img id="imageCharacter" src={character} alt="astraunaut" />
                 </div>
             </div>
         );

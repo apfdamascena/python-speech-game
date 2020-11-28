@@ -1,5 +1,6 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import './LoginInputLogo.css'
+import './LoginInputLogo.css';
 import logoImageInput from '../../../assets/images/logo.png';
 import './responsive.css';
 
@@ -8,7 +9,7 @@ class LogoInputLogo extends Component {
         return (
             <div className="containerLogin">
                 <div className="imageLogin">
-                    <img src={logoImageInput} alt = "Logo"/>
+                    <img src={logoImageInput} alt="Logo" />
                 </div>
             </div>
         );

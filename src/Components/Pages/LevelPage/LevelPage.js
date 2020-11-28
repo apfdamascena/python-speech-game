@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable radix */
 /* eslint-disable react/prop-types */
 /* eslint-disable import/no-unresolved */

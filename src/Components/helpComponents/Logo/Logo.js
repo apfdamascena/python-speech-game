@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import './Logo.css';
 import logoImage from '../../../assets/images/logo.png';
@@ -8,12 +9,12 @@ class Logo extends Component {
         return (
             <div className="containerLogo">
                 <div className="image">
-                    <img src={logoImage} alt="logo"/>
+                    <img src={logoImage} alt="logo" />
                 </div>
 
                 <div className="namelogo">
                     <h1>PythonTest</h1>
-                    <hr/>
+                    <hr />
                 </div>
             </div>
         );
