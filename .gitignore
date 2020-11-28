@@ -37,3 +37,4 @@ backlog.txt
 .firebaserc
 firebase.json
 /src/FireBase/FireBase.js
+.eslintcache

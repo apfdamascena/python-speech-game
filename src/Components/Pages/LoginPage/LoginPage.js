@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
@@ -10,35 +12,47 @@ class LoginPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            redirect: ""
-        }
+            redirect: '',
+        };
     }
 
     handlePageChange = () => {
-        this.setState({redirect : "/about-page"})
-    }
+        this.setState({ redirect: '/about-page' });
+    };
 
     handleProvacyPolicy = () => {
-        this.setState({ redirect : "/privacy-policy"})
-    }
+        this.setState({ redirect: '/privacy-policy' });
+    };
 
     render() {
-        if(this.state.redirect){
-            return(
-                <Redirect to = {{
-                    pathname:this.state.redirect,
-                    state : window.location.href
-                }}/>
+        const { redirect } = this.state;
+        if (redirect) {
+            return (
+                <Redirect
+                    to={{
+                        pathname: redirect,
+                        state: window.location.href,
+                    }}
+                />
             );
         }
         return (
             <div className="containerLoginPage">
-                <OrangeButton idButton="rightOrangeButton" action="ABOUT" onClick = {this.handlePageChange}/>
-                <OrangeButton idButton = "leftOrangeButton"action="PPRIVACY POLICY" onClick = {this.handleProvacyPolicy}/>
+                <OrangeButton
+                    idButton="rightOrangeButton"
+                    action="ABOUT"
+                    onClick={this.handlePageChange}
+                />
+                <OrangeButton
+                    idButton="leftOrangeButton"
+                    action="PPRIVACY POLICY"
+                    onClick={this.handleProvacyPolicy}
+                />
                 <LogoInputLogo />
                 <LoginInput
                     handleButtonPressed={this.props.didTapLoginButton}
-                    newUser={this.props.createNewUser} />
+                    newUser={this.props.createNewUser}
+                />
             </div>
         );
     }
