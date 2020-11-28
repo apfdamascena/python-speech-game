@@ -100,6 +100,7 @@ class NewUserPage extends Component {
                     <OrangeButton
                         action="GO BACK"
                         onClick={this.handleChangePage}
+                        idButton="leftOrangeButtonNewUser"
                     />
                     <OrangeButton
                         action="PRIVACY POLICY"

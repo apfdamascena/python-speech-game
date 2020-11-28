@@ -1,7 +1,5 @@
 FROM node:latest
 
-FROM node:latest
-
 RUN mkdir /source
 WORKDIR /source
 

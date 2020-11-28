@@ -17,7 +17,7 @@ class HomePage extends Component {
                 <Logo />
                 <Link to="/login-page">
                     <Button
-                        name="PLAY"
+                        name="START"
                         handleButtonPressed={this.props.didTapPlayButton}
                     />
                 </Link>

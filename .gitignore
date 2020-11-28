@@ -31,6 +31,8 @@ yarn.lock
 package-lock.json
 firebase-debug.log
 backlog.txt
+/server/dist
+
 
 #firebase
 .firebase/

@@ -29,10 +29,55 @@
 
     .UserName, .UserEmail, .UserPassword, .ConfirmUserPassword {
         left: 170px;
-        bottom: 70px;
+        bottom: 10px;
+    }
+
+    .check-box {
+        position: relative;
+        bottom: 40px;
     }
 
     .buttonCreateUser {
-        bottom: 90px;
+        bottom: 45px;
+    }
+}
+
+@media(min-width: 376px) and (max-width: 425px){
+
+    .UserName, .UserEmail, .UserPassword, .ConfirmUserPassword {
+        left: 170px;
+        top: 30px;
+    }
+
+    .check-box {
+        position: relative;
+        top: 1px;
+    }
+
+    .buttonCreateUser {
+        bottom: 4px;
+    }
+}
+
+@media(min-width: 426px) and (max-width: 1024px){
+
+    #leftSide {
+        position: relative;
+        bottom: 15px;
+        left: -65px;
+    }
+
+    .UserName, .UserEmail, .UserPassword, .ConfirmUserPassword {
+        left: 180px;
+        top: 30px;
+    }
+
+    .check-box {
+        position: relative;
+        top: 1px;
+    }
+
+    .buttonCreateUser {
+        bottom: 4px;
     }
 }

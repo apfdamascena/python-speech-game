@@ -65,8 +65,7 @@ class GamePage extends Component {
         let phrase = '';
         switch (optionChosen) {
             case 'FUNCTIONS':
-                phrase = `if def sum (a, b) appears, the audio should be "define a function called sum with parameters a and b"
-                            or ANYTHING LIKE THIS`;
+                phrase = `if def sum (a, b) appears, the audio should be "define a function called sum with parameters a and b"`;
                 break;
             default:
                 phrase = 'not exist';

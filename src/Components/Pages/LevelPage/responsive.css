@@ -1,4 +1,35 @@
-@media(max-width: 768px){
+@media(max-width: 320px){
+    #box1 {
+        margin-top: 40px;
+        width: 320px;
+        height: 350px;
+        left: 11px;
+    }
+
+    #box1 .elements {
+        margin-top: 0px;
+    }
+
+    #box1 .elements h2 {
+        font-size: 18px;
+    }
+
+    #rightOrangeButtonLevelPage{
+        position: relative;
+        bottom: 0px;
+        left: 8px;
+        top: 165px;
+        padding: 7px 12px;
+        margin-bottom: 10px;
+    }
+    
+    .containerTitle {
+        left: 12px;
+    }
+}
+
+
+@media(min-width: 321px) and (max-width: 768px){
     #box1 {
         margin-top: 40px;
         width: 320px;
@@ -16,7 +47,7 @@
     #rightOrangeButtonLevelPage{
         position: relative;
         bottom: 0px;
-        left: -30px;
+        left: -8px;
         top: 165px;
         padding: 7px 12px;
         margin-bottom: 10px;
