@@ -55,6 +55,7 @@ class RecordButton extends Component {
     }
 
     submit = () => {
+        this.props.onClick();
         const store = firebase.storage(firebaseRef);
         store
             .ref(`audios/${this.state.blobURL}`)

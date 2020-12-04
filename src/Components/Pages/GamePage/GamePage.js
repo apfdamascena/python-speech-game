@@ -52,7 +52,7 @@ class GamePage extends Component {
             });
         this.setState({
             randomNumber: this.getRandomNumber(0, this.state.data.length),
-            askNumber: this.getRandomNumber(0, this.state.ask),
+            askNumber: this.getRandomNumber(0, this.state.ask.length),
         });
         this.showInfo(this.state.name);
     }
@@ -78,6 +78,12 @@ class GamePage extends Component {
         API.get(window.location.pathname).then((response) => {
             const { score } = response.data;
             this.setState({ score });
+        });
+    };
+
+    changeContent = () => {
+        this.setState({
+            randomNumber: this.getRandomNumber(0, this.state.data.length),
         });
     };
 
@@ -130,6 +136,7 @@ class GamePage extends Component {
                     <RecordButton
                         user={this.state.user}
                         score={this.getScore}
+                        onClick={this.changeContent}
                     />
                 </div>
             </div>
