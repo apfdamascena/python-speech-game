@@ -9,8 +9,8 @@
     background: #6225E6;
     transition: 1s;
     box-shadow: 6px 6px 0 black;
-    /* transform: skewX(-15deg); */
     box-shadow: 3px 3px 0 #68DBAE;
+    margin-left: 8px;
 }
   
 #cta2:focus{
@@ -23,5 +23,5 @@ a#cta2 {
 }
 
 a#cta2 span {
-    margin-left: 4px;
+    margin-left: 3px;
 }

@@ -55,7 +55,6 @@ class RecordButton extends Component {
     }
 
     submit = () => {
-        this.props.onClick();
         const store = firebase.storage(firebaseRef);
         store
             .ref(`audios/${this.state.blobURL}`)
@@ -78,6 +77,7 @@ class RecordButton extends Component {
                             console.log(error);
                         });
                 }
+                this.props.onClick();
                 this.forceUpdate();
             })
             .catch((error) => {

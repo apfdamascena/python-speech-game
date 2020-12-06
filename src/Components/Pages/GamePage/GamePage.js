@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 /* eslint-disable react/prop-types */
@@ -19,20 +20,19 @@ import Title from '../../helpComponents/Title/Title';
 import SharedButtons from '../../helpComponents/SharedButtons/SharedButtons';
 import getName from '../../../utils/name';
 import 'react-notifications/lib/notifications.css';
-
 import './responsive.css';
 
 class GamePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            score: 0,
+            score: '',
             data: '',
             ask: '',
             user: this.props.location.state,
             name: getName(window.location.pathname),
-            randomNumber: 0,
-            askNumber: 0,
+            randomNumber: '',
+            askNumber: '',
             redirect: '',
         };
     }
@@ -43,16 +43,18 @@ class GamePage extends Component {
                 const { SIGNATURE, score, ASK } = response.data;
                 this.setState({
                     data: SIGNATURE.SIGNATURE,
-                    score,
+                    score: score,
                     ask: ASK.ASK,
                 });
             })
             .catch((error) => {
                 console.log(error);
             });
+        const randomNumber = this.getRandomNumber(0, this.state.data.length);
+        const askNumber = this.getRandomNumber(0, this.state.ask.length);
         this.setState({
-            randomNumber: this.getRandomNumber(0, this.state.data.length),
-            askNumber: this.getRandomNumber(0, this.state.ask.length),
+            randomNumber,
+            askNumber,
         });
         this.showInfo(this.state.name);
     }

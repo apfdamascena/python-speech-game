@@ -72,7 +72,7 @@ class OptionPage extends Component {
                         id="second"
                         onClick={this.handleClick}
                     />
-                    <ButtonOff name="CONDITIONAL" id="third" />
+                    <ButtonOff name="CONDITIONALS" id="third" />
                     <ButtonOff name="STATEMENTS" id="four" />
                 </div>
             </div>

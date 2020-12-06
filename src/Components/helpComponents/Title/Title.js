@@ -11,7 +11,7 @@ class Title extends Component {
         return (
             <div className="containerTitle">
                 <a id="cta1" href="#">
-                    <span>{this.props.name}</span>
+                    <span id={this.props.id}>{this.props.name}</span>
                     <span>
                         <svg
                             width="66px"

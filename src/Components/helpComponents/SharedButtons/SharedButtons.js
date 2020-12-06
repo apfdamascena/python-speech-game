@@ -16,9 +16,9 @@ import './responsive.css';
 
 const SharedButtons = ({ score }) => {
     const shareUrl = 'https://python-speech-game.firebaseapp.com/';
-    const shareTitle = `I helped a machine learn, I answered ${
+    const shareTitle = `I helped a computer to learn to program. I gave it ${
         score / 10
-    } times. Try to teach more than me, come on!`;
+    } lessons. Want to see how you fare? Try it out!`;
 
     return (
         <div className="sharedButtons">

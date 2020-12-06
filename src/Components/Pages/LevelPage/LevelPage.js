@@ -21,7 +21,7 @@ export default class LevelPage extends Component {
         super(props);
         this.state = {
             levels: [1, 2, 3, 4],
-            nameLevels: ['Easy', 'Easy +', 'Hard', 'Insane'],
+            nameLevels: ['Easy', 'Normal', 'Hard', 'Insane'],
             maxScore: [80, 140, 200, 300],
             score: 0,
             user: this.props.location.state,
@@ -63,10 +63,13 @@ export default class LevelPage extends Component {
                     action={`SCORE: ${this.state.score}`}
                     idButton="rightOrangeButtonLevelPage"
                 />
-                <Title name=" ....LEVELS" />
+                <Title name="LEVELS" id="levels" />
                 <div id="box1">
                     {this.state.levels.map((level, index) => {
-                        if (this.state.score >= this.state.maxScore[index]) {
+                        if (
+                            this.state.score >= this.state.maxScore[index] ||
+                            this.state.user.isAnonymous
+                        ) {
                             return (
                                 <div className="elements">
                                     <LevelButton
