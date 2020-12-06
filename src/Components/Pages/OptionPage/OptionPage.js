@@ -5,6 +5,11 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 
+import {
+    NotificationContainer,
+    NotificationManager,
+} from 'react-notifications';
+
 import Button from '../../helpComponents/Button/Button';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import CharacterLeft from './personagem_left.png';
@@ -47,6 +52,11 @@ class OptionPage extends Component {
         });
     };
 
+    handleUnviableAccess = () => {
+        const message = 'this item is disabled for now';
+        NotificationManager.error(message);
+    };
+
     render() {
         const { redirect, user } = this.state;
         if (redirect) {
@@ -62,18 +72,31 @@ class OptionPage extends Component {
 
         return (
             <div className="containerOptionPage">
+                <NotificationContainer />
                 <OrangeButton action="HOME" onClick={this.didTapGoBack} />
                 <img id="photo" src={CharacterLeft} alt="character" />
 
                 <div className="ButtonsOptions">
-                    <ButtonOff name="EXPRESSIONS" id="first" />
+                    <ButtonOff
+                        name="EXPRESSIONS"
+                        id="first"
+                        onClick={this.handleUnviableAccess}
+                    />
                     <Button
                         name="FUNCTIONS"
                         id="second"
                         onClick={this.handleClick}
                     />
-                    <ButtonOff name="CONDITIONALS" id="third" />
-                    <ButtonOff name="STATEMENTS" id="four" />
+                    <ButtonOff
+                        name="CONDITIONALS"
+                        id="third"
+                        onClick={this.handleUnviableAccess}
+                    />
+                    <ButtonOff
+                        name="STATEMENTS"
+                        id="four"
+                        onClick={this.handleUnviableAccess}
+                    />
                 </div>
             </div>
         );
