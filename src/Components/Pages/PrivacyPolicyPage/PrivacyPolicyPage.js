@@ -39,18 +39,19 @@ export default class PrivacyPolicyPage extends Component {
                     <div id="contentAbout2">
                         <div id="text">
                             <h4>
-                                Understand the types of information that is
-                                collected when you use our services:
+                                The following types of information are collected
+                                when you use our services:
                             </h4>
 
                             <p>Accounts created:</p>
                             <p id="box-inside">
-                                -When creating an account on the site, you
+                                - When creating an account on the site, you
                                 provide us with personal information that
-                                includes your email, name and a password. Later,
-                                this information allows us to create resources,
-                                such as: ranking, scores and levels reached on
-                                the platform.
+                                includes your email, user name and a password.
+                                The email and the user name allow us to create
+                                resources such as: ranking, scores and levels
+                                reached on the platform. The password is only
+                                used for authentication purposes.
                             </p>
 
                             <p>
@@ -59,28 +60,32 @@ export default class PrivacyPolicyPage extends Component {
                             </p>
                             <p id="box-inside">
                                 {' '}
-                                -Voice and audio information when you use audio
+                                - Voice and audio information when you use audio
                                 features.
-                                <br />- Information on activities carried out on
-                                the website.
+                                <br />
+                                Information on activities carried out on the
+                                website.
                             </p>
 
                             <p>Why do we collect this data?</p>
 
                             <p id="box-inside">
-                                - The audios will be used, exclusively, for a
-                                research of scientific initiation, which has the
-                                objective of programming by voice. We do not
-                                have the identification of the people who sent
-                                the audio, we don't use these audios for other
-                                purposes. We just want to build a large database
-                                that allows for the continuation of this
-                                research.
-                                <br />- We collect other information, such as:
+                                - The audio files will be used, exclusively, for
+                                research purposes, more specifically, as input
+                                to a speech recognition system responsible for
+                                translating your voice commands into text and
+                                this text is added to a database of commands
+                                instructing a program to write code. We do not
+                                associate audio files with your identity,not
+                                even your email, in any way. We do not use these
+                                audio files for other purposes.
+                                <br />- - We collect other information, such as:
                                 how many times a person contributed to our
                                 database, in order to build a ranking and have
                                 ways of encouraging user engagement on the
-                                platform.
+                                platform. However, we do not associate the user
+                                with the audio files she has contributed; these
+                                are stored anonymously.
                             </p>
                         </div>
                     </div>

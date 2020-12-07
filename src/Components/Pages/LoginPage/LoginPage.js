@@ -45,7 +45,7 @@ class LoginPage extends Component {
                 />
                 <OrangeButton
                     idButton="leftOrangeButton"
-                    action="PPRIVACY POLICY"
+                    action="PRIVACY POLICY"
                     onClick={this.handleProvacyPolicy}
                 />
                 <LogoInputLogo />

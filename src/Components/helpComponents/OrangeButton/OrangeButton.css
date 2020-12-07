@@ -21,7 +21,6 @@
 }
 
 .OrangeButton a > span > span {
-    font-weight: bold;
     background: linear-gradient(#FF6064, #FF9867);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -69,5 +68,4 @@
     position: relative;
     left: 740px;
 }
-
 

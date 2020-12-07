@@ -32,19 +32,23 @@ class AboutPage extends Component {
                 <div className="mainBox">
                     <div id="contentAbout">
                         <div id="text">
-                            <p>Purpose:</p>
+                            <p>Goal of this site:</p>
                             <p>
-                                We want to get as much audio as possible to
-                                start a search for voice programming in python.
-                                So, we will need you to increase our database
-                                even further.
+                                We are researchers who want to teach a computer
+                                to program based on voice commands from a
+                                developer. To reach that goal, we need to
+                                collect a lot of information about how
+                                programmers would instruct the computer to code.
+                                Can you help us in this task?
                             </p>
                             <p>
-                                It's easy to play : Create an account or just
-                                log in anonymously, select a python option, for
-                                example 'functions', and the screen will show a
+                                It is easy to help: Create an account or enter
+                                anonymously, select a python option, for example
+                                'functions', and the screen will show a
                                 sentence. Record your voice while you read the
-                                sentence and submit.
+                                sentence and submit. Do this as many times as
+                                you can. Instructors who teach the computer more
+                                will appear higher in the rankings!
                             </p>
                         </div>
                     </div>

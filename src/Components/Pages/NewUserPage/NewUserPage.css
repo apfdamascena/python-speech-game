@@ -72,6 +72,13 @@
     margin-right: 10px;
 }
 
+.check-box p {
+    cursor: pointer;
+}
+.check-box p:hover, .active {
+    color: #ACACAC;
+}
+
 #leftSide{
     align-self: flex-start;
     margin-right: 4%;

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/destructuring-assignment */
@@ -69,7 +71,7 @@ class NewUserPage extends Component {
                 score,
             })
                 .then(() => {
-                    this.handleChangePage();
+                    this.setState({ redirect: '/login-page' });
                 })
                 .catch((error) => {
                     console.log(error);
@@ -165,7 +167,9 @@ class NewUserPage extends Component {
 
                 <div className="check-box">
                     <input id="checkbox" type="checkbox" />
-                    <p>Agree to the terms of the privacy policy</p>
+                    <p onClick={this.handleButtonPrivacyPolicyPressed}>
+                        Agree to the terms of the privacy policy
+                    </p>
                 </div>
 
                 <div className="buttonCreateUser" onClick={this.signUp}>
