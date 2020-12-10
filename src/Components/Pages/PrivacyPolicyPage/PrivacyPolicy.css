@@ -1,11 +1,11 @@
 #contentAbout2{
     width : 700px;
-    height: 570px;
+    height: 640px;
     opacity: 0.6;
     background-color: white;
     border-radius: 25px;
     position: relative;
-    top:50px;
+    top: 10px;
 }
 
 #box-inside {

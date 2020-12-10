@@ -1,0 +1,19 @@
+@media (max-width: 768px){
+    #contentAbout2{
+        width : 330px;
+        height: 700px;
+        opacity: 0.6;
+        background-color: white;
+        border-radius: 25px;
+        position: relative;
+        top: 30px;
+    }
+
+    #text p {
+        font-size: 12px;
+    }
+
+    #text h4 {
+        font-size: 14px;
+    }
+}

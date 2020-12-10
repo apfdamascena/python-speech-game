@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom';
 import imageCharacter from '../../../assets/images/personagem.png';
 import OrangeButton from '../../helpComponents/OrangeButton/OrangeButton';
 import './PrivacyPolicy.css';
+import './responsive.css';
 
 export default class PrivacyPolicyPage extends Component {
     constructor(props) {
