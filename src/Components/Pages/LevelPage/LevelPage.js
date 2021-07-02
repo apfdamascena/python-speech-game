@@ -22,7 +22,7 @@ export default class LevelPage extends Component {
         this.state = {
             levels: [1, 2, 3, 4],
             nameLevels: ['Easy', 'Normal', 'Hard', 'Insane'],
-            maxScore: [80, 140, 200, 300],
+            maxScore: [0, 140, 200, 300],
             score: 0,
             user: this.props.location.state,
             redirect: '',
@@ -68,7 +68,7 @@ export default class LevelPage extends Component {
                     {this.state.levels.map((level, index) => {
                         if (
                             this.state.score >= this.state.maxScore[index] ||
-                            this.state.user.isAnonymous
+                            this.state.user.isAnonymous 
                         ) {
                             return (
                                 <div className="elements">
