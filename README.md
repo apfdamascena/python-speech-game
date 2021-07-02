@@ -34,7 +34,7 @@ This site was created during a scientific research entitled: deep learning as a 
     </li>
         <li><a href="#abstract">Abstract</a></li>
         <li><a href="#facepe">Facepe</a></li>
-        <li><a href="#what-was-done">Facepe</a></li>
+<li><a href="#what-was-done">What Was Done</a></li>
 
 <li><a href="#contact">Contact</a></li>
   </ol>
