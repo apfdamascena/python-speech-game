@@ -10,15 +10,6 @@
   <p align="center">
   
 There are numerous barriers to access technology and software development, which keep away new developers who can add, with new research, the academic area and boost the technology market. Voice-based programming appears in order to democratize access to software development, especially for developers with physical disabilities - loss or impairment of upper limbs - and neurological diseases. Similarly, one can list other groups that are unfeasible in the area of programming, such as: people with repetitive stress disorder and visual impairment. Thus, it is clear that offering alternatives such as voice programming to these groups provides inclusion and alleviates pain in the developer's daily life. This site was created during a scientific research entitled: deep learning as a support for voice programming and which I was guided by professor Fernando Castor. The site's intention is to collect the maximum number of audios, more precisely function signatures, to develop a database in the creation of the deep learning model. The collected audios will only be used to be translated and there is no user identification in sensitive data. Furthermore, the site has been validated by Hidehiko Masuhara - Tokyo Institute of Technology.
-  
-    <br />
-    <a href="https://github.com/apfdamascena/python-speech-game"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    ·
-    <a href="https://github.com/apfdamascena/python-speech-game/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/apfdamascena/python-speech-game/issues">Request Feature</a>
   </p>
 </p>
 
